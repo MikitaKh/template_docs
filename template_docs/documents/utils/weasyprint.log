@@ -34688,3 +34688,281 @@ Error: Expected ':' after declaration name, got EOF at 1:31.
 Error: Expected ':' after declaration name, got EOF at 1:31.
 Error: Expected ':' after declaration name, got EOF at 1:31.
 Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Ignored `border:1px sold black` at 1:1, invalid value.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected <ident> for declaration name, got literal. at 1:27.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
+Error: Expected ':' after declaration name, got EOF at 1:31.
