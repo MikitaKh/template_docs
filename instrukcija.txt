@@ -1,0 +1,11 @@
+.\venv\Scripts\activate   -- activate environment
+
+deactivate -- otkluczit environment
+
+pip freeze -- kakie pakety ustanowleny 
+
+pip install -r .\requirements.txt
+
+pip list - spisok paketow
+
+python manage.py runserver  4000  port

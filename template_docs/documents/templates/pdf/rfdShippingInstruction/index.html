@@ -1,0 +1,323 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RFD_SHIPPING_INSTRUCTION</title>
+    <meta name="description" content="Invoice demo sample">
+  </head>
+
+{% comment %} Pytania trudne momenty {% endcomment %}
+{% comment %} czy tu LCL czy nie {% endcomment %}
+{% comment %} Czcionka DejaVuSansCondensed {% endcomment %}
+{% comment %} Waga łączna jak policzyć z with nie działa {% endcomment %}
+
+<!--PODSTAWOWE INFORMACJE-->
+{% load static %}
+{% load custom_filters %}
+<!--PODSTAWOWE INFORMACJE   +2px к размерам-->
+<body>
+<table class="table-header" style=" ">
+    <tr>
+        <td class="width50" style="font-size: 14px !important; border:none !important " rowspan="2">
+            <center>   Wystawiający zlecenie: {{issuer}}</center>
+            <!-- <center>            {{phone_issuer}}</center> -->
+            <center>      email:    {{ email_issuer }}</center>
+            <center>          {{ branch_issuer }}</center>
+            <center>   NIP:   {{ nip_issuer }}</center>
+        </td>
+        <td  class="width5 center middle" ></td>
+        <td  class="width40 center middle" style="font-size: 16px " >
+            <center>
+                <br/>
+                <img style="margin-top: 10px; position:absolute; height: 15%; max-height: 16%; max-width: 30%" src=""/>
+            </center>
+        </td>
+    </tr>
+    <tr class="table-header" style="border:none !important">
+        <td style="border:none !important"  class="width5 center middle" ></td>
+
+        <td  class="width40 center middle" style="border:none !important; font-size: 10px !important;" >
+            {{ city }} {{ date }}<br/>
+
+        </td>
+    </tr>
+</table>
+
+<br/>
+
+<table style="">
+    <tr>
+        <td  class="width100 center middle h" style="border: none; font-size: 16px ">
+            <b> {{ document_type}} Nr {{ shipment_number }}</b> 
+        </td>
+    </tr>
+    <tr class="table-header">
+        <td  class="width100 center middle h" style="border: none; font-size: 10px ">
+            {{ info_about_invoice }}
+        </td>
+    </tr>
+</table>
+
+<!--INFORMACJE O PRZEWOZNIKU--> 
+<table style="font-size: 14px">
+    <tr>
+        <td  class="width25 center middle h" style="border:none" >
+            Przewoźnik
+        </td>
+        <td class="width75  center middle h" style="">
+            <b>{{ carrier  }}</b><br/>
+            <i>{{ carrier_addres }}</b><br/>
+                NIP: {{ carrier_nip }}</i>
+        </td>
+    </tr>
+    <tr>
+        <td  class="width25 center middle h" style="border:none" >
+           Osoba kontaktowa:
+        </td>
+        <td class="width75 center middle h" style="">
+          {% for person in contact_person %}
+           {{ person }} <br/>
+          {% endfor %}
+        </td>
+    </tr>
+    <tr>
+        <td  class="width25 center middle h" style="border:none" >
+           Środek transportu:
+        </td>
+        <td class="width75 center middle h" style="font-size: 14px">
+            {{ truck }}
+            {{ trailer }}
+            {{ vehicle_type }}
+            {{ driver }}
+            {{ driver_id_card }}
+            {{ driver_passport }}
+            {{ driver_phone }}
+        </td>
+    </tr>
+</table><br>
+
+<!--PUNKTY TRASY ZLECENIA-->
+<table class="table2">
+    <thead>
+        <tr >
+            <th class="width20" ><center>Punkt trasy</center></th>
+            <th class="width10"><center>Data</center></th>
+            <th class="width10"><center>Szczegóły</center></th>
+        </tr>
+    </thead>
+   <tbody>
+       <!-- PUNKTY -->
+       {% for poi in poi_points %}
+         <tr class=""  >
+            <td style="vertical-align: middle !important;" >
+                <b>{{ poi.name }}</b><br/>
+                {{ poi.street }}  {{ poi.building_nr }}<br/>
+                {{ poi.country_code|default:''|striptags }}  {{ poi.postal_code|default:''|striptags }}  {{ poi.city|default:''|striptags }},
+                {{ poi.country|default:''|striptags }}<br/>
+
+                {% if poi.open_hour is not None and poi.close_hour is not None %}
+                   Godziny otwarcia: {{ poi.open_hour }} - {{ poi.close_hour }}
+
+                {% endif %}
+                <br/>
+                <br/>
+            </td>
+
+            <!--data-->
+            <td class="width15 center top h" style="font-size: 8pt;  ">
+                {{ poi.date }}
+            </td>
+
+            <!--szczegoly-->
+            <td class="width50 top">
+             {% with total_weight='' %}
+               {% for field_name , action in dict_cargo.items %}
+
+               
+                  {% if poi|get_dictionary_item:action|length > 0 %}  
+                       <b>{{ field_name|upper }}</b><br/>
+
+                     
+                    
+                            {% for cargo in poi|get_dictionary_item:action %}
+                                &bull;      
+                                {% if cargo.name %}  Towar: <i>{{ cargo.name }}</i>, {% endif %}
+                                {% if cargo.type %}  Opakowanie: <i>{{ cargo.type }}</i>, {% endif %}
+                                {% if cargo.quantity %}   Sztuk: <i>{{ cargo.quantity }}</i> ,{% endif %}
+                                {% if cargo.weight_brutto %}   Waga brutto[kg]: <i>{{ cargo.weight_brutto }}</i>, {% endif %}
+                                {% if cargo.CBM %} CBM: <i>{{cargo.CBM}}</i>, {% endif %} 
+                                {% if cargo.dimensions %} Wymiary: <i>{{cargo.dimensions}}</i>, {% endif %}
+                                {% if cargo.info %}   Uwagi: <i>{{ cargo.info }}</i>  {% endif %}
+                                <br/>
+
+                              
+                            {% endfor %}     
+
+                   {% endif %}
+                
+              {% endfor %}
+             
+              
+               {% comment %} naprawic total cargo value {% endcomment %}
+              {% if total_weight  %}  &bull; Waga łaczna: {{ total_weight }}<br/> {% endif %}
+              {% endwith %}
+
+
+             <br/>
+             {% if poi.ref_number %} <b>Numer referencyjny:</b>{{ poi.ref_number }} <br/> {% endif %}
+             {% if poi.contact_person %}   <b>Osoba kontaktowa:</b> {{ poi.contact_person }} {% endif %}
+             {% if poi.contact_person_phone %} <b>Phone:</b> {{ poi.contact_person_phone }} {% endif %}
+
+             {% if poi.contact_person is not None or poi.contact_person_phone is not None %} <br/> {% endif %}
+
+             {% if poi.info %} <b>Uwagi:</b><br/>{{ poi.info|linebreaksbr }} {% endif %}
+
+            </td>
+
+         </tr>
+           
+       {% endfor %}
+
+   </tbody>
+
+</table>
+
+ <!--FINANSE-->
+ <table class="table3">
+     {% comment %} HideFracht razobratsya chto takoe {% endcomment %}
+     <tr>
+       <td class="width100" style="border:none" >
+         
+        {% if fracht_txt_arr|length > 0 %} 
+           
+              {% for  item in fracht_txt_arr %}
+                  {% if prefix_or_txt_arr %} {{ prefix_or_txt_arr|get_index:forloop.counter0 }} <br/> {% endif %} 
+                  {% if fracht_txt_arr %} <b> {{ fracht_txt_arr|get_index:forloop.counter0 }}</b> <br/> {% endif %}
+                  {% if payment_term_txt_arr %} {{ payment_term_txt_arr|get_index:forloop.counter0 }} <br/> {% endif %}
+                    
+                    
+                {% endfor %}  
+        {% else %}
+
+             {% if fracht %} <b>Fracht przewozowy {{ fracht }} netto + VAT</b>  {% endif %} 
+             <br/>
+             {% if payment_term %} Termin płatności: {{payment_term}} <br/>  {% endif %} 
+             
+            
+            
+        {% endif %}
+          
+        <!--WARTOSĆ TOWARU -->
+          
+           {% if goods_value > 0 %} 
+              <b>Wartość towaru: {{ goods_value }} {{ goods_value_currency }} </b>
+              <br/> 
+           {% endif %}
+
+           {% if extra_cost %}
+             <b>Koszt dodatkowy: {{ extra_cost }} {{ extra_cost_value }} </b>
+             <br/>
+           {% endif %}
+
+       </td>
+     </tr>
+   
+ </table>
+
+ <br/>
+ <br/>
+  
+  <!--NOTATKA WEWNETRZNA-->
+  <table class="table3" >
+      <tr>
+         <td>
+          <b>Uwagi do zlecenia:</b>
+         </td>
+      </tr>
+      <tr>
+        <td> 
+           {% if shipment_internal_note %} 
+                {{ shipment_internal_note|linebreaksbr }}<br/>
+           {% else %}
+                 {{ shipment_note|linebreaksbr }} <br/>   
+           {% endif %}
+        </td>
+      </tr>
+<!-- PIN  -->
+     {% if pin  %}
+       <tr>
+          <td>
+            <b>PIN:</b> {{ pin }} <br/>
+          </td>
+       </tr>
+
+     {% endif %}
+
+<!-- PIN REF -->
+     {% if ref_number  %}
+       <tr>
+          <td>
+            <b>Nr referencyjny:</b> {{ ref_number }} <br/>
+          </td>
+       </tr>
+
+     {% endif %}
+
+<!--ODPRAWA PRZEJSCIE ITD-->
+  <tr>
+    <td>
+     
+     {% if custom_type %} <b>Odprawa celna:</b> {{custom_type}} <br/>{% endif %}
+
+     {% if custom_point %} {{ custom_point|linebreaksbr }} {% endif %}
+
+ <!--ZWROTY-->
+       {% if pallets_return %} {{ pallets_return|linebreaksbr }} {% endif %}
+       {% if documents_return %} {{ documents_return|linebreaksbr }} {% endif %}
+    
+    </td>
+  </tr>
+  </table>
+
+  <br/>
+
+  <div>{{ warunki|safe }}</div>
+   
+  <br>
+  <br/>
+<div style="margin: 0 auto; width:100%;">
+    <div style="width: 37%; height: 10%;">
+
+        <a style="  font-size: 12px ">....................................................................................</a>
+
+        <div style="text-align:center; font-size: 12px ">
+         
+                <span style="float:center; text-align: center;   font-size: 12px "> (PODPIS ZLECENIOBIORCY) </span>
+                <br/>
+                <span style="float:center; text-align: center;   font-size: 10px ">Oświadczam, iż akceptuję ogólne warunki zlecenia </span>
+          
+        </div>  
+        
+    </div>
+</div>
+<!--  FOOTER -->
+<div class="footer" >
+<br/><div style='font-size:9px; margin: auto; width:100%; border-top: 1px solid black; margin-top:3px'>
+            <div style='display:inline; float: left; width:49%'> 
+            
+                 {{ company_user.full_name }} <br/>tel:{{company_user.phone}} fax:{{company_user.fax}} nip:{{company_user.nip}} regon:{{company_user.regon}}<br/>
+             
+            {% comment %} Nova Tracking Sp. z o.o. <br/>tel:  fax:  nip: 9532641810 regon: 34153695000000<br/>  {% endcomment %}
+            </div>
+            <div style="display:inline; float: right; width:5%; text-align:right;">
+            </div>
+            <div style='display:inline; float: right; width:45%'> 
+            Oddział {{ branch.full_name }} {{branch.street}} {{ branch.postal_code }} {{ branch.city }}<br/>
+            {% comment %} Oddział NOVA TRACKING SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ /o. Warszawa Aleje Jerozolimskie 33 00-200 Warszawa<br/>  {% endcomment %}
+         </div>
+    
+      </div>
+   </div>
+</body>
+
+</html>
+
