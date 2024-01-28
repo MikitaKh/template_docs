@@ -29,15 +29,27 @@ body{
     letter-spacing: -0.2px;
     font-size:7px;
 }
-table, th, td, tr{
+
+th, td, tr{
     border-collapse: collapse;
     vertical-align: top;
-    /* border:1px solid black; */
+    border:1px solid black;
+    border-spacing: 0px !important;
 }
+
+table{
+    width:100%;
+    border-collapse:collapse !important;
+}
+
+
+
+
 .cmrBody{
     font-family: HelveticaNeue;
-    width:700px;
+    width:685px;
     height:842px;
+    border-collapse:collapse !important;
 }
 .num-right{
     font-family: HelveticaNeueBold;
@@ -79,12 +91,12 @@ table, th, td, tr{
     margin-top: -7px;
     /* margin:10px; */
 }
-.tableInside table{
+/* .tableInside table{
     width:100%;
     border-collapse:collapse;
     border:1px solid black;
 
-}
+} */
 .tableInside tr{
 
 
