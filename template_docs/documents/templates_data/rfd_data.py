@@ -62,14 +62,23 @@ point1 = {
         'start_date':'2023-10-09 08:00',
         ######
         #cała lista ładunków dla poszczególnych punktów
-        'PoiLoad' : [cargoPoi1,cargoPoi2],
-        'PoiCustom':[cargoPoi1],
-        'PoiUnload' :[],
+        'actions':{
+        'poi_load' : [cargoPoi1,cargoPoi2],
+        'poi_custom':[cargoPoi1],
+        'poi_unload' :[],
+        'poi_open_t1':[],
+        'poi_port_out':[],
+        'poi_port_in':[],
+        'poi_document_reciept':[],
+        'poi_empty_road':[],
+        'poi_unload_empty':[],
+        'poi_load_full':[],
+        'poi_unload_full':[],
+        },
         'ref_number' : 'CDSA4562311',
         'contact_person' : 'Bartosz',
         'contact_person_phone' : '6785334322',
         'info':'Po zaladunku odprawa adres sms\n ttt  weer'
-
         
     }
 
@@ -87,9 +96,19 @@ point2= {
         #dla rfdWaybill  poistart
         'start_date':'2023-10-10 10:00',
         #####
-        'PoiLoad':'',
-        'PoiUnload':[cargoPoi1,cargoPoi2],
-        'PoiDocumentReciept':[cargoPoi3],
+         'actions':{
+        'poi_load' : [cargoPoi1,cargoPoi2],
+        'poi_custom':[cargoPoi1],
+        'poi_unload' :[],
+        'poi_open_t1':[],
+        'poi_port_out':[cargoPoi2],
+        'poi_document_reciept':[],
+        'poi_empty_road':[cargoPoi2],
+        'poi_unload_empty':[],
+        'poi_load_full':[],
+        'poi_unload_full':[],
+        'poi_port_in':[],
+        },
         'ref_number' : 'CDSA4562311',
         'contact_person' : 'Adam Nowak',
         'contact_person_phone' : '6785554322',
@@ -126,6 +145,7 @@ conditions =  """<p style="text-align: justify;"><strong>Og&oacute;lne warunki i
 
 context_data ={
         #Podstawowe informacje
+         'template_language':'pl',
          'logo': '',
          'issuer': ' Mikita Kharko',
          'phone_issuer' : '+48546654543',

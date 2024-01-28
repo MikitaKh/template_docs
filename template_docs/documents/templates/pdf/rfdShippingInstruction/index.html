@@ -1,8 +1,10 @@
+{% load i18n %}
+{% language template_language %}
 <html>
   <head>
     <meta charset="utf-8">
     <title>RFD_SHIPPING_INSTRUCTION</title>
-    <meta name="description" content="Invoice demo sample">
+    <meta name="description" content="rfdShippingInstruction">
   </head>
 
 {% comment %} Pytania trudne momenty {% endcomment %}
@@ -13,7 +15,7 @@
 <!--PODSTAWOWE INFORMACJE-->
 {% load static %}
 {% load custom_filters %}
-<!--PODSTAWOWE INFORMACJE   +2px к размерам-->
+<!--PODSTAWOWE INFORMACJE   +2px -->
 <body>
 <table class="table-header" style=" ">
     <tr>
@@ -28,7 +30,7 @@
         <td  class="width40 center middle" style="font-size: 16px " >
             <center>
                 <br/>
-                <img style="margin-top: 10px; position:absolute; height: 15%; max-height: 16%; max-width: 30%" src=""/>
+                <img style="margin-top: 10px; position:absolute; height: 15%; max-height: 16%; max-width: 30%" src={{logo}}/>
             </center>
         </td>
     </tr>
@@ -71,7 +73,7 @@
     </tr>
     <tr>
         <td  class="width25 center middle h" style="border:none" >
-           Osoba kontaktowa:
+          {% trans "Osoba kontaktowa:" %} 
         </td>
         <td class="width75 center middle h" style="">
           {% for person in contact_person %}
@@ -115,7 +117,7 @@
                 {{ poi.country|default:''|striptags }}<br/>
 
                 {% if poi.open_hour is not None and poi.close_hour is not None %}
-                   Godziny otwarcia: {{ poi.open_hour }} - {{ poi.close_hour }}
+                  {% trans "Godziny otwarcia:" %}  {{ poi.open_hour }} - {{ poi.close_hour }}
 
                 {% endif %}
                 <br/>
@@ -130,15 +132,15 @@
             <!--szczegoly-->
             <td class="width50 top">
              {% with total_weight='' %}
-               {% for field_name , action in dict_cargo.items %}
-
+               {% for action_name,action in poi.actions.items %}
                
-                  {% if poi|get_dictionary_item:action|length > 0 %}  
-                       <b>{{ field_name|upper }}</b><br/>
+
+                  {% if action  %}  
+                       <b>{% trans action_name|upper %}</b><br/>
 
                      
                     
-                            {% for cargo in poi|get_dictionary_item:action %}
+                            {% for cargo in action %}
                                 &bull;      
                                 {% if cargo.name %}  Towar: <i>{{ cargo.name }}</i>, {% endif %}
                                 {% if cargo.type %}  Opakowanie: <i>{{ cargo.type }}</i>, {% endif %}
@@ -320,4 +322,4 @@
 </body>
 
 </html>
-
+{% endlanguage %}

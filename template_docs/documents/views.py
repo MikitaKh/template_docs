@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from documents.utils.pdf_generator import PDFGenerator
 from documents.templates_data.rfd_data import context_data
 import os
+from django.utils.translation import gettext as _
 
 
 

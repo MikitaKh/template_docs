@@ -5,7 +5,12 @@
         <title></title>
         {% comment %} <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" href=""> {% endcomment %}
+        <style type="text/css">
+ 9    table { border-collapse: collapse; }
+10   
+18   </style>
     </head>
     <body>
         <div class="cmrBody">
@@ -224,12 +229,20 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px sold black;border-bottom:none;border-left:none;border-right:none;height:45px;">
-                                    <span class="num">21</span><br><br><br><br>
-                                    <p style="margin-right:160px;" class="cell21">Wystawiono</p> <p style="float:none;">dnia</p><br>
-                                    <p style="margin-right:160px;" class="cell21">Ausgefertigt</p> <p style="float:none;">am</p><br>
-                                    <p style="margin-right:157px;" class="cell21">Established in</p> <p style="float:none;">on</p><br>
-                                    </span>
+                                <td style="border:1px sold black;border-left:none;border-right:none;height:45px;">
+                                    <span class="num-right">21</span>
+                                   <div style="display: flex; justify-content: start; padding-left:25px;">
+                                            <div>
+                                                <span>Wystawiono</span>    <br/>
+                                                <span>Ausgefertigt</span><br/>
+                                                <span style="white-space: nowrap;">Established in</span><br/>
+                                            </div>
+                                            <div style="padding-left:70px;">
+                                                <span>dnia</span><br/>
+                                                <span>am</span><br/>
+                                                <span>in</span><br/>
+                                            </div>
+                                        </div>
                                 </td>
                             </tr>
                         </table>
@@ -238,7 +251,7 @@
                         <table  style="width:100%; border-collapse:collapse;">
                             <tr>
                                 <td style="height:60px;">
-                                    <span class="num-right">19</span> 
+                                    <span class="num-left">19</span> 
                                      Postanowienia specjalne<br/>
                                      Besondere Vereinbarungen<br/>
                                      Special agreements<br/>
@@ -253,117 +266,120 @@
                                             Zu zahlen vom:<br>
                                             To be paid by<br>
                                             </td>
-                                            <td style="height:20px;width:16.66%;border-bottom:1px solid black; border-right:1px solid black;">
+                                            <td style="height:20px;width:16.66%;border-bottom:1px solid black; border-top: 3px solid black; border-right:1px solid black;">
                                             Nadawca<br>
                                             Absender<br>
                                             Sender<br>
                                             </td>
-                                            <td style="height:20px;width:10%;border-bottom:1px solid black;border-right:1px solid black;"></td>
+                                            <td style="height:20px;width:10%;border-bottom:1px solid black;border-right:1px solid black; border-top: 3px solid black;"></td>
 
-                                            <td colspan="2" style="height:20px;width:25%;border-bottom:1px solid black;border-right:2px solid black; border-left:2px solid black;">
+                                            <td colspan="2" style="height:20px;width:25%;border-bottom:1px solid black;border-right:3px solid black; border-left:3px solid black; border-top: 3px solid black;">
                                                 <center>  
                                                     Waluta / Währung<br/>
                                                     / Currency 
                                                </center>
                                             </td>
-                                            <td style="height:20px;width:15%;border-bottom:1px solid black;">
+                                            <td style="height:20px;width:15%;border-bottom:1px solid black;border-top:3px solid black; border-right:3px solid black; ">
                                             Odbiorca<br>
                                             Empfänger<br>
                                             Consignee<br>
                                             </td>
                                         </tr>
-                                        <tr style="border-top:none;border-bottom:none; border-left:none; ">
-                                            <td style="height:20px;border-left:none; border-bottom:none; ">
+                                        <tr style="border-top:none;border-bottom:none; border-left:3px solid black; ">
+                                            <td style="height:20px;border-left:3px solid; border-bottom:none; ">
                                             Przewoźne / Fracht<br/>
                                             / Carriage charges
                                             </td>
                                             <td class="border"></td>
                                             <td class="border"></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black;border-right:3px solid black;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px; border:1px solid black;border-top:none; border-left:none;">Bonifikaty / Ermässigungen
+                                            <td style="height:20px; border:1px solid black;border-top:none; border-left: 3px solid black; ">Bonifikaty / Ermässigungen
                                                 Deductions</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; border:1px solid black;  border-left:none; border-bottom:none;">
+                                            <td style="height:20px; border:1px solid black;  border-left:3px solid black; border-bottom:none;">
                                                 Saldo / Zuschläge /<br/>
                                                 Balance
                                                 </td>
                                             <td class="border"></td>
                                             <td class="border"></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px;;border-top:none; border-bottom-none; border-left:none;">
+                                            <td style="height:20px;;border-top:none; border-bottom-none; border-left:3px solid black;">
                                                 Dopłaty / Nebengebühren<br/>
                                                 / Supplem. charges</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" ></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; "></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; ;border-top:none; border-left:none;">
+                                            <td style="height:20px; ;border-top:none; border-left:3px solid black;">
                                             Koszty dodatkowe<br/>
                                             / Sonstiges / Miscellaneous</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; "></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; border:1px solid black; border-left:none;">
+                                            <td style="height:20px; border:1px solid black; border-left:3px solid black;">
                                             Ubezpieczenie / Versicherung / Insurance</td>
                                             <td class="border"></td>
                                             <td  class="border"></td>
+                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
                                             <td class="border"></td>
-                                            <td class="border"></td>
-                                            <td class="border" style="border-right:none;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px; border:1px solid black; border-left:none;border-bottom:none">Razemm / Gesamtsumme
+                                            <td style="height:20px; border:1px solid black; border-bottom:3px solid black; border-left:3px solid black;">Razemm / Gesamtsumme
                                                 / Total to be paid</td>
-                                            <td class="border" style="border-bottom:none;"></td>
-                                            <td class="border" style="border-bottom:none;"></td>
-                                            <td class="border" style="border-bottom:none;"></td>
-                                            <td class="border" style="border-bottom:none;"></td>
-                                            <td class="border" style="border-right:none; border-bottom:none;"></td>
+                                            <td class="border" style="border-bottom:3px solid black;;"></td>
+                                            <td class="border" style="border-bottom:3px solid black;;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; border-bottom:3px solid black;"></td>
+                                            <td class="border" style="border-bottom:3px solid black;;"></td>
+                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; border-bottom:3px solid black;"></td>
                                         </tr>
                                     
                                 
                             </tr>
                             <tr>
                                 <td  style="height:35px;border:none;">
-                                    <span class="num">15</span>Zapłata / Rückerstattuung / Cash on deliver
+                                   <div style="display: flex; align-items: center; text-align: center;">
+                                    <span class="num-left" >15</span> <span style="padding-left:3px; white-space:nowrap;">Zapłata / Rückerstattuung / Cash on deliver</span>
+                                 
+                                  </div>
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" >
-                        <table style="width:100%;border:none;">
+                    <td colspan="4" style="border-left: 1px solid black;"s>
+                        <table style="width:100%;  ">
                             <tr>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;border-left:none;height:115px;">
-                                    <span class="num">22</span>
+                                <td style="border:1px solid black;border-top:3px solid black;border-bottom:none;border-left:none;height:115px;">
+                                    <span class="num-right">22</span>
                                 </td>
-                                <td style="border:none;">
-                                    <span class="num">23</span>
+                                <td style="">
+                                    <span class="num-right">23</span>
                                 </td>
                                 <td style="border:1px solid black;border-top:none;border-bottom:none;border-right:none;">
-                                    <span class="num">24</span>Przesyłkę otrzymano / Gut empfangen
+                                    <span class="num-right">24</span>Przesyłkę otrzymano / Gut empfangen
                                     / Goods recived<br><br><br><br><br>
                                     <p style="margin-right:60px;" class="cell21">Miejscowość</p><p>dnia</p><br>
                                     <p style="margin-right:85px;" class="cell21">Ort</p><p>am</p><br>
@@ -371,7 +387,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;border-left:none;height:15px;">
+                                <td style="border:1px solid black;border-top:none;border-bottom:1px solid black;border-left:none;height:15px;">
                                     Podpis i stempel nadawcy<br>
                                     Unterschrift und Stempel des Absenders<br>
                                     Signature and stamp of the sender<br>
