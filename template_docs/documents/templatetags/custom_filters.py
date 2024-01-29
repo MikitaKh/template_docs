@@ -25,3 +25,7 @@ def filter_range(start, end):
 @register.filter
 def get_index(sequence, position):
     return sequence[position]
+
+@register.filter
+def custom_range(value):
+   return range(1, value + 1)
