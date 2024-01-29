@@ -34,7 +34,7 @@ class PDFGenerator:
      css_content = PDFGenerator.get_css_content(relative_directory,'documents/templates/',font_config)
     
 
-    # Используйте отформатированный HTML-контент для генерации PDF
+    # Get html for generating html
      pdf_bytes = PDFGenerator.generate_pdf(html_content,css_content,font_config=font_config)
 
      return pdf_bytes

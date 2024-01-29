@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html lang="pl">
     <head>
         <meta charset="utf-8">
@@ -7,18 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="stylesheet" href=""> {% endcomment %}
-        <style type="text/css">
- 9    table { border-collapse: collapse; }
-10   
-18   </style>
     </head>
+    {% load custom_filters %}
+     
     <body>
-        <div class="cmrBody">
-            <div class="bigNum"><b>1</b></div>
+    {% for i in 4|custom_range %}
+       
+        <div class="{% cycle 'cmrBody1' 'cmrBody2' 'cmrBody3' 'cmrBody4' %}">
+            <div class="bigNum"><b>{% if forloop.last %} {% else %} {{i}} {% endif %}  </b></div>
             <div style="margin-bottom:2px;"> 
-                Egzemplarz dla nadawcy<br>
-                Exemplar für den Absender<br>
-                Copy for sender<br/>
+              {% cycle 'Egzemplarz dla nadawcy' 'Egzemplarz dla odbiorcy' 'Egzemplarz dla przewoźnika' '' %}  <br>
+              {% cycle 'Exemplar für den Absender' 'Exemplar fur den Empfanger' 'Exemplar fur den Frachtfuhrer' '' %} <br>
+              {% cycle 'Copy for sender' 'Copy for consignee' 'Copy for carrier' '' %}<br/>
             </div>
            
             <table>
@@ -72,18 +74,18 @@
                                                     Absender (Name, Anschrift, Land)<br>
                                                     Sender (name, address, country)
                     </td>
-                    <td colspan="2" style="border:3px solid black;border-bottom:none;">
+                    <td colspan="2" style="border:3px solid ;border-bottom:none;">
                         <span class="num-left">16</span>Przewoźnik (nazwisko lub nazwa, adres, kraj)<br>
                                                     Frachtführer (Name, Anschrift, Land)<br>
                                                     Carrier (Name, address, country)<br><br><br><br>
                     </td>
                 <tr>
-                    <td colspan="2" style="height:50px; border:1px solid black;">
+                    <td colspan="2" style="height:50px; border:1px solid ;">
                         <span class="num-right">3</span>Miejsce przeznaczenia ( Nazwisko lub nazwa, adres, kraj )<br>
                                                     Auslieferungsort des Gutes (Ort, Land)<br>
                                                     Place of delivery of the goods (place, country)<br>
                     </td>
-                    <td colspan="2" style="border:3px solid black; border-bottom:none;border-top:none;">
+                    <td colspan="2" style="border:3px solid ; border-bottom:none;border-top:none;">
                     <div style="margin-top:-8px;">
                            <span  class="num-left">17</span>
                                                    Kolejni przewoźnicy  ( Nazwisko lub nazwa, adres, kraj )<br>
@@ -94,12 +96,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="height:35px;border:1px solid black;;height:50px;">
+                    <td colspan="2" style="height:35px;border:1px solid ;height:50px;">
                         <span class="num-right">4</span> Miejsce i data załadowania ( Miejscowość, kraj, data )<br>
                         Ort und Tag der Übernahme das Gutes (Ort, Land, Datum)<br>
                         Place and date taking over the goods (place, country, data)<br>
                     </td>
-                    <td colspan="2" style="border: 3px solid black;border-bottom:none!important; border-top: 1px solid black !important">
+                    <td colspan="2" style="border: 3px solid ;border-bottom:none!important; border-top: 1px solid ">
                     
                         <span class="num-left">18</span> Zastrzeżenia i uwagi przewoźnika<br>
                                                         Vorbehalte und Bemerkungen der Frachtführer<br>
@@ -108,17 +110,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="border:1px solid black;height:50px;">
+                    <td colspan="2" style="border:1px solid ;height:50px;">
                         <span class="num-right">5</span> Załączone dokumenty<br>
                                                     Beigefügte Dokumente<br>
                                                     Documents attached<br>
                     </td>
-                     <td colspan="2" style="border:3px solid black;border-top:none">
+                     <td colspan="2" style="border:3px solid ;border-top:none">
 
                     </td> 
                 </tr>
                 <tr>
-                    <td colspan="4" style="height:230px;border:1px solid black;">
+                    <td colspan="4" style="height:230px;border:1px solid ;">
                         <table style="width:100%;border:none;">
                             <tr>
                                 <td style="border:none;height:190px;width:16%">
@@ -146,7 +148,7 @@
                                     Bezeichnung des Gutes<br>
                                     Nature of the goods<br>
                                 </td>
-                                <td style="border:1px solid black;border-bottom:none;border-top:none;width:14.28%">
+                                <td style="border:1px solid ;border-bottom:none;border-top:none;width:14.28%">
                                     <span class="num-left10">10</span>
                                     Numer statystyczny<br/>
                                    
@@ -154,13 +156,13 @@
                                     Statistical number<br/>
                                    
                                 </td>
-                                <td style="border:1px solid black;border-bottom:none;border-bottom:none;border-top:none;width:14.28%">
+                                <td style="border:1px solid ;border-bottom:none;border-bottom:none;border-top:none;width:14.28%">
                                     <span class="num-left">11</span>
                                     Waga brutto w kg<br>
                                     Bruttogewicht in kg<br>
                                     Groos weight in kg<br>
                                 </td>
-                                <td style="border:1px solid black;border-right:none;border-bottom:none;border-top:none;width:14.28%">
+                                <td style="border:1px s;border-right:none;border-bottom:none;border-top:none;width:14.28%">
                                    <span class="num-right">12</span>
                                     Objętość w m3<br>
                                     Umfang m3<br>
@@ -168,13 +170,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid black;border-left:none;border-top:none;border-right:none;"></td>
-                                <td style="border:1px solid black;border-left:none;border-top:none;border-right:none;"></td>
-                                <td style="border:1px solid black;border-top:none;border-left:none;border-right:none;"></td>
-                                <td style="border:1px solid black;border-top:none;border-left:none;border-right:none;"></td>
-                                <td style="border:1px solid black;border-bottom:none;border-top:none;"></td>
-                                <td style="border:1px solid black;border-bottom:none;border-top:none;"></td>
-                                <td style="border:1px solid black;border-bottom:none;border-top:none;border-right:none;"></td>
+                                <td style="border:1px solid ;border-left:none;border-top:none;border-right:none;"></td>
+                                <td style="border:1px solid ;border-left:none;border-top:none;border-right:none;"></td>
+                                <td style="border:1px solid ;border-top:none;border-left:none;border-right:none;"></td>
+                                <td style="border:1px solid ;border-top:none;border-left:none;border-right:none;"></td>
+                                <td style="border:1px solid ;border-bottom:none;border-top:none;"></td>
+                                <td style="border:1px solid ;border-bottom:none;border-top:none;"></td>
+                                <td style="border:1px solid ;border-bottom:none;border-top:none;border-right:none;"></td>
                             </tr>
                             <tr>
                                 <td colspan="4" style="border:none;">
@@ -184,34 +186,34 @@
                                                                                             Nummer UN<br>
                                                                                             Number UN<br>
                                             </td>
-                                            <td style="border:1px solid black;border-bottom:none;border-top:none;width:20%;">Patrz punkt 9<br>
+                                            <td style="border:1px solid ;border-bottom:none;border-top:none;width:20%;">Patrz punkt 9<br>
                                                                                                                                 Bez.s.Nr.9<br>
                                                                                                                                 Look point 9<br>
                                             </td>
-                                            <td style="border:1px solid black;border-bottom:none;border-top:none;width:20%;">Klasa<br>
+                                            <td style="border:1px solid ;border-bottom:none;border-top:none;width:20%;">Klasa<br>
                                                                                                                                 Klasse<br>
                                                                                                                                 Class<br>
                                             </td>
-                                            <td style="border:1px solid black;border-bottom:none;border-top:none;width:20%;">Grupa pakowania<br>
+                                            <td style="border:1px solid ;border-bottom:none;border-top:none;width:20%;">Grupa pakowania<br>
                                                                                                                                 Verpackung gruppe<br>
                                                                                                                                 The packing group<br>
                                             </td>
-                                            <td style="border:1px solid black;border-bottom:none;border-top:none;width:20%;border-right:none;">( ADR* )</td>
+                                            <td style="border:1px solid ;border-bottom:none;border-top:none;width:20%;border-right:none;">( ADR* )</td>
                                         </tr>
                                     </table>
                                 </td>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;"></td>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;"></td>
-                                <td style="border:1px solid black;border-top:none;border-right:none;border-bottom:none;"></td>
+                                <td style="border:1px solid ;border-top:none;border-bottom:none;"></td>
+                                <td style="border:1px solid ;border-top:none;border-bottom:none;"></td>
+                                <td style="border:1px solid ;border-top:none;border-right:none;border-bottom:none;"></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="width:340px; border-left:1px solid black; border-right:1px solid black;">
+                    <td colspan="2" style="width:340px; border-left:1px solid ; border-right:1px solid ;">
                         <table style="width:100%;border:none;">
                             <tr>
-                                <td style="height:180px;border:1px solid black;border-top:none;border-left:none;border-right:none;">
+                                <td style="height:180px;border:1px solid ;border-top:none;border-left:none;border-right:none;">
                                     <span class="num-right">13</span> 
                                     Instrukcje nadawcy<br>
                                     Anweisungen des Absenders<br>
@@ -219,17 +221,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid black;border-top:none;border-left:none;border-right:none;height:65px;">
+                                <td style="border:1px solid ;border-top:none;border-left:none;border-right:none;height:45px;">
                                     <span class="num-right">14</span>
                                     Postanowienia odnośnie przewoźnego<br>
                                     Frechtzahlungsanweisungen<br>
                                     Instruction as to payement for carriage<br>
+                                    <div style="padding-left: 25px; padding-top:5px; padding-bottom:0px;">
                                     Przewoźne zapłacone / frei / Carriage paid<br>
-                                    Przewoźne nieopłacone / Unfrei / Carriage forward<br>
+                                    Przewoźne nieopłacone / Unfrei / Carriage forward
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px sold black;border-left:none;border-right:none;height:45px;">
+                                <td style="border:1px solid;border-left:none;border-right:none;height:45px;">
                                     <span class="num-right">21</span>
                                    <div style="display: flex; justify-content: start; padding-left:25px;">
                                             <div>
@@ -247,112 +251,112 @@
                             </tr>
                         </table>
                     </td>
-                    <td colspan="2" style="border-right:1px solid black;">
+                    <td colspan="2" style="border-right:1px solid;">
                         <table  style="width:100%; border-collapse:collapse;">
                             <tr>
-                                <td style="height:60px;">
+                                <td style="height:55px;">
                                     <span class="num-left">19</span> 
                                      Postanowienia specjalne<br/>
                                      Besondere Vereinbarungen<br/>
                                      Special agreements<br/>
                                 </td>
                             </tr>
-                            <tr style="border-collapse:collapse; !important border: 2px solid black;">
+                            <tr style="border-collapse:collapse; !important border: 2px solid;">
                                     
-                                        <tr style="border-left:2px solid black;">
-                                            <td style="height:20px;width:30%;border-bottom:1px solid black; border-top: 3px solid black; border-right:1px solid black; border-left:1px solid black;">
+                                        <tr style="border-left:2px solid ;">
+                                            <td style="height:20px;width:30%;border-bottom:1px solid ; border-top: 3px solid ; border-right:1px solid; border-left:1px solid;">
                                             <span class="num-right-2">20</span>
                                             Do zapłacenia<br>
                                             Zu zahlen vom:<br>
                                             To be paid by<br>
                                             </td>
-                                            <td style="height:20px;width:16.66%;border-bottom:1px solid black; border-top: 3px solid black; border-right:1px solid black;">
+                                            <td style="height:20px;width:16.66%;border-bottom:1px solid; border-top: 3px solid; border-right:1px solid ;">
                                             Nadawca<br>
                                             Absender<br>
                                             Sender<br>
                                             </td>
-                                            <td style="height:20px;width:10%;border-bottom:1px solid black;border-right:1px solid black; border-top: 3px solid black;"></td>
+                                            <td style="height:20px;width:10%;border-bottom:1px solid;border-right:1px solid; border-top: 3px solid;"></td>
 
-                                            <td colspan="2" style="height:20px;width:25%;border-bottom:1px solid black;border-right:3px solid black; border-left:3px solid black; border-top: 3px solid black;">
+                                            <td colspan="2" style="height:20px;width:25%;border-bottom:1px solid;border-right:3px solid; border-left:3px solid; border-top: 3px solid ;">
                                                 <center>  
                                                     Waluta / Währung<br/>
                                                     / Currency 
                                                </center>
                                             </td>
-                                            <td style="height:20px;width:15%;border-bottom:1px solid black;border-top:3px solid black; border-right:3px solid black; ">
+                                            <td style="height:20px;width:15%;border-bottom:1px solid;border-top:3px solid; border-right:3px solid; ">
                                             Odbiorca<br>
                                             Empfänger<br>
                                             Consignee<br>
                                             </td>
                                         </tr>
-                                        <tr style="border-top:none;border-bottom:none; border-left:3px solid black; ">
+                                        <tr style="border-top:none;border-bottom:none; border-left:3px solid; ">
                                             <td style="height:20px;border-left:3px solid; border-bottom:none; ">
                                             Przewoźne / Fracht<br/>
                                             / Carriage charges
                                             </td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black;border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left:3px solid;border-right:3px solid;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px; border:1px solid black;border-top:none; border-left: 3px solid black; ">Bonifikaty / Ermässigungen
+                                            <td style="height:20px; border:1px solid ;border-top:none; border-left: 3px solid; ">Bonifikaty / Ermässigungen
                                                 Deductions</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; border:1px solid black;  border-left:3px solid black; border-bottom:none;">
+                                            <td style="height:20px; border:1px solid;  border-left:3px solid; border-bottom:none;">
                                                 Saldo / Zuschläge /<br/>
                                                 Balance
                                                 </td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px;;border-top:none; border-bottom-none; border-left:3px solid black;">
+                                            <td style="height:20px;;border-top:none; border-bottom-none; border-left:3px solid;">
                                                 Dopłaty / Nebengebühren<br/>
                                                 / Supplem. charges</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; "></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid; "></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; ;border-top:none; border-left:3px solid black;">
+                                            <td style="height:20px; ;border-top:none; border-left:3px solid;">
                                             Koszty dodatkowe<br/>
                                             / Sonstiges / Miscellaneous</td>
                                             <td class="border"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; "></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid; "></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none;">
-                                            <td style="height:20px; border:1px solid black; border-left:3px solid black;">
+                                            <td style="height:20px; border:1px solid; border-left:3px solid;">
                                             Ubezpieczenie / Versicherung / Insurance</td>
                                             <td class="border"></td>
                                             <td  class="border"></td>
-                                            <td class="border" style="border-left: 3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left: 3px solid; border-right:3px solid;"></td>
                                             <td class="border"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black;"></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid;"></td>
                                         </tr>
                                         <tr style="border-top:none;border-bottom:none; ">
-                                            <td style="height:20px; border:1px solid black; border-bottom:3px solid black; border-left:3px solid black;">Razemm / Gesamtsumme
+                                            <td style="height:20px; border:1px solid; border-bottom:3px solid ; border-left:3px solid;">Razemm / Gesamtsumme
                                                 / Total to be paid</td>
-                                            <td class="border" style="border-bottom:3px solid black;;"></td>
-                                            <td class="border" style="border-bottom:3px solid black;;"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; border-bottom:3px solid black;"></td>
-                                            <td class="border" style="border-bottom:3px solid black;;"></td>
-                                            <td class="border" style="border-left:3px solid black; border-right:3px solid black; border-bottom:3px solid black;"></td>
+                                            <td class="border" style="border-bottom:3px solid;"></td>
+                                            <td class="border" style="border-bottom:3px solid ;"></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid; border-bottom:3px solid;"></td>
+                                            <td class="border" style="border-bottom:3px solid;"></td>
+                                            <td class="border" style="border-left:3px solid; border-right:3px solid; border-bottom:3px solid;"></td>
                                         </tr>
                                     
                                 
@@ -369,44 +373,97 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="border-left: 1px solid black;"s>
+                    <td colspan="4" style="border-left: 1px solid; border-right: 1px solid">
                         <table style="width:100%;  ">
                             <tr>
-                                <td style="border:1px solid black;border-top:3px solid black;border-bottom:none;border-left:none;height:115px;">
+                                <td style="border:1px solid;border-top:3px solid;border-bottom:none;border-left:none;height:115px;">
                                     <span class="num-right">22</span>
                                 </td>
-                                <td style="">
+                                <td style="border-top: 3px solid; border-right:3px solid; border-left:3px solid; ">
                                     <span class="num-right">23</span>
                                 </td>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;border-right:none;">
-                                    <span class="num-right">24</span>Przesyłkę otrzymano / Gut empfangen
-                                    / Goods recived<br><br><br><br><br>
-                                    <p style="margin-right:60px;" class="cell21">Miejscowość</p><p>dnia</p><br>
-                                    <p style="margin-right:85px;" class="cell21">Ort</p><p>am</p><br>
-                                    <p style="margin-right:80px;" class="cell21">Place</p><p>on</p><br>
+                                <td style="border:1px solid;border-top:1px solid;border-bottom:none; border-right:none;">
+                                    <span class="num-right">24</span>
+                                    <span> Przesyłkę otrzymano / Gut empfangen<br/>
+                                    / Goods recived </span>
+                                    <div style="display: flex; justify-content: start; padding-left:5px; padding-top:10px;">
+                                            <div>
+                                                <span>Miejscowość</span>    <br/>
+                                                <span>Ort</span><br/>
+                                                <span>Place</span><br/>
+                                            </div>
+                                            <div style="padding-left:70px;">
+                                                <span>dnia</span><br/>
+                                                <span>am</span><br/>
+                                                <span>in</span><br/>
+                                            </div>
+                                        </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border:1px solid black;border-top:none;border-bottom:1px solid black;border-left:none;height:15px;">
+                                <td style="border:1px solid;border-top:none;border-bottom:1px solid;height:15px;">
+                                  <div style="padding-left:4px;">
                                     Podpis i stempel nadawcy<br>
                                     Unterschrift und Stempel des Absenders<br>
                                     Signature and stamp of the sender<br>
+                                  </div>
                                 </td>
-                                <td style="border:none;">
+                                <td style="border-left:3px solid; border-right:3px solid; border-bottom:3px solid;">
+                                  <div style="padding-left:4px">
                                     Podpis i stempel przewośnika<br>
                                     Unterschrift und Stempel des Frachtführers<br>
                                     Signature and stamp of the carrier<br>
+                                  </div>
                                 </td>
-                                <td style="border:1px solid black;border-top:none;border-bottom:none;border-right:none;">
+                                <td style="border:1px solid;border-top:none;border-bottom:1px solid;border-right:none;">
+                                   <div style="padding-left:4px">
                                     Podpis i stempel odbiorcy<br>
                                     Unterschrift und Stempel des Empfängers<br>
                                     Signature and stamp of the consignee<br>
+                                  <div>
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
             </table>
+            {% comment %} side block {% endcomment %}
+          <div style="margin:0 auto; position:relative;bottom:440px;left:357px; margin-bottom: -14px; transform: rotate(90deg);" >
+            <ul>
+                <li>W przypadku przewozu towarów niebezpiecznych, oprócz ewentualnego posiadania zaświadczenia, należy podać w ostatnim wierszu:klasę liczbę oraz w danym przypadku literę</li>
+                <li>Bei gefährlichen Gütrn ist, ausser der eventuellen Bescheinigung, auf der letzten Linie der Rubrik anzugeben: die Klasse, die Ziffer, sowie gegebenenfalls der Buchstabe</li>
+                <li> In case of dangerous goods mention, besides the possible certification,on the last line of the column the particulars of the class, the number and the letter , if any</li>
+            </ul>
+          </div>
+
+          <div style="margin:0 auto; position:relative; bottom:620px; right:355px; display:flex ; transform: rotate(-90deg);">
+            <div style="padding-right:10px; font-size:5.5px; ">
+               Do wypełnienia pod odpowiedzialnością nadawcy<br/>
+               Auszufüllen unter der Verantwortung des Absenders<br/>
+               To be completed on the sender's responsibility<br/>
+            </div>
+            <div class="num-side" style="padding-top:3px; padding-right:10px;">
+               1-15
+            </div>
+            <div style="padding-right:9px; font-size:5.5px;">
+              włącznie oraz<br/>
+              einschliesslich<br/>
+              including and<br/>
+            </div>
+            <div class="num-side" style="padding-top:3px; padding-right:10px; ">
+               19 + 20 + 22
+            </div>
+            <div style="font-size:5.5px;">
+               Rubryki obwiedzione tłustymi liniami wypełnia przewoźnik<br/>
+               Die mit fett gedruckten Linien eingerahmten Rubriken müssen vom Frachtführer ausgefüllt werden<br/>
+               The spaces framed with heavy lines must filled in by the carrier<br/>
+            </div>
+          </div>
         </div>
+        
+  
+
     </body>
+    
 </html>
+  {% endfor %}
