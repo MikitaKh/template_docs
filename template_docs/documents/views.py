@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from documents.utils.pdf_generator import PDFGenerator
 from documents.templates_data.rfd_data import context_data
+from documents.templates_data.cmr_data_json import cmr_data
 import os
 from django.utils.translation import gettext as _
 
@@ -54,7 +55,7 @@ def generate_rfdWaybill(request):
 
 def generate_cmr(request):
     
-    pdf_content = PDFGenerator.generate('documents/templates/pdf/cmr/index.html',context_data)
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/cmr/index.html',cmr_data)
     
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition']='inline; filename=cmr.pdf'
