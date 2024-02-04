@@ -46,8 +46,8 @@ cmr_data={
     'class':'klasa 3 \n klasa 5.1 ',
     'packing_group':'II \n III \n II ',
     'adr':'ADR TAK',
-    'sender_instructions':'Instrukcje nadawcy',
-    'instruction_for_carrier':'Zastrzeżenia i uwagi przewoźnika',
+    'sender_instructions':'Instrukcje nadawcy \n miejsce dla instrukci nadawcy etc',
+    'instructions_for_carrier':'Zastrzeżenia i uwagi przewoźnika',
     'cash_on_delivery':'1200 PLN',
     #pierwszy przewoźnik
     'carrier':{
@@ -60,18 +60,19 @@ cmr_data={
     'driver':{
        'name':'Kowalski',
        'surname':'Marek',
-       'truck':'CB1234567',
+       'identification_document':'CB1234567',
+       'truck':'DW123454',
        'trailer':' DW123454'
     },
     #kolejny przewoznik
     'successive_carriers':{
-        {
+
         'name':'Hofpol Hoffa Tadeusz',
         'street':'Wichrowa 4',
         'postal_code':'60-449',
         'city':'Poznań',
         'country':'Polska'
-        }
+        
     },
     'successive_driver':{
        'name':'Kower',
@@ -87,13 +88,13 @@ cmr_data={
     'sender_carriage_charges_currency':'EUR',
     #Bonifikaty
     'sender_discounts_amount':'120',
-    'sender_discounts_currenscy':'EUR',
+    'sender_discounts_currency':'EUR',
     #Saldo
     'sender_balance_amount':'130',
-    'sendeer_balance_currency':'PLN',
+    'sender_balance_currency':'PLN',
     #Dopłaty
     'sender_supplem_charges_amount':'140',
-    'sender_suppllem_charges_currency':'USD',
+    'sender_supplem_charges_currency':'USD',
     #Koszty dodatkowe
     'sender_miscellaneous_amount':'170',
     'sender_miscellaneous_currency':'EUR',
@@ -109,13 +110,13 @@ cmr_data={
     'consignee_carriage_charges_currency':'EUR',
     #Bonifikaty
     'consignee_discounts_amount':'120',
-    'consignee_discounts_currenscy':'PLN',
+    'consignee_discounts_currency':'PLN',
     #Saldo
     'consignee_balance_amount':'230',
     'consignee_balance_currency':'CH',
     #Dopłaty
     'consignee_supplem_charges_amount':'200',
-    'consignee_suppllem_charges_currency':'PLN',
+    'consignee_supplem_charges_currency':'PLN',
     #Koszty dodatkowe
     'consignee_miscellaneous_amount':'120',
     'consignee_miscellaneous_currency':'EUR',
@@ -126,10 +127,12 @@ cmr_data={
     'consignee_total_amount':'400',
     'consignee_total_currency':'USD',
     #####################################
-    'special_agreements':'postanwoeinia specjalne',
-    'estableshed_date':'2024-01-22',
-    'established_city':'Poznan',
-    'goods_recieved_place':'Swadzim',
+    'special_agreements':'Reklamacje będą uwzględniane tylko w przypadku adnotacji na liście przewozowym / CMR podpisanym przez odbiorcę i kierowcę',
+    'instruction_for_carriage':'postanowienia odnosnie przewoźnego',
+    'carriage_charges_payment_date': '2024-02-20',
+    'established_date':'2024-01-22',
+    'established_city':'Ostrów Wielkopolski',
+    'goods_recieved_place':'Dąbrowa górnicza',
     'goods_recieved_date':'2024-02-20'
 
 }
