@@ -6,5 +6,6 @@ urlpatterns = [
     path('',index),
     path('generate_rfdShippingInstruction',generate_rfdShippingInstruction),
     path('generate_rfdWaybill',generate_rfdWaybill),
-    path('generate_cmr',generate_cmr)
+    path('generate_cmr',generate_cmr),
+    path('generate_invoice',generate_invoice)
 ]
