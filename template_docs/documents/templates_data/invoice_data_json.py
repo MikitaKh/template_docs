@@ -1,5 +1,13 @@
 
-invoice_data = {
+invoice_data={
+    'invoice_number':' FVK/000354/11/23',
+    'issue_date':'2024-02-06',
+    'service_date':'2024-01-31',
+}
+
+
+
+nova_tracking= {
     'document':{
        'blocked':'',
        'calc_mode':'',

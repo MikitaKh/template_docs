@@ -1,1 +1,30 @@
-Invocie
+{% load i18n %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <meta name="description" content="Invoice">
+</head>
+
+<body>
+
+   <div style="float: left; width: 50%;" class="pdf-invocie__document-details-section">
+       <strong>{% trans "Invoice Number" %}:</strong> {{ invoice_number }} <br/>
+       <br/>
+       <strong>{% trans "Issue Date" %}:</strong> {{issue_date}} <br/>
+       <strong>{% trans "Service Date" %}:</strong> {{ service_date }}<br/>
+
+  </div>
+
+  <div style="float: right; width: 50%; text-align: center; ">
+        <div class="barcode" style="margin-bottom: -18px;">
+                    {{invoice_number}}
+        </div> 
+        {{invoice_number}}   
+        
+  </div>
+
+ 
+   
+</body>
+</html>

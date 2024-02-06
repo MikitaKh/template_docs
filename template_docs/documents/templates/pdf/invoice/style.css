@@ -1,0 +1,121 @@
+@page {
+    
+    margin-top: 0.3in;
+    margin-bottom: 1in;
+    margin-left: 0.5in;
+    margin-right: 0.5in; 
+     size: A4;
+
+    @bottom-right {
+        
+        content: counter(page)"/"counter(pages);
+        margin-bottom: 0.1in;
+        font-size: 7pt;
+        
+    }
+ 
+}
+
+
+@font-face {
+    font-family: DejaVuSansCondensed ;
+    src: url(DejaVuSansCondensed.ttf);
+}
+
+@font-face {
+    font-family: DejaVuSerifCondensed ;
+    src: url(DejaVuSerifCondensed.ttf);
+}
+
+@font-face {
+    font-family: code128;
+    src: url(code128);
+}
+
+@font-face {
+    font-family: Libre Barcode;
+    src: url(librebarcode128-regular.ttf);
+}
+
+.barcode  {
+    font-family: Libre Barcode !important;
+    font-size: 58px; 
+    
+  }
+
+body {
+    font-size: 10px;
+    font-family: DejaVuSerifCondensed !important;
+}
+
+#invoiceDetails {
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#invoiceDetails thead tr {
+    background: #F1F1F1;
+}
+
+#invoiceDetails thead th {
+    font-weight: bold;
+}
+
+#invoiceDetails tr {
+    border: 1px solid #C3C3C3;
+}
+
+#invoiceDetails td {
+    border: 1px solid #C3C3C3;
+    padding: 3px 5px;
+}
+
+.no-border {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+i {
+    font-size: 0.9em;
+    color: #444;
+}
+
+.totals th {
+    padding: 5px;
+}
+
+.totals td {
+    border: 1px solid #d8d8d8;
+    padding: 2px;
+}
+
+.document-is-paid {
+    font-size: 20pt;
+    color: #A4B29D;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 4pt solid #A4B29D;
+    border-bottom: 4pt solid #A4B29D;
+    padding: 5pt;
+    white-space: nowrap;
+    display: inline-block;
+    width: auto;
+    letter-spacing: 2pt;
+    position: absolute;
+}
+
+.document-is-paid {
+    left: 175pt;
+    margin-top: -40pt;
+}
+
+.pdf-invoice__document-details-section {
+    font-size: 9pt;
+}
+
