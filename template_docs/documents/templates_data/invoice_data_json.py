@@ -3,187 +3,164 @@ invoice_data={
     'invoice_number':' FVK/000354/11/23',
     'issue_date':'2024-02-06',
     'service_date':'2024-01-31',
+    'sender':{
+        'name': 'PEKAO - CARGO Agencja Celna Sp. z o.o.',
+        'street':'ul. Wirażowa',
+        'building_number':'35',
+        'postal_code':'02-158',
+        'city':'Warszawa',
+        'country':'Poland',
+        'vat_id':'PL5220103271', 
+        'transfer_details':{
+           'eur': 'Pekao S.A.',
+           'swift_code': 'PKOPPLPWXXX\nPL57 1240 1037 1978 0000 0691 7997',
+           'vat_pl':'Pekao S.A.',
+           'swift_code_pl':'PKOPPLPWXXX\nPL31 1240 1037 1111 0000 0691 7971'
+        },
+     },
+     'recipient':{
+        'name':'MIKKA - HANSEN R. WĄSIK SPÓŁKA JAWNA',
+        'street':': ul. Sebastiana Klonowica' ,
+        'building_number':'24/67',
+        'postal_code':'02-158',
+        'city':' Kraków',
+        'country':'Poland',
+        'vat_id':'PL6793176807'
+      },
+      'addresse':{
+          'name': 'MIKKA - HANSEN R. WĄSIK SPÓŁKA JAWNA',
+          'street':' Tuchowska',
+          'building_nr':'76a',
+          'postal_code':'33-100',
+          'city':'Tarnów',
+          'country':'Polska'
+      },
+      'forwarding_position':'PEKAO/0263/01/24 PEKAO/0270/01/24',
+      'type_currency_document': 2,  # single currency or multi currency document
+      'document_currency': 'EUR',
+      'currency':'PLN', #Waluta systemowa
+      'document_exchange_rate':'4,3309',
+      'document_language':'en',
+      'items':[
+          {
+            'title':'Fracht morski',
+            'quantity':'1',
+            'measure_unit':'pcs',
+            'unit_price':'1 200,00 ',
+            'tax':'23%',
+            'amount':'1 200,00',
+            'tax_amount':'276,00',
+            'total':'1 476,00',
+            'currency':'PLN',
+             # For multi currency invoice type(2)
+            'exchange_rate':'0,2309',
+            'amount_in_document_currency':'277,08',
+            'tax_amount_in_document_currency':'63,73',
+            'total_in_document_currency':'340,81'
+
+          },
+           {
+            'title':'THC',
+            'quantity':'1',
+            'measure_unit':'pcs',
+            'unit_price':'1 300,00',
+            'tax':'8%',
+            'amount':'1 300,00',
+            'tax_amount':'104,00',
+            'total':'1 404,00',
+            'currency':'PLN',
+             # For multi currency invoice type(2)
+            'exchange_rate':'0,2309 ',
+            'amount_in_document_currency':'300,17',
+            'tax_amount_in_document_currency':'24,01',
+            'total_in_document_currency':'324,18'
+
+          },
+           {
+            'title':'Opłata dokumentacyjna',
+            'quantity':'1',
+            'measure_unit':'pcs',
+            'unit_price':'2 300,00',
+             'tax':'8%',
+            'amount':'2 300,00',
+            'tax_amount':'184,00',
+            'total':'2 484,00',
+            'currency':'PLN',
+             # For multi currency invoice type(2)
+            'exchange_rate':'0,2309',
+            'amount_in_document_currency':'531,07',
+            'tax_amount_in_document_currency':'42,49',
+            'total_in_document_currency':'573,56'
+
+          }
+      ],
+      'way_of_payment': 'Bank Transfer',
+      'day_of_payment':'2023-02-15',
+      'split_payment' : 'Split Payment Method',
+      'summary_in_converted_currency':[
+          {
+              'tax_rate':'8%',
+              'net_value':'831,24 ',
+              'tax_value':'66,50',
+              'gross_value':'897,74' 
+          },
+          {
+              'tax_rate':'23%',
+              'net_value':'277,08',
+              'tax_value':'63,73',
+              'gross_value':'340,81'
+          }
+
+      ],
+      'summary_grand_total_in_converted_currency':{
+          'net_value': '1 108,32',
+          'tax_value':'130,23',
+          'gross_value': '1 238,55'
+      },
+      'summary':[
+          {
+              'tax_rate':'8%',
+              'net_value':'3 600,02',
+              'tax_value':'288,00',
+              'gross_value':'3 888,02'  
+          },
+          {
+               'tax_rate':'23%',
+              'net_value':'1 200,01',
+              'tax_value':'276,01',
+              'gross_value':'1 476,02' 
+          }
+      ],
+      'summary_grand_total':{
+              'net_value':'4 800,03',
+              'tax_value':'564,01',
+              'gross_value':'5 364,04'
+      },
+      'exchange_rates':[
+          {
+            'base_currency':'PLN',
+            'rate':'0,2309',
+            'quote_currency':' EUR'
+          },
+        #   {
+        #      'base_currency':'BRL',
+        #      'rate':'0,1867',
+        #      'quote_currency':'EUR'
+        #   }
+
+      ],
+      'exchange_rate_provider_name':'Narodowy Bank Polski',
+      'exchange_rate_table_name':'241/A/NBP/2023',
+      'exchange_rate_date':'2023-12-13',
+      'notes':"-> - Punta Caucedo, Santo Domingo, Dominican",
+      'issuer_name':"Mikita Kharko",
+      
+
+
+          
+      
+
+
 }
 
-
-
-nova_tracking= {
-    'document':{
-       'blocked':'',
-       'calc_mode':'',
-       'created_at':'',
-       'created_by':'',
-       'currency':'',
-       'date':'',
-       'date_of_service':'',
-       'disable_validation':'',
-       'division_id':'',
-       'document_type':'',
-       'exchange_rate_date':'',
-       'exchange_rate_mode':'',
-       'exchange_rate_provider':'',
-       'exchange_rate_table':'',
-       'folder_list':{
-           
-       },
-       'invoice_id':'',
-       'is_aggregated':'',
-       'is_factoring':'',
-       'is_ncp_with_vat_defered':'',
-       'language':'',
-       'main_id':'',
-       'method':'',
-       'mode':'',
-       'number':'',
-       'paid_value':'',
-       'payment_date_mode':'',
-       'payment_days':'',
-       'payment_deadline':'',
-       'payment_info':'',
-       'payment_type':'',
-       'product_id':'',
-       'proforma_id':'',
-       'reciever_id':'',
-       'reciepient_address_variant':'',
-       'sale_date':'',
-       'sender_account_id':'',
-       'sender_id':'',
-       'sent_date':'',
-       'show_only_corrected_items':'',
-       'split_payment': '',
-       'stamp_id':'',
-       'status':'',
-       'sub_type':'',
-       'transaction':'',
-       'type':'',
-       'unlock_number':'',
-    },
-    'items':
-    {
-        0:{
-           'branch_full_name':'',
-           'branch_name_2':'',
-           'division_display_value':'',
-           'folder_number':'',
-           'proforma_service_id':'',
-           'assigned_user_id':'',
-           'blocked':'',
-           'booking':'',
-           'branch_id':'',
-           'calc_mode':'',
-           'cargo_id':'',
-           'category':'',
-           'category_id':'',
-           'comments':'',
-           'contractor_id':'',
-           'converted_currency':'',
-           'converted_gross_value':'',
-           'converted_net_price':'',
-           'converted_net_value':'',
-           'converted_tax_value':'',
-           'corrected':'',
-           'created_at':'',
-           'created_from_service_id':'',
-           'currency':'',
-           'customer_id':'',
-           'delivery_number':'',
-           'description':'',
-           'dict_id':'',
-           'division_id':'',
-           'docs_required':'',
-           'documents_text':'',
-           'driver_name':'',
-           'email_text':'',
-           'exchange_rate':'',
-           'exchange_rate_date':'',
-           'exchange_rate_mode':'',
-           'exchange_rate_provider':'',
-           'exchange_rate_table':'',
-           'execution_date':'',
-           'folder_id':'',
-           'gross_value':'',
-           'group_id':'',
-           'id':'',
-           'in_balance':'',
-           'index_number':'', 
-           'internal_order_id':'',    
-           'invoice_id':'',
-           'is_active':'',
-           'is_autogenerated':'',
-           'is_consolidation':'',
-           'is_generated':'',
-           'is_template':'',
-           'issue_date':'',
-           'keywords':'',
-           'measure_unit':'',
-           'name':'',
-           'net_price':'',
-           'net_value':'',
-           'number':'',
-           'order_cargo_container_id':'',
-           'order_number':'',
-           'ordinal':'',
-           'parent_id':'',
-           'pickup_date':'',
-           'pkwiu':'',
-           'product_id':'',
-           'proforma_service_id':'',
-           'proj_converted_gross_value':'',
-           'proj_converted_net_price':'',
-           'proj_converted_net_value':'',
-           'proj_converted_tax_value':'',
-           'proj_currency':'',
-           'proj_exchange_rate':'',
-           'proj_exchange_rate_date' :'',
-           'pwd_ogl':'',
-           'quantity':'',
-           'real_currency':'',
-           'real_gross_value':'',
-           'real_net_price':'',
-           'real_net_value':'',
-           'real_tax_value':'',
-           'receipt_date':'',
-           'ref':'',
-           'remarks':'',
-           'rent_date':'',
-           'route_id':'',
-           'sale_date':'',
-           'service_price_id':'',
-           'settled_in_tax_report':'',
-           'shipment_id':'',
-           'sibling_id':'',
-           'source':'',
-           'source_id':'',
-           'status':'',
-           'sys_currency':'',
-           'sys_exchange_rate':'',
-           'sys_exchange_rate':'',
-           'sys_gross_value':'',
-           'sys_net_price':'',
-           'sys_net_value':'',
-           'sys_tax_value':'',
-           'tax':'',
-           'tax_id':'',
-           'tax_report_document_id':'',
-           'tax_value':'',
-           'to_confirm':'',
-           'train_date':'',
-           'type':'',
-           'unit':'',
-           'unit_created_at':'',
-           'unit_id':'',
-           'unit_name':'',
-           'units_ids':'',
-           'updated_at':'',
-           'value_status':'',
-           'vehicle_name':'',
-           'warehouse_id':'',
-           'warehouse_order_id':'',
-           'warehouse_order_item_id':'',
-           'was_edited_by_user':'',
-           'winsad_number':''
-
-        }
-    },
-}
 

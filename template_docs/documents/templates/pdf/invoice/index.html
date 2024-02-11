@@ -1,11 +1,14 @@
 {% load i18n %}
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
 <html>
 <head>
     <meta charset="utf-8">
     <title>Invoice</title>
     <meta name="description" content="Invoice">
 </head>
-
+{% comment %} 20201118 {% endcomment %}
 <body>
 
    <div style="float: left; width: 50%;" class="pdf-invocie__document-details-section">
@@ -16,15 +19,310 @@
 
   </div>
 
-  <div style="float: right; width: 50%; text-align: center; ">
-        <div class="barcode" style="margin-bottom: -18px;">
-                    {{invoice_number}}
-        </div> 
-        {{invoice_number}}   
-        
-  </div>
+  <div style="float: right; width: 50%; text-align: center; padding-top:10px; ">
+        <span class="barcode" >
+               {{invoice_number}}
+        </span> 
+    
+        <span style="margin:0px;">{{invoice_number}}<span>     
+  </div> 
 
- 
+  <div class="spacer"></div>
+  
+  <hr/>
+
+   {% comment %} contractors_section {% endcomment %}
+
+    <div style="display:flex;" class="pdf-invoice__addresses-section">
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__sender-address {% else %} pdf-invoice__sender-address-1 {% endif %} ">
+          <strong>{% trans "Seller" %} :</strong><br/>
+          <br/>
+          {{ sender.name }}<br/>
+          {% trans "Address:" %} {{ sender.street }} {{sender.building_nr}}<br/>
+          {{sender.postal_code}} {{sender.city}}<br/>
+          {{sender.country}}<br/>
+          {% trans "VAT ID:" %} {{sender.vat_id}}<br/>
+          {% trans "EUR:" %} {{ sender.transfer_details.eur }}<br/>
+          {% trans "SWIFT CODE:"%} {{ sender.transfer_details.swift_code|linebreaksbr}}<br/>
+          {% trans "VAT PL:" %} {{ sender.transfer_details.vat_pl}}<br/>
+          {% trans "SWIFT CODE:" %}{{ sender.transfer_details.swift_code_pl|linebreaksbr}}
+       </div>
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__recipient-addresses-section {% else %} pdf-invoice__recipient-addresses-section-1 {% endif %}">
+           
+        <div  style="display:flex;">
+                <div  class="{% if addresse|length > 0 %} pdf-invoice__recipient-address {% else %} pdf-invoice__recipient-address-1 {% endif %}">
+                    <strong>{% trans "Customer:" %}</strong><br/>
+                    <br/>
+                    {{recipient.name}}<br/>
+                    {% trans "Address:" %} {{recipient.street}} {{recipient.building_number}}<br/>
+                    {{ recipient.postal_code }} {{ recipient.city }}<br/>
+                    {{ recipient.country }}<br/>
+                    {% trans "VAT ID:" %} {{ recipient.vat_id }} 
+                </div>
+                
+                {% if addresse|length > 0 %}
+                <div  class="pdf-invoice__addressee-address"  >
+                    <strong>{% trans "Recipient:" %}</strong><br/>
+                    <br/>
+                    {{addresse.name}}<br/>
+                    {% trans "Address:" %} {{addresse.street}} {{addresse.building_nr}}<br/>
+                    {{ addresse.postal_code }} {{ addresse.city }}
+                    {{ addresse.country }} 
+                </div> 
+                {% endif %}
+            </div>
+         
+            {% if forwarding_position|length > 0 %}
+            <div class="pdf-invoice__orders-list">
+              <table>
+                  <tr>
+                    <td style="vertical-align:top">
+                      <strong>{% trans "Forwarding position:" %}</strong><br/>
+                    </td>
+                    <td style="vertical-align:top">
+                        {{ forwarding_position  }}
+                    </td>
+                  </tr>
+              </table>
+              <div style="clear:both;"></div>
+            </div>
+           {% endif %}
+        
+       </div>
+
+    </div>
+    <br/>
+    <br/>
+    
+    {% comment %} extra_section ??? {% endcomment %}
    
+    {% comment %} items_secction {% endcomment %}
+
+    <table id="invoiceDetails">
+      <thead>
+        <tr> 
+            {%if type_currency_document == 1  %}
+               <td>{% trans "No" %}</td>
+               <td>{% trans "Description" %}</td>
+               <td>{% trans "Quantity" %}</td>
+               <td>{% trans "U/M" %}</td>
+               <td>{% trans "Unit Price" %}</td>
+               <td>{% trans "Tax" %}</td>
+               <td>{% trans "Amount" %}</td>
+               <td>{% trans "Tax Amount" %}</td>
+               <td>{% trans "Total" %}</td>
+               <td>{% trans "Currency" %}</td>      
+            {% elif type_currency_document == 2 %}
+               <td>{% trans "No" %}</td>
+               <td>{% trans "Description" %}</td>
+               <td>{% trans "Quantity" %}</td>
+               <td style="white-space: nowrap;">{% trans "U/M" %}</td>
+               <td>{% trans "Unit Price" %}</td>
+               <td>{% trans "Currency" %}</td>
+               <td>{% trans "Amount" %}</td>
+               <td>{% trans "Exchange Rate" %}</td>
+               <td>{% trans "Amount in" %} {{ document_currency }}</td>
+               <td>{% trans "Tax" %}</td>
+               <td>{% trans "Tax amount in" %} {{ document_currency }}</td>
+               <td>{% trans "Total in" %} {{ document_currency }} </td>
+                
+            {% endif %}
+        </tr>
+      </thead>
+      {% for item in items %}
+      <tr>
+        {% if type_currency_document == 1  %}
+         <td class="center-item"> {{ forloop.counter }}</td>
+         <td>{{item.title}} </td>
+         <td class="center-item">{{ item.quantity }} </td>
+         <td class="center-item">{{ item.measure_unit }} </td>
+         <td class="center-item">{{ item.unit_price }} </td>
+         <td class="center-item">{{ item.tax }} </td>
+         <td class="center-item">{{ item.amount }} </td>
+         <td class="center-item">{{ item.tax_amount }} </td>
+         <td class="center-item">{{ item.total }} </td>
+         <td class="center-item">{{ item.currency }} </td>
+         {% else %}
+           <td class="center-item"> {{ forloop.counter }}</td> 
+           <td>{{item.title}} </td>
+           <td class="center-item">{{ item.quantity }} </td>
+           <td class="center-item">{{ item.measure_unit }} </td>
+           <td class="center-item">{{ item.unit_price }} </td>
+           <td class="center-item">{{ item.currency }} </td>
+           <td class="center-item">{{ item.amount }} </td>
+           <td class="center-item">{{ item.exchange_rate }} </td>
+           <td class="center-item">{{ item.amount_in_document_currency }}</td>
+           <td class="center-item">{{ item.tax }}</td>
+           <td class="center-item">{{ item.tax_amount_in_document_currency }}</td>
+          <td class="center-item">{{ item.total_in_document_currency}}</td>
+
+            
+         {% endif %}
+      </tr>
+      {% endfor %}
+     
+    </table>
+
+    <div style="clear: both;"></div>
+      
+      <br/>
+  
+    <div style="width: 25%; float: left;">
+        <strong>{% trans "Way of Payment:" %}</strong> {% trans way_of_payment %}<br/>
+        <br/>
+        <strong>{% trans "Day of Payment" %}</strong> {{ day_of_payment }}<br/>
+    </div>
+   
+   {% if split_payment %}
+    <div style="width: 20%; float: left; font-size: 1.3em; margin-left: 2%; margin-right: 2%;" class="center bold">
+        {{ split_payment }}
+    </div>
+  {% endif %}
+
+    
+   {% comment %} items_summary {% endcomment %}
+
+   <div style="width:50%; float:right; border: 1px solid white; padding-top:0px;">
+     <table class="totals" style="width:100%; font-size: 0.89em; height: 8%;">
+         <thead>
+            <tr>
+                <th class="center">{% trans "Tax Rate" %}</th>
+                <th class="center">{% trans "Net Value" %}</th>
+                <th class="center">{% trans "Tax Value" %}</th>
+                <th class="center">{% trans "Gross Value"%}</th>
+            </tr>
+         </thead>
+         <tbody>
+         
+               {% for sum in summary_in_converted_currency %}
+               <tr>
+                <td class="center">{{ sum.tax_rate }}</td>
+                <td class="center">{{ sum.net_value }}</td>
+                <td class="center">{{ sum.tax_value }}</td>
+                <td class="center">{{ sum.gross_value }}</td> 
+              </tr> 
+               {% endfor %}
+                <tr>
+                <td class="center"><strong>{% trans "Grand Total" %}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.net_value }}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.tax_value }}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.gross_value }}</strong></td>  
+               </tr>
+         </tbody>
+     </table>
+     <br/>
+   </div>
+
+  {% comment %} SUMMARY IN CURRENCY {% endcomment %}
+ {% if summary_in_converted_currency and type_currency_document == 2 %}
+    <hr style="clear: both;"/> 
+    <div  style="width:50%; float: left;">
+        <table class="totals" style="width:100%; font-size: 0.89em; height: 8%;">
+         <thead>
+            <tr>
+                <th class="center">{% trans "Tax Rate" %} {{ currency }}</th>
+                <th class="center">{% trans "Net Value" %} {{ currency }}</th>
+                <th class="center">{% trans "Tax Value" %} {{ currency }}</th>
+                <th class="center">{% trans "Gross Value"%} {{ currency }}</th>
+            </tr>
+         </thead>
+         <tbody>
+         
+               {% for sum in summary %}
+               <tr>
+                <td class="center">{{ sum.tax_rate }}</td>
+                <td class="center">{{ sum.net_value }}</td>
+                <td class="center">{{ sum.tax_value }}</td>
+                <td class="center">{{ sum.gross_value }}</td> 
+              </tr> 
+               {% endfor %}
+                <tr>
+                <td class="center"><strong>{% trans "Grand Total" %}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.net_value }}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.tax_value }}</strong></td>
+                <td class="center"><strong>{{ summary_grand_total.gross_value }}</strong></td>  
+               </tr>
+         </tbody>
+         </table>
+    </div>
+
+    <div style="width: 48%; margin-left: 2%; margin-top: 1%; float:left;">
+       {% trans "Exchange Rate" %} 1 {{ document_currency }} = {{ document_exchange_rate }} {{ currency }}<br/>
+       <i>{% trans "Table" %} {{ exchange_rate_table_name }} {% trans "number" %} {{exchange_rate_table_name}} {% trans "dated" %} {{exchange_rate_date}}  </i>
+    </div>
+   
+    <div style="clear: both;"></div>
+     <br/>
+        <hr style="clear: both;"/>
+    <div style="clear: both;"></div>
+
+{% endif %}   
+
+{% comment %} EXCHANGE RATe SECTION {% endcomment %}
+{% if type_currency_document == 2 %}
+ <br/>
+ <div>
+    {% for exchange_rate in exchange_rates %}
+       {% trans "Exchange Rate" %} 1 {{ exchange_rate.base_currency }} = {{ exchange_rate.rate }} {{ exchange_rate.quote_currency }}<br/>
+    {% endfor %}
+     <i>{% trans "Table" %} {{ exchange_rate_table_name }} {% trans "number" %} {{exchange_rate_table_name}} {% trans "dated" %} {{exchange_rate_date}}  </i>
+ </div>
+  <br/>
+
+  <div>
+      <strong> {% trans "TAX:" %} </strong> {{ summary_grand_total_in_converted_currency.tax_value }} {{ document_currency }} = {{ summary_grand_total.tax_value }} {{ currency }}<br/>
+      {% trans "Exchange Rate" %} 1 {{ document_currency }} = {{ document_exchange_rate }} {{ currency }}<br/>
+      <i>{% trans "Table" %} {{ exchange_rate_table_name }} {% trans "number" %} {{exchange_rate_table_name}} {% trans "dated" %} {{exchange_rate_date}}  </i>
+  </div>
+{% endif %}
+
+<div style="clear: both;"></div>
+
+ <hr style="clear: both;"/>
+<strong>{% trans "Notes:" %}</strong><br/>
+{{ notes|safe }}
+
+<div style="clear: both;"></div>
+
+{% comment %} TOTAL SECTION {% endcomment %}
+<hr style="clear: both;"/>
+<div style="width: 30%; float:left;">
+  <strong>{% trans "Issued By:" %}</strong><br/>
+  {{ issuer_name }}
+</div>
+
+<div style="width: 70%; float: right;">
+   <div style="background: #efefef; padding: 5px; font-size: 1.2em;" >
+
+       <div style="float: left; width: 68%;" >
+          <strong>{% trans "Amount payable:" %}</strong>
+       </div>
+
+       <div style="float: right; width: 30%; text-align: right;" >
+          <strong>{% if type_currency_document == 2 %} 
+                        {{ summary_grand_total_in_converted_currency.gross_value }} {{ document_currency }}  
+                  {% else %}
+                      {{ summary_grand_total.gross_value }} {{ currency }} 
+                  {% endif %}
+          </strong>
+       </div>
+
+       <div style="clear: both;"></div>
+
+       <div style="text-align:right;">
+
+          {{document_currency}}{{document_language}}
+          {% trans "In words:" %} 
+          {% with currency_lang_string=document_currency|add:","|add:document_language %}
+             {{ summary_grand_total_in_converted_currency.gross_value|number_to_words:currency_lang_string}}
+          {% endwith %}
+       </div>
+
+    </div>
+</div>
+
+
 </body>
 </html>

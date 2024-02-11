@@ -1,4 +1,5 @@
 from django import template
+from num2words import num2words
 
 register = template.Library()
 
@@ -29,3 +30,38 @@ def get_index(sequence, position):
 @register.filter
 def custom_range(value):
    return range(1, value + 1)
+
+# @register.filter(name='number_to_words')
+# def number_to_words(value, lang='en'):
+#     return num2words(value, lang=lang)
+
+
+@register.filter(name='number_to_words')
+def number_to_words(value, args):
+
+    array = args.split(',')
+
+    currency = array[0]
+    lang = array[1]
+     
+    try:
+        value = float(value.replace(' ', '').replace(',', '.'))
+    except ValueError:
+        return value
+
+    integer_part, decimal_part = str(value).split('.')
+
+    integer_text = num2words(int(integer_part), lang=lang)
+
+    decimal_text = f"and {decimal_part}/100" if decimal_part else ""
+
+    result = f"{integer_text} {currency}"
+    if decimal_text:
+        result += f" {decimal_text}"
+
+    return result
+
+
+
+
+    
