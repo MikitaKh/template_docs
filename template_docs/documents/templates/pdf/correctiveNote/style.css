@@ -29,13 +29,15 @@
 
 @font-face {
     font-family: code128;
-    src: url(../../code128);
+    src: url(../../fonts/code128.ttf);
 }
 
 @font-face {
     font-family: Libre Barcode;
     src: url(../../fonts/librebarcode128-regular.ttf);
 }
+
+/* Main styles */
 
 .barcode  {
     font-family: Libre Barcode !important;
@@ -46,8 +48,6 @@
     /* background-color: green; */
     
   }
-
-
 
 body {
     font-size: 10px;
@@ -190,6 +190,11 @@ i {
 
 .center {
     text-align: center;
+}
+
+
+.right {
+    text-align: right;
 }
 
 .bold {

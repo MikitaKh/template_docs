@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template.loader import get_template
 from django.shortcuts import render
 from django.template import engines
@@ -8,6 +9,7 @@ from weasyprint import CSS
 from weasyprint.text.fonts import FontConfiguration
 from io import BytesIO
 import logging
+
 
 
 
@@ -44,8 +46,12 @@ class PDFGenerator:
     def generate_pdf(html_content: str , css_content: CSS,font_config)->bytes:
         """Generate a PDF file and return its content as bytes."""
         pdf_io = BytesIO()
-        
-        HTML(string=html_content).write_pdf(pdf_io , stylesheets=[css_content],font_config=font_config)
+        #base path for rendering images
+        base_url = str(settings.BASE_DIR)
+
+        print("Base URL:", base_url)
+
+        HTML(string=html_content,base_url=base_url).write_pdf(pdf_io , stylesheets=[css_content],font_config=font_config)
         logger = logging.getLogger('weasyprint')
         logger.addHandler(logging.FileHandler('C:/Users/agabi/Desktop/templates/template_docs/documents/utils/weasyprint.log'))
         return pdf_io.getvalue()

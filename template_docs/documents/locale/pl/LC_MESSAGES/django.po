@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 16:26+0100\n"
+"POT-Creation-Date: 2024-02-15 23:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,54 +20,233 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:79
+#: .\documents\templates\pdf\invoice\index.html:16
+msgid "pdfTemplates.invoice.invoiceNumber"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:18
+msgid "pdfTemplates.invoice.issueDate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:19
+msgid "pdfTemplates.invoice.serviceDate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:46
+msgid "Seller"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:49
+#: .\documents\templates\pdf\invoice\index.html:66
+#: .\documents\templates\pdf\invoice\index.html:77
+msgid "Address:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:52
+#: .\documents\templates\pdf\invoice\index.html:69
+msgid "VAT ID:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:53
+msgid "EUR:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:54
+#: .\documents\templates\pdf\invoice\index.html:56
+msgid "SWIFT CODE:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:55
+msgid "VAT PL:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:63
+msgid "Customer:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:74
+msgid "Recipient:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:89
+msgid "Forwarding position:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:116
+#: .\documents\templates\pdf\invoice\index.html:127
+msgid "No"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:117
+#: .\documents\templates\pdf\invoice\index.html:128
+msgid "Description"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:118
+#: .\documents\templates\pdf\invoice\index.html:129
+msgid "Quantity"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:119
+#: .\documents\templates\pdf\invoice\index.html:130
+msgid "U/M"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:120
+#: .\documents\templates\pdf\invoice\index.html:131
+msgid "Unit Price"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:121
+#: .\documents\templates\pdf\invoice\index.html:136
+msgid "Tax"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:122
+#: .\documents\templates\pdf\invoice\index.html:133
+msgid "Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:123
+msgid "Tax Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:124
+msgid "Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:125
+#: .\documents\templates\pdf\invoice\index.html:132
+msgid "Currency"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:134
+#: .\documents\templates\pdf\invoice\index.html:263
+#: .\documents\templates\pdf\invoice\index.html:280
+#: .\documents\templates\pdf\invoice\index.html:288
+msgid "Exchange Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:135
+msgid "Amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:137
+msgid "Tax amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:138
+msgid "Total in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:182
+msgid "Way of Payment:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:184
+msgid "Day of Payment"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:201
+#: .\documents\templates\pdf\invoice\index.html:236
+msgid "Tax Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:202
+#: .\documents\templates\pdf\invoice\index.html:237
+msgid "Net Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:203
+#: .\documents\templates\pdf\invoice\index.html:238
+msgid "Tax Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:204
+#: .\documents\templates\pdf\invoice\index.html:239
+msgid "Gross Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:218
+#: .\documents\templates\pdf\invoice\index.html:253
+msgid "Grand Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:264
+#: .\documents\templates\pdf\invoice\index.html:282
+#: .\documents\templates\pdf\invoice\index.html:289
+msgid "Table"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:264
+#: .\documents\templates\pdf\invoice\index.html:282
+#: .\documents\templates\pdf\invoice\index.html:289
+msgid "number"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:264
+#: .\documents\templates\pdf\invoice\index.html:282
+#: .\documents\templates\pdf\invoice\index.html:289
+msgid "dated"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:287
+msgid "TAX:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:296
+msgid "Notes:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:305
+msgid "Issued By:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:313
+msgid "Amount payable:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:329
+msgid "In words:"
+msgstr ""
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:80
 msgid "Osoba kontaktowa:"
 msgstr ""
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:123
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:124
 msgid "Godziny otwarcia:"
 msgstr ""
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_load"
-msgstr "Załadunek"
+#~ msgid "poi_load"
+#~ msgstr "Załadunek"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_custom"
-msgstr "Odprawa"
+#~ msgid "poi_custom"
+#~ msgstr "Odprawa"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_unload"
-msgstr "Rozładunek"
+#~ msgid "poi_unload"
+#~ msgstr "Rozładunek"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_open_t1"
-msgstr "Otwarcie T1"
+#~ msgid "poi_open_t1"
+#~ msgstr "Otwarcie T1"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_port_out"
-msgstr "Zjazd z promu"
+#~ msgid "poi_port_out"
+#~ msgstr "Zjazd z promu"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_document_reciept"
-msgstr "Odbiór dokumentów"
+#~ msgid "poi_document_reciept"
+#~ msgstr "Odbiór dokumentów"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_empty_road"
-msgstr "Pusty przejazd"
+#~ msgid "poi_empty_road"
+#~ msgstr "Pusty przejazd"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_unload_empty"
-msgstr "Złożenie pusty"
+#~ msgid "poi_unload_empty"
+#~ msgstr "Złożenie pusty"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_load_full"
-msgstr "Podjęcie pełny"
+#~ msgid "poi_load_full"
+#~ msgstr "Podjęcie pełny"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_unload_full"
-msgstr "Złożenie pełny"
+#~ msgid "poi_unload_full"
+#~ msgstr "Złożenie pełny"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:138
-msgid "poi_port_in"
-msgstr "Złożenie pełny"
+#~ msgid "poi_port_in"
+#~ msgstr "Złożenie pełny"

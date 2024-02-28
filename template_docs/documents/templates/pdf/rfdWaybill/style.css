@@ -18,32 +18,32 @@
 
 @font-face {
 font-family: Libre Barcode;
-src: url(librebarcode128-regular.ttf);
+src: url(../../fonts/librebarcode128-regular.ttf);
 }
 @font-face {
 font-family: Barlow Condensed;
-src: url(barlowcondensed-regular.otf);
+src: url(../../fonts/barlowcondensed-regular.otf);
 }
 @font-face {
 font-family: Barlow Condensed;
 font-weight: 300;
-src: url(barlowcondensed-light.otf);
+src: url(../../fonts/barlowcondensed-light.otf);
 }
 @font-face {
 font-family: Barlow Condensed;
 font-weight: 700;
-src: url(barlowcondensed-bold.otf);
+src: url(../../fonts/barlowcondensed-bold.otf);
 }
 
 @font-face {
 font-family: Source Sans Pro;
 font-weight: 700;
-src: url(sourcesanspro-bold.otf);
+src: url(../../fonts/sourcesanspro-bold.otf);
 }
 /* DEJAVU FONTS */
 @font-face {
     font-family: DejaVuSansCondensed;
-    src: url(DejaVuSansCondensed.ttf);
+    src: url(../../fonts/DejaVuSansCondensed.ttf);
 }
 
 

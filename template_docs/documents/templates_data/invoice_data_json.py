@@ -1,6 +1,8 @@
 
 invoice_data={
     'invoice_number':' FVK/000354/11/23',
+    'logo_url':'documents/static/images/nova_logo.png',
+    'stamp_url':'documents/static/images/nova_logo.png',
     'issue_date':'2024-02-06',
     'service_date':'2024-01-31',
     'sender':{

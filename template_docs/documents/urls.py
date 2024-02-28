@@ -7,5 +7,6 @@ urlpatterns = [
     path('generate_rfdShippingInstruction',generate_rfdShippingInstruction),
     path('generate_rfdWaybill',generate_rfdWaybill),
     path('generate_cmr',generate_cmr),
-    path('generate_invoice',generate_invoice)
+    path('generate_invoice',generate_invoice),
+    path('generate_corrective_note',generate_corrective_note)
 ]

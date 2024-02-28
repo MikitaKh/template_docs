@@ -1,0 +1,422 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-27 23:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:17
+msgid "pdfTemplates.correctiveNote.correctiveNoteNumber"
+msgstr "Corrective Invoice no."
+
+#: .\documents\templates\pdf\correctiveNote\index.html:18
+msgid "pdfTemplates.correctiveNote.correctiveNoteIssueDate"
+msgstr "Issue Date of Corrective Invoice"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:20
+msgid "pdfTemplates.correctiveNote.correctingDocument"
+msgstr "Correcting Document"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:21
+msgid "pdfTemplates.correctiveNote.from_date"
+msgstr "From Date"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:22
+msgid "pdfTemplates.correctiveNote.regardingSalesFromDate"
+msgstr "Regarding Sales from Date"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:48
+msgid "pdfTemplates.correctiveNote.seller"
+msgstr "Seller"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:54
+#: .\documents\templates\pdf\correctiveNote\index.html:71
+msgid "pdfTemplates.correctiveNote.vatId"
+msgstr "TAX ID"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:55
+msgid "pdfTemplates.correctiveNote.eur"
+msgstr "EUR"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:56
+#: .\documents\templates\pdf\correctiveNote\index.html:58
+msgid "pdfTemplates.correctiveNote.swiftCode"
+msgstr "SWIFT CODE"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:57
+msgid "pdfTemplates.correctiveNote.vatPl"
+msgstr "TAX ID PL"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:65
+msgid "pdfTemplates.correctiveNote.customer"
+msgstr "Customer"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:76
+msgid "pdfTemplates.correctiveNote.recipient"
+msgstr "Recepient"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:79
+msgid "pdfTemplates.correctiveNote.address"
+msgstr "Address"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:91
+msgid "pdfTemplates.correctiveNote.forwardingPosition:"
+msgstr "Forwarding position"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:111
+msgid "pdfTemplates.correctiveNote.notes"
+msgstr "Notes"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:119
+msgid "pdfTemplates.correctiveNote.correctionReasons"
+msgstr "Reason of Correction"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:134
+#: .\documents\templates\pdf\correctiveNote\index.html:146
+msgid "pdfTemplates.correctiveNote.No"
+msgstr "No"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:136
+#: .\documents\templates\pdf\correctiveNote\index.html:148
+msgid "pdfTemplates.correctiveNote.nameOfProductService"
+msgstr "Name of product / service"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:137
+#: .\documents\templates\pdf\correctiveNote\index.html:149
+msgid "pdfTemplates.correctiveNote.quantity"
+msgstr "Quantity"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:138
+#: .\documents\templates\pdf\correctiveNote\index.html:150
+msgid "pdfTemplates.correctiveNote.UM"
+msgstr "U/M"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:139
+msgid "pdfTemplates.correctiveNote.priceWithoutTax"
+msgstr "Price without Tax"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:140
+#: .\documents\templates\pdf\correctiveNote\index.html:156
+msgid "pdfTemplates.correctiveNote.vatTax"
+msgstr "VAT Rate"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:141
+#: .\documents\templates\pdf\correctiveNote\index.html:279
+msgid "pdfTemplates.correctiveNote.totalNet"
+msgstr "Total NET"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:142
+#: .\documents\templates\pdf\correctiveNote\index.html:280
+msgid "pdfTemplates.correctiveNote.taxValue"
+msgstr "Tax Value"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:143
+#: .\documents\templates\pdf\correctiveNote\index.html:281
+msgid "pdfTemplates.correctiveNote.totalGross"
+msgstr "Total Gross"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:144
+#: .\documents\templates\pdf\correctiveNote\index.html:152
+msgid "pdfTemplates.correctiveNote.currency"
+msgstr "Currency"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:151
+msgid "pdfTemplates.correctiveNote.priceWithoutTaxInDefinedCurrency"
+msgstr "Price without Tax in defined Currency"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:153
+msgid "pdfTemplates.correctiveNote.valueWithoutTaxInDefinedCurrency"
+msgstr "Value without Tax in defined Currency"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:154
+#: .\documents\templates\pdf\correctiveNote\index.html:315
+#: .\documents\templates\pdf\correctiveNote\index.html:321
+#: .\documents\templates\pdf\correctiveNote\index.html:339
+#: .\documents\templates\pdf\correctiveNote\index.html:347
+msgid "pdfTemplates.correctiveNote.rate"
+msgstr "Rate"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:155
+msgid "pdfTemplates.correctiveNote.amountIn"
+msgstr "Amount In"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:157
+msgid "pdfTemplates.correctiveNote.taxAmountIn"
+msgstr "Tax amount in"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:158
+msgid "pdfTemplates.correctiveNote.totalIn"
+msgstr "Total in"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:257
+msgid "pdfTemplates.correctiveNote.wayOfPayment"
+msgstr "Way of Payment"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:259
+msgid "pdfTemplates.correctiveNote.dayOfPayment"
+msgstr "Day of Payment"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:266
+msgid "pdfTemplates.correctiveNote.splitPaymentMethod"
+msgstr "Split Payment Method"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:275
+msgid "pdfTemplates.correctiveNote.summaryOfCorrectionInvoice"
+msgstr "Summary of Correction Invoice"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:278
+msgid "pdfTemplates.correctiveNote.vatRate"
+msgstr "VAT Rate"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:294
+msgid "pdfTemplates.correctiveNote.grandTotal"
+msgstr "Grand Total"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:311
+msgid "pdfTemplates.correctiveNote.beforeCorrection"
+msgstr "Before correction"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:314
+#: .\documents\templates\pdf\correctiveNote\index.html:320
+#: .\documents\templates\pdf\correctiveNote\index.html:346
+msgid "pdfTemplates.correctiveNote.vat"
+msgstr "VAT"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:316
+#: .\documents\templates\pdf\correctiveNote\index.html:322
+#: .\documents\templates\pdf\correctiveNote\index.html:341
+msgid "pdfTemplates.correctiveNote.table"
+msgstr "Table"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:316
+#: .\documents\templates\pdf\correctiveNote\index.html:322
+#: .\documents\templates\pdf\correctiveNote\index.html:341
+msgid "pdfTemplates.correctiveNote.number"
+msgstr "number"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:316
+#: .\documents\templates\pdf\correctiveNote\index.html:322
+#: .\documents\templates\pdf\correctiveNote\index.html:341
+msgid "pdfTemplates.correctiveNote.dated"
+msgstr "dated"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:319
+msgid "pdfTemplates.correctiveNote.afterCorrection"
+msgstr "After correction"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:326
+msgid "pdfTemplates.correctiveNote.amountOfTaxIncrease"
+msgstr "The amount of tax increase"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:357
+msgid "pdfTemplates.correctiveNote.issuedBy"
+msgstr "Issuer"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:365
+msgid "pdfTemplates.correctiveNote.totalToPay"
+msgstr "Total to pay (Amount)"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:376
+msgid "pdfTemplates.correctiveNote.byWords"
+msgstr "By Words"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:402
+msgid "pdfTemplates.correctiveNote.receptionDate"
+msgstr "Reception Date"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:408
+msgid "pdfTemplates.correctiveNote.recieverOfCorrectionInvoice"
+msgstr "Receiver of Correction Invoice"
+
+#: .\documents\templates\pdf\invoice\index.html:20
+#, fuzzy
+#| msgid "pdfTemplates.correctiveNote.issuedBy"
+msgid "pdfTemplates.invoice.issueDate"
+msgstr "Issuer"
+
+#: .\documents\templates\pdf\invoice\index.html:21
+#, fuzzy
+#| msgid "pdfTemplates.correctiveNote.rate"
+msgid "pdfTemplates.invoice.serviceDate"
+msgstr "Rate"
+
+#: .\documents\templates\pdf\invoice\index.html:48
+msgid "Seller"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:51
+#: .\documents\templates\pdf\invoice\index.html:68
+#: .\documents\templates\pdf\invoice\index.html:79
+msgid "Address:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:54
+#: .\documents\templates\pdf\invoice\index.html:71
+msgid "VAT ID:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:55
+msgid "EUR:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:56
+#: .\documents\templates\pdf\invoice\index.html:58
+msgid "SWIFT CODE:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:57
+msgid "VAT PL:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:65
+msgid "Customer:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:76
+msgid "Recipient:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:91
+msgid "Forwarding position:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:118
+#: .\documents\templates\pdf\invoice\index.html:129
+msgid "No"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:119
+#: .\documents\templates\pdf\invoice\index.html:130
+msgid "Description"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:120
+#: .\documents\templates\pdf\invoice\index.html:131
+msgid "Quantity"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:121
+#: .\documents\templates\pdf\invoice\index.html:132
+msgid "U/M"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:122
+#: .\documents\templates\pdf\invoice\index.html:133
+msgid "Unit Price"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:123
+#: .\documents\templates\pdf\invoice\index.html:138
+msgid "Tax"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:124
+#: .\documents\templates\pdf\invoice\index.html:135
+msgid "Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:125
+msgid "Tax Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:126
+msgid "Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:127
+#: .\documents\templates\pdf\invoice\index.html:134
+msgid "Currency"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:136
+#: .\documents\templates\pdf\invoice\index.html:265
+#: .\documents\templates\pdf\invoice\index.html:282
+#: .\documents\templates\pdf\invoice\index.html:290
+msgid "Exchange Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:137
+msgid "Amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:139
+msgid "Tax amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:140
+msgid "Total in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:184
+msgid "Way of Payment:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:186
+msgid "Day of Payment"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:203
+#: .\documents\templates\pdf\invoice\index.html:238
+msgid "Tax Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:204
+#: .\documents\templates\pdf\invoice\index.html:239
+msgid "Net Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:205
+#: .\documents\templates\pdf\invoice\index.html:240
+msgid "Tax Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:206
+#: .\documents\templates\pdf\invoice\index.html:241
+msgid "Gross Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:220
+#: .\documents\templates\pdf\invoice\index.html:255
+msgid "Grand Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:289
+msgid "TAX:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:298
+msgid "Notes:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:307
+msgid "Issued By:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:315
+msgid "Amount payable:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:331
+msgid "In words:"
+msgstr ""
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:80
+msgid "Osoba kontaktowa:"
+msgstr ""
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:124
+msgid "Godziny otwarcia:"
+msgstr ""

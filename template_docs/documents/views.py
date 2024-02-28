@@ -4,6 +4,7 @@ from documents.utils.pdf_generator import PDFGenerator
 from documents.templates_data.rfd_data import context_data 
 from documents.templates_data.cmr_data_json import cmr_data
 from documents.templates_data.invoice_data_json import invoice_data
+from documents.templates_data.corrective_note_data_json import corrective_note_data
 
 import os
 from django.utils.translation import gettext as _
@@ -67,3 +68,16 @@ def generate_invoice(request):
     response.write(pdf_content)
 
     return response
+
+
+def generate_corrective_note(request):
+    
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/correctiveNote/index.html',corrective_note_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename=invoice.pdf'
+
+    response.write(pdf_content)
+
+    return response
+

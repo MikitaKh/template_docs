@@ -45,7 +45,12 @@ def number_to_words(value, args):
     lang = array[1]
      
     try:
-        value = float(value.replace(' ', '').replace(',', '.'))
+        cleaned_value = value.replace(' ', '').replace(',', '.')
+
+        if cleaned_value.startswith('-'):
+           cleaned_value = cleaned_value[1:]
+
+        value = float(cleaned_value)
     except ValueError:
         return value
 

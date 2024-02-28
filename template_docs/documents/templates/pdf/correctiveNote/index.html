@@ -1,0 +1,403 @@
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Corrective Note</title>
+    <meta name="description" content="Invoice">
+</head>
+{% comment %} 20190828 {% endcomment %}
+<body>
+   {% comment %} HEADER SECTION {% endcomment %}
+  <div style="float: left; width: 50%;" class="pdf-invocie__document-details-section">
+       <strong>{% trans "pdfTemplates.correctiveNote.correctiveNoteNumber" %}:</strong> {{ corrective_note_number }} <br/>
+       <strong>{% trans "pdfTemplates.correctiveNote.correctiveNoteIssueDate" %}</strong>{{corrective_note_issue_date}}<br/>
+       <br /><br />
+       <strong>{% trans "pdfTemplates.correctiveNote.correctingDocument" %}:</strong> {{correcting_document}} <br/>
+        <strong>{% trans "pdfTemplates.correctiveNote.from_date" %}:</strong> {{from_date}} <br/>
+       <strong>{% trans "pdfTemplates.correctiveNote.regardingSalesFromDate" %}:</strong> {{ regarding_sales_from_date }}<br/>
+
+
+  </div>
+ 
+  <div style="float: right; width: 50%; text-align: center;">
+   {% if logo_url %}
+      <div style="margin-bottom: 10px;">
+          <img src="{{ logo_url }}" style=" max-height:50px; margin:0; padding: 0; " />
+      </div>
+   {% endif %}
+
+       <div style="padding-top: 10px;"> 
+            <span style="margin-bottom:4px;" class="barcode" > {{corrective_note_number}}</span><br/>
+            <span style="margin:0px;">{{corrective_note_number}}<span>  
+       </div> 
+    </div>
+
+  <div style="clear: both;"></div>
+  
+  <hr/>
+    {% comment %} CONTRACTORS SECTION {% endcomment %}
+   <div style="display:flex;" class="pdf-invoice__addresses-section">
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__sender-address {% else %} pdf-invoice__sender-address-1 {% endif %} ">
+          <strong>{% trans "pdfTemplates.correctiveNote.seller" %} :</strong><br/>
+          <br/>
+          {{ sender.name }}<br/>
+          {% trans "pdfTemplates.correctiveNote.address" %}: {{ sender.street }} {{sender.building_nr}}<br/>
+          {{sender.postal_code}} {{sender.city}}<br/>
+          {{sender.country}}<br/>
+          {% trans "pdfTemplates.correctiveNote.vatId" %}: {{sender.vat_id}}<br/>
+          {% trans "pdfTemplates.correctiveNote.eur" %}: {{ sender.transfer_details.eur }}<br/>
+          {% trans "pdfTemplates.correctiveNote.swiftCode"%}: {{ sender.transfer_details.swift_code|linebreaksbr}}<br/>
+          {% trans "pdfTemplates.correctiveNote.vatPl" %}: {{ sender.transfer_details.vat_pl}}<br/>
+          {% trans "pdfTemplates.correctiveNote.swiftCode" %}:{{ sender.transfer_details.swift_code_pl|linebreaksbr}}
+       </div>
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__recipient-addresses-section {% else %} pdf-invoice__recipient-addresses-section-1 {% endif %}">
+           
+        <div  style="display:flex;">
+                <div  class="{% if addresse|length > 0 %} pdf-invoice__recipient-address {% else %} pdf-invoice__recipient-address-1 {% endif %}">
+                    <strong>{% trans "pdfTemplates.correctiveNote.customer" %}:</strong><br/>
+                    <br/>
+                    {{recipient.name}}<br/>
+                    {% trans "pdfTemplates.correctiveNote.address" %}: {{recipient.street}} {{recipient.building_number}}<br/>
+                    {{ recipient.postal_code }} {{ recipient.city }}<br/>
+                    {{ recipient.country }}<br/>
+                    {% trans "pdfTemplates.correctiveNote.vatId" %}: {{ recipient.vat_id }} 
+                </div>
+                
+                {% if addresse|length > 0 %}
+                <div  class="pdf-invoice__addressee-address"  >
+                    <strong>{% trans "pdfTemplates.correctiveNote.recipient" %}:</strong><br/>
+                    <br/>
+                    {{addresse.name}}<br/>
+                    {% trans "pdfTemplates.correctiveNote.address" %} {{addresse.street}} {{addresse.building_nr}}<br/>
+                    {{ addresse.postal_code }} {{ addresse.city }}
+                    {{ addresse.country }} 
+                </div> 
+                {% endif %}
+            </div>
+         
+            {% if forwarding_position|length > 0 %}
+            <div class="pdf-invoice__orders-list">
+              <table>
+                  <tr>
+                    <td style="vertical-align:top">
+                      <strong>{% trans "pdfTemplates.correctiveNote.forwardingPosition:" %}</strong><br/>
+                    </td>
+                    <td style="vertical-align:top">
+                        {{ forwarding_position  }}
+                    </td>
+                  </tr>
+              </table>
+              <div style="clear:both;"></div>
+            </div>
+           {% endif %}
+        
+       </div>
+
+    </div>
+
+    {% comment %} NOTES SECTION {% endcomment %}
+    <div style="clear: both;"></div>
+
+    <hr style="clear: both;"/>
+    <strong>{% trans "pdfTemplates.correctiveNote.notes" %}:</strong><br/>
+    {{ notes|safe|linebreaksbr }}
+
+    <div style="clear: both;"></div>
+
+    {% comment %} CORRECTION REASONS {% endcomment %}
+     <hr style="clear: both;"/>
+     <strong> {% trans "pdfTemplates.correctiveNote.correctionReasons" %}:</strong><br/>
+      {% for reason in correction_reasons %}
+         {{reason}}<br/>
+      {% endfor %}
+      <br/>
+   
+   {% comment %} ITEMS SECTION {% endcomment %}
+   <div style="clear: both;"></div>
+    {% comment %} REFACTOR THIS {% endcomment %}
+    <table id="invoiceDetails">
+      <thead>
+        <tr> 
+            {%if type_currency_document == 1  %}
+               <td>{% trans "pdfTemplates.correctiveNote.No" %}</td>
+               <td></td>
+               <td>{% trans "pdfTemplates.correctiveNote.nameOfProductService" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.quantity" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.UM" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.priceWithoutTax" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.vatTax" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.totalNet" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.taxValue" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.totalGross" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.currency" %}</td>      
+            {% elif type_currency_document == 2 %}
+               <td>{% trans "pdfTemplates.correctiveNote.No" %}</td>
+               <td></td>
+               <td>{% trans "pdfTemplates.correctiveNote.nameOfProductService" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.quantity" %}</td>
+               <td style="white-space: nowrap;">{% trans "pdfTemplates.correctiveNote.UM" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.priceWithoutTaxInDefinedCurrency" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.currency" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.valueWithoutTaxInDefinedCurrency" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.rate" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.amountIn" %} {{ document_currency }}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.vatTax" %}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.taxAmountIn" %} {{ document_currency }}</td>
+               <td>{% trans "pdfTemplates.correctiveNote.totalIn" %} {{ document_currency }} </td>
+                
+            {% endif %}
+        </tr>
+      </thead>
+        {% for item in items %}
+      <tr>
+        {% if type_currency_document == 1  %}
+         <td class="center-item"> {{ forloop.counter }}</td>
+         <td class="center-item">It was</td>
+         <td>{{item.orig.title}} </td>
+         <td class="center-item">{{ item.orig.quantity }} </td>
+         <td class="center-item">{{ item.orig.measure_unit }} </td>
+         <td class="center-item">{{ item.orig.unit_price }} </td>
+         <td class="center-item">{{ item.orig.tax }} </td>
+         <td class="center-item">{{ item.orig.amount }} </td>
+         <td class="center-item">{{ item.orig.tax_amount }} </td>
+         <td class="center-item">{{ item.orig.total }} </td>
+         <td class="center-item">{{ item.orig.currency }} </td>
+         {% else %}
+           <td class="center-item"> {{ forloop.counter }}</td> 
+           <td class="center-item">It was</td>
+           <td>{{item.orig.title}} </td>
+           <td class="center-item">{{ item.orig.quantity }} </td>
+           <td class="center-item">{{ item.orig.measure_unit }} </td>
+           <td class="center-item">{{ item.orig.unit_price }} </td>
+           <td class="center-item">{{ item.orig.currency }} </td>
+           <td class="center-item">{{ item.orig.amount }} </td>
+           <td class="center-item">{{ item.orig.exchange_rate }} </td>
+           <td class="center-item">{{ item.orig.amount_in_document_currency }}</td>
+           <td class="center-item">{{ item.orig.tax }}</td>
+           <td class="center-item">{{ item.orig.tax_amount_in_document_currency }}</td>
+          <td class="center-item">{{ item.orig.total_in_document_currency}}</td>  
+         {% endif %}
+      </tr>
+       <tr>
+        {% if type_currency_document == 1  %}
+         <td class="center-item"> {{ forloop.counter }}</td>
+         <td class="center-item">Should be</td>
+         <td>{{item.fix.title}} </td>
+         <td class="center-item">{{ item.fix.quantity }} </td>
+         <td class="center-item">{{ item.fix.measure_unit }} </td>
+         <td class="center-item">{{ item.fix.unit_price }} </td>
+         <td class="center-item">{{ item.fix.tax }} </td>
+         <td class="center-item">{{ item.fix.amount }} </td>
+         <td class="center-item">{{ item.fix.tax_amount }} </td>
+         <td class="center-item">{{ item.fix.total }} </td>
+         <td class="center-item">{{ item.fix.currency }} </td>
+         {% else %}
+           <td class="center-item"> {{ forloop.counter }}</td> 
+           <td class="center-item">Should be</td>
+           <td>{{item.fix.title}} </td>
+           <td class="center-item">{{ item.fix.quantity }} </td>
+           <td class="center-item">{{ item.fix.measure_unit }} </td>
+           <td class="center-item">{{ item.fix.unit_price }} </td>
+           <td class="center-item">{{ item.fix.currency }} </td>
+           <td class="center-item">{{ item.fix.amount }} </td>
+           <td class="center-item">{{ item.fix.exchange_rate }} </td>
+           <td class="center-item">{{ item.fix.amount_in_document_currency }}</td>
+           <td class="center-item">{{ item.fix.tax }}</td>
+           <td class="center-item">{{ item.fix.tax_amount_in_document_currency }}</td>
+          <td class="center-item">{{ item.fix.total_in_document_currency}}</td>  
+         {% endif %}
+      </tr>
+      <tr style="background: #f8f8f8;">
+        {% if type_currency_document == 1  %}
+         
+         <td colspan="2" style="text-align: right;">total correction<br /> </td>
+         <td >{{item.diffrence.title}} </td>
+         <td class="center-item">{{ item.diffrence.quantity }} </td>
+         <td class="center-item">{{ item.diffrence.measure_unit }} </td>
+         <td class="center-item">{{ item.diffrence.unit_price }} </td>
+         <td class="center-item">{{ item.diffrence.tax }} </td>
+         <td class="center-item">{{ item.diffrence.amount }} </td>
+         <td class="center-item">{{ item.diffrence.tax_amount }} </td>
+         <td class="center-item">{{ item.diffrence.total }} </td>
+         <td class="center-item">{{ item.diffrence.currency }} </td>
+         {% else %}
+            <td colspan="2" style="text-align: right;">total correction<br /> </td>
+           <td>{{item.diffrence.title}} </td>
+           <td class="center-item">{{ item.diffrence.quantity }} </td>
+           <td class="center-item">{{ item.diffrence.measure_unit }} </td>
+           <td class="center-item">{{ item.diffrence.unit_price }} </td>
+           <td class="center-item">{{ item.diffrence.currency }} </td>
+           <td class="center-item">{{ item.diffrence.amount }} </td>
+           <td class="center-item">{{ item.diffrence.exchange_rate }} </td>
+           <td class="center-item">{{ item.diffrence.amount_in_document_currency }}</td>
+           <td class="center-item">{{ item.diffrence.tax }}</td>
+           <td class="center-item">{{ item.diffrence.tax_amount_in_document_currency }}</td>
+          <td class="center-item">{{ item.diffrence.total_in_document_currency}}</td>  
+         {% endif %}
+      </tr>
+      {% endfor %}
+      </table>
+
+  <div style="clear: both;"></div>
+  <br />
+
+  <div style="width: 25%; float: left;">
+     <strong>{% trans 'pdfTemplates.correctiveNote.wayOfPayment' %}</strong>{{ way_of_payment }}<br/>
+     <br/>
+     <strong>{% trans 'pdfTemplates.correctiveNote.dayOfPayment' %}</strong>{{ day_of_payment  }}
+  </div>
+
+   {% if split_payment == 1  %}
+    <div style="width: 20%; float: left; font-size: 1.3em; margin-left: 2%; margin-right: 2%;" class="center bold">
+         {% comment %} add translation with trans {% endcomment %}
+        {% trans 'pdfTemplates.correctiveNote.splitPaymentMethod' %}   
+
+    </div>
+  {% endif %}
+
+  <div  style="width: 50%; float: right; border: solid 1px white;" >
+       <table class="totals" style="width: 100%; font-size: 0.89em; height: 8%;" >
+          <thead>
+              <tr>
+                <th style="border-bottom: 1px solid #d8d8d8; " class="center"  colspan="4"> {% trans 'pdfTemplates.correctiveNote.summaryOfCorrectionInvoice' %} </th>
+              <tr>
+              <tr>
+                 <th class="center">{% trans 'pdfTemplates.correctiveNote.vatRate' %}</th>
+                 <th class="center">{% trans 'pdfTemplates.correctiveNote.totalNet' %}</th>
+                 <th class="center">{% trans 'pdfTemplates.correctiveNote.taxValue' %}</th>
+                 <th class="center">{% trans 'pdfTemplates.correctiveNote.totalGross' %}</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for tax_diff in tax_diffrence %}
+                <tr>
+                 <td class="center">{{ tax_diff.tax_rate }}</td>
+                 <td class="center">{{ tax_diff.net }}</td>
+                 <td class="center">{{ tax_diff.tax }}</td>
+                 <td class="center">{{ tax_diff.gross }}</td>
+                </tr>
+              {% endfor %}
+              <tr>
+                  <td class="right"><strong>{% trans 'pdfTemplates.correctiveNote.grandTotal' %}</strong> </td>
+                  <td class="center"><strong>{{ total_diffrence.net }}</strong></td>
+                  <td class="center"><strong>{{ total_diffrence.tax }}</strong></td>
+                  <td class="center"><strong>{{ total_diffrence.gross }}</strong></td>
+              </tr>
+          </tbody>
+       </table>
+  </div>
+
+  <div style="clear: both;"></div>
+
+  {% comment %} INVOICE TAX CORRECTION SECTION {% endcomment %}
+
+  <br/>
+  <div>
+    <div style="float: left; width: 48%" > 
+       <strong>{% trans 'pdfTemplates.correctiveNote.beforeCorrection' %}:</strong><br/>
+        {% comment %} Tut uslowie chto vat bolsze nulya {% endcomment %}
+        <strong>{% trans 'pdfTemplates.correctiveNote.vat' %}:</strong> {{ original_document_tax.tax_indocument_currency }} {{ document_currency }} = {{original_document_tax.tax_in_system_currency}} {{ currency }} <br/>
+        {% trans 'pdfTemplates.correctiveNote.rate'  %}  1 {{ exchange_rate_original_document.currency }} = {{ exchange_rate_original_document.rate }} {{ exchange_rate_original_document.quote_currency }} <br/>
+         <i>{% trans "pdfTemplates.correctiveNote.table" %} {{ exchange_rate_original_document.provider_name }} {% trans "pdfTemplates.correctiveNote.number" %} {{exchange_rate_original_document.table_name}} {% trans "pdfTemplates.correctiveNote.dated" %} {{exchange_rate_original_document.table_date}}  </i>
+    </div>
+    <div style="float: left; width: 48%; margin-left: 2%;" >
+       <strong>{% trans 'pdfTemplates.correctiveNote.afterCorrection' %}</strong><br/>
+       <strong>{% trans 'pdfTemplates.correctiveNote.vat' %}:</strong> {{document_tax.tax_indocument_currency }} {{ document_currency }} = {{document_tax.tax_in_system_currency}} {{ currency }} <br/>
+        {% trans 'pdfTemplates.correctiveNote.rate'  %}  1 {{ exchange_rate_document.currency }} = {{ exchange_rate_document.rate }} {{ exchange_rate_document.quote_currency }} <br/>
+         <i>{% trans "pdfTemplates.correctiveNote.table" %} {{ exchange_rate_document.provider_name }} {% trans "pdfTemplates.correctiveNote.number" %} {{exchange_rate_document.table_name}} {% trans "pdfTemplates.correctiveNote.dated" %} {{exchange_rate_document.table_date}}  </i>
+    </div> 
+     <div style="clear: both;"></div>
+     <br/>
+     <strong>{% trans "pdfTemplates.correctiveNote.amountOfTaxIncrease" %}:</strong> {{ amount_of_tax_increase.amount_in_currency }} {{ exchange_rate_of_tax_increase.currency }} <br/>
+     
+  </div>
+   
+  <div style="clear: both;"></div>
+   
+   {% comment %} EXCHANGE RATES SECTION {% endcomment %}
+  
+  {% if type_currency_document == 2 %}
+ <br/>
+ <div>
+    {% for exchange_rate in exchange_rates %}
+       {% trans 'pdfTemplates.correctiveNote.rate' %} 1 {{ exchange_rate.currency }} = {{ exchange_rate.rate }} {{ exchange_rate.quote_currency }}<br/>
+    {% endfor %}
+     <i>{% trans "pdfTemplates.correctiveNote.table" %} {{ exchange_rate_provider_name }} {% trans "pdfTemplates.correctiveNote.number" %} {{exchange_rate_table_name}} {% trans "pdfTemplates.correctiveNote.dated" %} {{exchange_rate_date}}  </i>
+ </div>
+  <br/>
+
+  <div>
+      <strong> {% trans "pdfTemplates.correctiveNote.vat" %}: </strong> {{ amount_of_tax_increase.amount_in_document_currency }} {{ document_currency }} = {{ amount_of_tax_increase.amount_in_currency }} {{ currency }}<br/>
+      {% trans "pdfTemplates.correctiveNote.rate" %} 1 {{ exchange_rate_document.currency }} = {{ exchange_rate_document.rate }} {{ exchange_rate_document.quote_currency }}<br/>
+      <i>{% trans "Table" %} {{ exchange_rate_table_name }} {% trans "number" %} {{exchange_rate_table_name}} {% trans "dated" %} {{exchange_rate_date}}  </i>
+  </div>
+{% endif %}
+
+<hr style="clear: both;"/>
+  {% comment %} TOTALS SECTION {% endcomment %}
+   
+   <div style="width: 30%; float:left;">
+  <strong>{% trans "pdfTemplates.correctiveNote.issuedBy" %}:</strong><br/>
+  {{ issuer_name }}
+</div>
+
+<div style="width: 70%; float: right;">
+   <div style="background: #efefef; padding: 5px; font-size: 1.2em;" >
+
+       <div style="float: left; width: 68%;" >
+          <strong>{% trans "pdfTemplates.correctiveNote.totalToPay" %}</strong>
+       </div>
+
+       <div style="float: right; width: 30%; text-align: right;" >
+          <strong>{{ total_diffrence.gross }} {{ document_currency }} </strong>
+       </div>
+
+       <div style="clear: both;"></div>
+
+       <div style="text-align:right;">
+
+          {% trans "pdfTemplates.correctiveNote.byWords" %}: 
+          {% with currency_lang_string=document_currency|add:","|add:document_language %}
+             {{ total_diffrence.gross|number_to_words:currency_lang_string}}
+          {% endwith %}
+       </div>
+
+    </div>
+    
+</div>
+   
+
+<div style="clear: both;"></div>
+
+<hr style="clear: both;"/>
+<br/>
+<br/>
+   {% comment %} BOTTOM SECTION {% endcomment %}
+{% if stamp_url %}
+  <div style="float:left;width:48%">
+      <img src="{{ stamp_url }}" style="height:90px; max-height:90px;">
+  </div>
+{% endif %}
+
+
+<div style="float: right; width: 25%; text-align: center;">
+    <strong>{% trans 'pdfTemplates.correctiveNote.receptionDate' %}:</strong><br/>
+    <br/><br/>
+    <span>..................................................</span>
+</div>
+
+<div style="float: right; width: 25%; text-align: center;">
+    <strong>{% trans 'pdfTemplates.correctiveNote.recieverOfCorrectionInvoice' %}:</strong><br/>
+    <br/><br/>
+    <span>..................................................</span>
+</div>
+
+
+
+</body>
+</html>
