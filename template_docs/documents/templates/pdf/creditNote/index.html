@@ -1,0 +1,188 @@
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Credit Note</title>
+    <meta name="description" content="Invoice">
+</head>
+{% comment %} 20190828 {% endcomment %}
+<body>
+{% comment %} HEADER {% endcomment %}
+  <div style="float: left; width: 50%; text-align: center;">
+      <div style="font-weight: bold; font-size: 2em;">{% trans 'pdfTemplates.creditNote.creditNote' %}</div>
+      <div style="font-weight: bold; font-size: 1.5em;">{{ credit_note_number }}</div>
+
+
+      <div style="margin-bottom: 5px;">
+      <div style="line-height: 60px; height: 40px;justify-content: flex-end; " class="barcode" > {{credit_note_number}}</div>
+        <i>{% trans 'pdfTemplates.creditNote.orginal' %} / <span class="line-through" >{% trans 'pdfTemplates.creditNote.copy' %}</span></i> 
+      </div>
+
+  </div>
+
+  <div style="float: right; width: 50%; text-align: center;">
+     <div style="margin-bottom: 10px;">
+       {% if logo_url%}
+          <img src="{{ logo_url }}" style=" max-height: 50px; margin: 0; padding: 0;"/>
+       {% endif %}
+     </div>
+     <strong>{{ place_of_issue }}, {{ date_of_issue }}</strong>
+  </div>
+
+<div style="clear:both;"></div>
+<hr style="clear: both;"/>
+<br/>
+<br/>
+
+{% comment %} CONTRACTORS SECTION {% endcomment %}
+
+<div style="display:flex;" class="pdf-invoice__addresses-section">
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__sender-address {% else %} pdf-invoice__sender-address-1 {% endif %} ">
+          <strong>{% trans "pdfTemplates.creditNote.seller" %} :</strong><br/>
+          <br/>
+          {{ sender.name }}<br/>
+          {% trans "pdfTemplates.creditNote.address" %}: {{ sender.street }} {{sender.building_nr}}<br/>
+          {{sender.postal_code}} {{sender.city}}<br/>
+          {{sender.country}}<br/>
+          {% trans "pdfTemplates.creditNote.vatId" %}: {{sender.vat_id}}<br/>
+       </div>
+
+       <div class="{% if addresse|length > 0 %} pdf-invoice__recipient-addresses-section {% else %} pdf-invoice__recipient-addresses-section-1 {% endif %}">
+           
+        <div  style="display:flex;">
+                <div  class="{% if addresse|length > 0 %} pdf-invoice__recipient-address {% else %} pdf-invoice__recipient-address-1 {% endif %}">
+                    <strong>{% trans "pdfTemplates.creditNote.customer" %}:</strong><br/>
+                    <br/>
+                    {{recipient.name}}<br/>
+                    {% trans "pdfTemplates.creditNote.address" %}: {{recipient.street}} {{recipient.building_number}}<br/>
+                    {{ recipient.postal_code }} {{ recipient.city }}<br/>
+                    {{ recipient.country }}<br/>
+                    {% trans "pdfTemplates.creditNote.vatId" %}: {{ recipient.vat_id }} 
+                </div>
+                
+                {% if addresse|length > 0 %}
+                <div  class="pdf-invoice__addressee-address"  >
+                    <strong>{% trans "pdfTemplates.creditNote.recipient" %}:</strong><br/>
+                    <br/>
+                    {{addresse.name}}<br/>
+                    {% trans "pdfTemplates.creditNote.address" %}: {{addresse.street}} {{addresse.building_nr}}<br/>
+                    {{ addresse.postal_code }} {{ addresse.city }}
+                    {{ addresse.country }} 
+                </div> 
+                {% endif %}
+            </div>
+        
+       </div>
+
+</div>
+
+<div style="clear: both;"></div>
+
+<hr style="clear: both;"/>
+
+{% comment %} TITLES FORWARDING POSITIONS {% endcomment %}
+<div style="clear: both;"></div>
+
+<div style="width: 60%; float: left;">
+    <strong>{% trans 'pdfTemplates.creditNote.title' %}:</strong><br/>
+    <br/>
+    {{ title }}
+</div>
+
+<div style="width: 38%; float: left;" >
+  <strong>{% trans 'pdfTemplates.creditNote.forwardingPosition'%}:</strong><br/>
+  <br/>
+  {{ forwarding_positions }}
+</div>
+
+<div style="clear: both;"></div>
+
+<br/>
+
+{% comment %} TABLE CREDIT NOTE DETAILS {% endcomment %}
+
+<table id="invoiceDetails" >
+  <thead>
+      <tr>
+         <td style="width: 65%">{% trans 'pdfTemplates.creditNote.contents'  %}</td>
+         <td style="width: 35%">{% trans  'pdfTemplates.creditNote.amount' %}</td>
+      </tr>
+  </thead>
+  <tbody>
+      {% for item in items%}
+        <tr>
+           <td>
+              <strong>{{ item.service_name }}</strong><br>
+              <i>{{ item.service_name }}</i>
+           </td>
+           <td>{{ item.amount }} {{ document_currency }}</td>
+        </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+<br/>
+
+<div class="clear"></div>
+
+<table class="regular">
+   <tbody>
+     <tr>
+        <td>
+        <strong>{% trans 'pdfTemplates.creditNote.toPay' %}</strong>
+        </td>
+        <td> {{ amount_to_pay }} {{ document_currency }}</td>
+     </tr>
+     <tr>
+        <td>
+          <strong>{% trans 'pdfTemplates.creditNote.paymentTerm' %}</strong>
+        </td>
+        <td> {{ payment_term }} </td>
+     </tr>
+     {% if transfer_details %}
+        <tr>
+            <td>
+                <strong>{% trans 'pdfTemplates.creditNote.transferDetails' %}</strong>
+            </td>
+            <td> 
+                {{ transfer_details.payment_type }}<br/>
+                {{ document_currency }}: {{ transfer_details.bank }} <br/>
+                {% trans 'pdfTemplates.creditNote.swiftCode' %}: {{ transfer_details.swift_code }}<br/>
+                {{ transfer_details.bank_account }}
+            </td>
+        </tr>
+      {% endif %}
+
+      {% if notes %}
+         <tr>
+            <td>
+                <strong>{% trans 'pdfTemplates.creditNote.notes' %}</strong>
+            </td>
+            <td>{{ notes|linebreaksbr }}</td>
+        </tr>
+      {% endif %}
+
+      {% if issuer %}
+         <tr>
+           <td>
+             <strong>{% trans 'pdfTemplates.creditNote.issuer' %}</strong>
+           </td>
+           <td>
+             {{ issuer }}
+           </td>
+         </tr>
+      {% else %}
+          <b>{% trans 'pdfTemplates.creditNote.issuer' %}:</b> <span></span>
+      {% endif %}
+
+
+   </tbody>
+</table>
+<div style="clear: both;"></div>
+
+<body>
+</html>

@@ -1,0 +1,186 @@
+@page {
+    
+    margin-top: 0.3in;
+    margin-bottom: 1in;
+    margin-left: 0.4in;
+    margin-right: 0.4in; 
+     size: A4;
+
+    @bottom-right {
+        
+        content: counter(page)"/"counter(pages);
+        margin-bottom: 0.1in;
+        font-size: 8pt;
+        
+    }
+ 
+}
+
+/* fonts */
+@font-face {
+    font-family: DejaVuSerifCondensed ;
+    src: url(../../fonts/DejaVuSerifCondensed.ttf);
+}
+
+@font-face {
+    font-family: DejaVuSerifCondensed-Bold ;
+    src: url(../../fonts/DejaVuSerifCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: DejaVuSerifCondensed-Italic ;
+    src: url(../../fonts/DejaVuSerifCondensed-Italic.ttf);
+}
+
+@font-face {
+    font-family: Libre Barcode;
+    src: url(../../fonts/librebarcode128-regular.ttf);
+}
+
+
+body {
+    font-size: 10pt;
+    font-family: DejaVuSerifCondensed !important;
+}
+
+.barcode  {
+    font-family: Libre Barcode !important;
+    font-size: 60px; 
+    /* line-height: 25px; */
+    padding: 0px; 
+    margin-top:3px !important;
+  
+     /* background-color: green;  */
+    
+  }
+
+
+#invoiceDetails {
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#invoiceDetails thead tr {
+    background: #F1F1F1;
+}
+
+#invoiceDetails thead th {
+    font-weight: bold;
+}
+
+#invoiceDetails tr {
+    border: 1px solid #C3C3C3;
+}
+
+#invoiceDetails td {
+    border: 1px solid #C3C3C3;
+    padding: 3px 5px;
+}
+
+.no-border {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+i {
+    font-size: 0.9em;
+    color: #444;
+}
+
+.totals th {
+    padding: 5px;
+}
+
+.totals td {
+    border: 1px solid #d8d8d8;
+    padding: 2px;
+    
+}
+
+.regular {
+    border-collapse: collapse;
+}
+
+.regular tr td {
+    padding: 3px 10px;
+    vertical-align: top;
+    margin: 0;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.line-through{
+   text-decoration: line-through;
+}
+
+/* contractor_section */
+
+.pdf-invoice__sender-address {
+    width: 33%;
+    float: left;
+   
+}
+
+.pdf-invoice__sender-address-1 {
+    width: 49.5%;
+    float: left;
+   
+}
+
+.pdf-invoice__recipient-addresses-section {
+    float: left;
+    width: 66%;
+    margin-left: 1%;
+   
+}
+
+.pdf-invoice__recipient-address {
+    width: 49%;
+    /* float: left; */
+    
+}
+
+.pdf-invoice__addressee-address {
+    width: 49%;
+    /* float: left; */
+    margin-left: 1%;
+  
+}
+
+.pdf-invoice__orders-list {
+    padding-top: 5px;
+    border-top: 1px dotted #888;
+    margin-top: 5px;
+}
+
+.pdf-invoice__recipient-addresses-section-1 {
+    width: 49.5%;
+    margin-left: 1%;
+   
+}
+
+.pdf-invoice__recipient-address-1 {
+    width: 100%;
+}
+
+.center-item{
+   text-align: center;
+   white-space: nowrap;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+

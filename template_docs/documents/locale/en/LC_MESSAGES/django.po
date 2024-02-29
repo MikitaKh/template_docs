@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-27 23:49+0100\n"
+"POT-Creation-Date: 2024-02-29 22:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,6 +42,12 @@ msgstr "Regarding Sales from Date"
 msgid "pdfTemplates.correctiveNote.seller"
 msgstr "Seller"
 
+#: .\documents\templates\pdf\correctiveNote\index.html:51
+#: .\documents\templates\pdf\correctiveNote\index.html:68
+#: .\documents\templates\pdf\correctiveNote\index.html:79
+msgid "pdfTemplates.correctiveNote.address"
+msgstr "Address"
+
 #: .\documents\templates\pdf\correctiveNote\index.html:54
 #: .\documents\templates\pdf\correctiveNote\index.html:71
 msgid "pdfTemplates.correctiveNote.vatId"
@@ -67,10 +73,6 @@ msgstr "Customer"
 #: .\documents\templates\pdf\correctiveNote\index.html:76
 msgid "pdfTemplates.correctiveNote.recipient"
 msgstr "Recepient"
-
-#: .\documents\templates\pdf\correctiveNote\index.html:79
-msgid "pdfTemplates.correctiveNote.address"
-msgstr "Address"
 
 #: .\documents\templates\pdf\correctiveNote\index.html:91
 msgid "pdfTemplates.correctiveNote.forwardingPosition:"
@@ -221,6 +223,27 @@ msgstr "After correction"
 msgid "pdfTemplates.correctiveNote.amountOfTaxIncrease"
 msgstr "The amount of tax increase"
 
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\invoice\index.html:266
+#: .\documents\templates\pdf\invoice\index.html:284
+#: .\documents\templates\pdf\invoice\index.html:291
+msgid "Table"
+msgstr ""
+
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\invoice\index.html:266
+#: .\documents\templates\pdf\invoice\index.html:284
+#: .\documents\templates\pdf\invoice\index.html:291
+msgid "number"
+msgstr ""
+
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\invoice\index.html:266
+#: .\documents\templates\pdf\invoice\index.html:284
+#: .\documents\templates\pdf\invoice\index.html:291
+msgid "dated"
+msgstr ""
+
 #: .\documents\templates\pdf\correctiveNote\index.html:357
 msgid "pdfTemplates.correctiveNote.issuedBy"
 msgstr "Issuer"
@@ -240,6 +263,86 @@ msgstr "Reception Date"
 #: .\documents\templates\pdf\correctiveNote\index.html:408
 msgid "pdfTemplates.correctiveNote.recieverOfCorrectionInvoice"
 msgstr "Receiver of Correction Invoice"
+
+#: .\documents\templates\pdf\creditNote\index.html:17
+msgid "pdfTemplates.creditNote.creditNote"
+msgstr "CREDIT NOTE"
+
+#: .\documents\templates\pdf\creditNote\index.html:23
+msgid "pdfTemplates.creditNote.orginal"
+msgstr "Original"
+
+#: .\documents\templates\pdf\creditNote\index.html:23
+msgid "pdfTemplates.creditNote.copy"
+msgstr "Copy"
+
+#: .\documents\templates\pdf\creditNote\index.html:48
+msgid "pdfTemplates.creditNote.seller"
+msgstr "Seller"
+
+#: .\documents\templates\pdf\creditNote\index.html:51
+#: .\documents\templates\pdf\creditNote\index.html:64
+#: .\documents\templates\pdf\creditNote\index.html:75
+msgid "pdfTemplates.creditNote.address"
+msgstr "Address"
+
+#: .\documents\templates\pdf\creditNote\index.html:54
+#: .\documents\templates\pdf\creditNote\index.html:67
+msgid "pdfTemplates.creditNote.vatId"
+msgstr "VAT ID"
+
+#: .\documents\templates\pdf\creditNote\index.html:61
+msgid "pdfTemplates.creditNote.customer"
+msgstr "Customer"
+
+#: .\documents\templates\pdf\creditNote\index.html:72
+msgid "pdfTemplates.creditNote.recipient"
+msgstr "Recepient"
+
+#: .\documents\templates\pdf\creditNote\index.html:95
+msgid "pdfTemplates.creditNote.title"
+msgstr "Title"
+
+#: .\documents\templates\pdf\creditNote\index.html:101
+msgid "pdfTemplates.creditNote.forwardingPosition"
+msgstr "Forwarding position"
+
+#: .\documents\templates\pdf\creditNote\index.html:116
+msgid "pdfTemplates.creditNote.contents"
+msgstr "Contents"
+
+#: .\documents\templates\pdf\creditNote\index.html:117
+msgid "pdfTemplates.creditNote.amount"
+msgstr "Amount"
+
+#: .\documents\templates\pdf\creditNote\index.html:141
+msgid "pdfTemplates.creditNote.toPay"
+msgstr "To Pay"
+
+#: .\documents\templates\pdf\creditNote\index.html:147
+msgid "pdfTemplates.creditNote.paymentTerm"
+msgstr "Payment Term"
+
+#: .\documents\templates\pdf\creditNote\index.html:154
+msgid "pdfTemplates.creditNote.transferDetails"
+msgstr "Transfer Details"
+
+#: .\documents\templates\pdf\creditNote\index.html:159
+msgid "pdfTemplates.creditNote.swiftCode"
+msgstr "SWIFT CODE"
+
+#: .\documents\templates\pdf\creditNote\index.html:168
+msgid "pdfTemplates.creditNote.notes"
+msgstr "Notes"
+
+#: .\documents\templates\pdf\creditNote\index.html:177
+#: .\documents\templates\pdf\creditNote\index.html:184
+msgid "pdfTemplates.creditNote.issuer"
+msgstr "Issuer"
+
+#: .\documents\templates\pdf\invoice\index.html:18
+msgid "pdfTemplates.invoice.invoiceNumber"
+msgstr "Rate"
 
 #: .\documents\templates\pdf\invoice\index.html:20
 #, fuzzy
