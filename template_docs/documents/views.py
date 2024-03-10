@@ -6,6 +6,7 @@ from documents.templates_data.cmr_data_json import cmr_data
 from documents.templates_data.invoice_data_json import invoice_data
 from documents.templates_data.corrective_note_data_json import corrective_note_data
 from documents.templates_data.credit_note_json import credit_note_data
+from documents.templates_data.bol_data_json import bol_data
 
 import os
 from django.utils.translation import gettext as _
@@ -86,6 +87,18 @@ def generate_corrective_note(request):
 def generate_creditNote(request):
     
     pdf_content = PDFGenerator.generate('documents/templates/pdf/creditNote/index.html',credit_note_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename=invoice.pdf'
+
+    response.write(pdf_content)
+
+    return response
+
+
+def generate_bill_of_landing(request):
+    
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/bol/index.html',bol_data)
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename=invoice.pdf'

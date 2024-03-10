@@ -1,1 +1,252 @@
-Templates_docs
+{% load i18n %}
+
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bill of landing</title>
+    <meta name="description" content="Invoice">
+</head>
+
+<body>
+<div style="display: flex;">
+<div style=" width: 70%;">
+   
+  <div style="margin-left:6px;  font-size: 25px; ">{% trans 'pdfTemplates.bol.billOfLanding' %}</div>
+
+  <div style="margin-left:6px; ">
+     {{ issuer.name }}<br/>
+     {{ issuer.street}}<br/>
+     {{issuer.city}} ,{{ issuer.state }} {{ issuer.postal_code }}
+  </div>
+
+ <div>{% trans 'pdfTemplates.bol.pickUpDate' %}: 
+    {% trans 'pdfTemplates.bol.ready' %}: 
+    <strong>{{ pickup.ready_date|string_to_date:"%d.%m.%Y"|date:"M d, Y" }}</strong> @ <strong>{{ pickup.ready_time }}</strong>
+    {% trans 'pdfTemplates.bol.close' %}:
+    <strong>{{ pickup.close_date|string_to_date:"%d.%m.%Y"|date:"M d, Y" }}</strong> @ <strong>{{ pickup.close_time }}</strong>
+   </div>
+  
+</div>
+<div style=" width: 30%; height:97px; border: 1px solid black; ">
+    <span style=" display: inline-block;margin-left:15px; margin-top: 5px !important;">
+      {% trans 'pdfTemplates.bol.placeProLabelHere' %}
+    </span>
+</div>
+</div>
+  {% comment %} REF NUMBERS SHIPPER CONSIGNEE  {% endcomment %}
+ <table class="bol">
+	<tbody>
+    <tr class="bol-info" style="height:70px;" >
+			<td>
+             {% trans 'pdfTemplates.bol.BOL#' %}: <span class="size-14"> {{ bol }}</span><br/>
+             {% trans 'pdfTemplates.bol.carrier' %}: <br/>
+              {% if carrier %}
+              <div class="carrier">
+               {{ carrier.name }}<br/>
+               {{ carrier.street}}<br/>
+               {{ carrier.city}} ,{{ carrier.state }} {{ carrier.postal_code }}<br/>
+               </div>
+              {% endif %}
+            <div style="margin-bottom:3px;"> 
+               {% trans 'pdfTemplates.bol.service' %}: <span style="margin-bottom:20px !important;" class="size-13">{{ service }}</span>
+            </div>
+      </td>
+			<td>
+             {% trans 'pdfTemplates.bol.poNo' %}:  <span class="size-14"> {{ po_number }} </span> <br/>
+             {% trans 'pdfTemplates.bol.refNo' %}: <span class="size-14">{{ ref_number }} </span> <br />
+             {% trans 'pdfTemplates.bol.loadTenderNo' %}: <span class="size-14"> {{ load_tender_number }} </span> 
+      </td>
+			 <td>
+             {% trans 'pdfTemplates.bol.additionalServices' %}: <br/>
+               {% for service in additional_services %}
+                  <span class="size-14" >-{{ service }}</span>
+               {% endfor %}
+        </td>
+		</tr>
+		<tr class="participants" style="height:100px;">
+			<td>
+         <strong class="font-size-10" >{% trans 'pdfTemplates.bol.shipper' %}</strong><br/>
+         <div class="height-20">
+            {{ shipper.name }}<br/>
+            {{ shipper.street }}<br/>
+            {{ shipper.office_number }}<br/>
+            {{ shipper.city}} ,{{ shipper.state }} {{ shipper.postal_code }}
+         </div>
+         <strong class="font-size-10" >{% trans 'pdfTemplates.bol.contact' %}:</strong>
+           {% if shipper.contact %}
+            {{ shipper.contact.full_name }}<br/>
+            {{ shipper.contact.phone}}<br/>
+            {{ shipper.contact.email }}
+         {% endif %}
+      </td>
+			<td>
+         <strong class="font-size-10">{% trans 'pdfTemplates.bol.consignee' %}</strong><br/>
+        <div  class="height-20">
+            {{ consignee.name }}<br/>
+            {{ consignee.street }}<br/>
+            {{ consignee.office_number }}<br/>
+            {{ consignee.city}} ,{{ consignee.state }} {{ consignee.postal_code }}
+         <div>
+         <strong class="font-size-10" >{% trans 'pdfTemplates.bol.contact' %}:</strong>
+          {% if consignee.contact %}
+            {{ consignee.contact.full_name }}<br/>
+            {{ consignee.contact.phone}}<br/>
+            {{ consignee.contact.email }}
+         {% endif %}
+      </td>
+			<td>
+         <strong class="font-size-10">{% trans 'pdfTemplates.bol.billFreightTo' %}:</strong>
+         <div  class="height-20">
+            {{ bill_freight_to.name }}<br/>
+            {{ bill_freight_to.street }}<br/>
+            {{ bill_freight_to.office_number }}<br/>
+            {{ bill_freight_to.city}} ,{{ bill_freight_to.state }} {{ bill_freight_to.postal_code }}
+         <div>
+          <strong class="font-size-10">{% trans 'pdfTemplates.bol.contact' %}:</strong>
+          {% if bill_freight_to.contact %}
+            {{ bill_freight_to.contact.full_name }}<br/>
+            {{ bill_freight_to.contact.phone}}<br/>
+            {{ bill_freight_to.contact.email }}
+         {% endif %}
+      </td>
+		</tr>
+	</tbody>
+  </table>
+  <br/>
+  {% comment %} CARGO {% endcomment %}
+   <table class="cargo">
+  <thead>
+    <tr style="text-align:center; vertical-align: bottom;">
+      <th style="width: 12%">{% trans 'pdfTemplates.bol.type' %}</th>
+      <th style="width: 12%">{% trans 'pdfTemplates.bol.pieces' %}</th>
+      <th style="width: 46%">{% trans 'pdfTemplates.bol.descriptionOfArticles' %} / {% trans 'pdfTemplates.bol.specialMarks' %}SPECIAL MARKS</th>
+      <th style="width: 10%">{% trans 'pdfTemplates.bol.class' %}</th>
+      <th style="width: 10%">{% trans 'pdfTemplates.bol.nmfc' %}</th>
+      <th style="width: 10%">{% trans 'pdfTemplates.bol.weight' %}</th>
+    </tr>
+  </thead>
+	<tbody>
+    
+       {% for cargo in cargos %}
+       <tr class="cargo-info">
+			 <td>{{ cargo.quantity }} {{ cargo.package_type }} </td>
+			 <td>{{ cargo.pieces }}</td>
+			 <td style="text-align:left !important; padding-left:6px !important;">
+          -{{cargo.name}}<br/>
+          L: {{cargo.length}} W: {{cargo.width}} H: {{ cargo.height }}
+          </td>
+          <td> {{ cargo.class }}</td>
+			 <td>{{ cargo.nmfc }}</td>
+			 <td>{{ cargo.weight}}</td>
+       </tr>
+       {% endfor %}
+		
+		<tr class="cargo-total" >
+			 <td class="left-6" colspan="2" >
+           <strong>{% trans 'pdfTemplates.bol.declaredValue' %}: {{ cargo_total.declared_value }} {{ cargo_total.currency }}</strong>
+          </td>
+          <td>
+          {% trans 'pdfTemplates.bol.totalPieces' %}: 
+              {% for cargo in cargos %}
+              {% comment %} Zmienic na |pluralize usunąć przecinek w końcu {% endcomment %}
+                <strong>{{ cargo.package_type }}: {{ cargo.quantity }},</strong> 
+              {% endfor %}
+          </td>
+			 <td class="total-weight" colspan="2">
+            <strong>{% trans 'pdfTemplates.bol.totalWeight' %}:{{ cargo_total.weight }}</strong>
+         </td>
+       
+		</tr>
+	</tbody>
+  </table>
+  <br/>
+
+{% comment %} SPECIAL INSTRUCTIONS {% endcomment %}
+<table class="special-instructions">
+   <tr>
+      <td  style="width: 67%; font-size:12px;">
+      <strong>{% trans 'pdfTemplates.bol.specialInstructions' %}:</strong><br/>
+         {{ special_instructions|linebreaksbr }}
+      </td>
+      <td  style="width: 33%;" >
+      {% trans 'pdfTemplates.bol.customsBroker' %}:
+        <div style="10px">
+            {{ customs_broker.name }}<br/>
+            {{ customs_broker.street }}<br/>
+            {{ customs_broker.office_number }}<br/>
+            {{ customs_broker.city}} ,{{ consignee.state }} {{ consignee.postal_code }}<br/>
+            <strong>{% trans 'pdfTemplates.bol.licensionNumer' %}</strong>: {{ customs_broker.licension_nr}}
+         <div>
+         <strong style="font-size:10px;">{% trans 'pdfTemplates.bol.contact' %}:</strong>
+          {% if consignee.contact %}
+            {{ customs_broker.contact.full_name }}<br/>
+            {{ customs_broker.contact.phone}}<br/>
+            {{ customs_broker.contact.email }}
+         {% endif %}
+        
+      
+      </td>
+   </tr>
+</table>
+<br/>
+
+<table class="signatures">
+   <tr>
+     <td class="border-left left-6"  style="width: 45%;">
+      {% trans 'pdfTemplates.bol.shipper' %} <span style="padding-left:27px;" >{{ shipper.name }}</span>
+     </td>
+     <td style="width: 35%;">
+      {% trans 'pdfTemplates.bol.per' %} {{ shipper_signature.person  }}
+     </td>
+     <td class="border-right" style="width: 20%;">
+      {% trans 'pdfTemplates.bol.date' %} {{ shipper_signature.date|string_to_date:"%d.%m.%Y"|date:"M d, Y" }} 
+     </td>
+   </tr>
+   <tr>
+     <td class="border-left left-6 ">
+     {% trans 'pdfTemplates.bol.carrier' %}<span style="padding-left:27px;" >{{ carrier.name }}</span>
+     </td>
+     <td>
+      PER {{ carrier_signature.person  }}
+    </td>
+     <td class="border-right">
+      {% trans 'pdfTemplates.bol.date' %} {{ carrier_signature.date|string_to_date:"%d.%m.%Y"|date:"M d, Y" }} 
+     </td>
+   </tr>
+   <tr>
+    <td class="border-left left-6 ">
+    {% trans 'pdfTemplates.bol.consignee' %} <span style="padding-left:10px;" >{{ consignee.name }}</span>
+    </td>
+    <td>
+     {% trans 'pdfTemplates.bol.per' %} {{ consignee_signature.person  }}
+    </td>
+    <td class="border-right">
+     {% trans 'pdfTemplates.bol.date' %} {{ consignee_signature.date|string_to_date:"%d.%m.%Y"|date:"M d, Y" }} 
+   </td>
+   </tr>
+</table>
+
+<div class="font-size-9_5" style="padding:5px;">
+   <div style="float: left;">{% trans 'pdfTemplates.bol.hmIndicates' %}</div>
+   <div style="float: right;">{% trans 'pdfTemplates.bol.straightBillOfLanding' %}</div>
+</div>
+
+<div style="clear: both;"></div>
+
+<div style="padding-top: 40px; padding-bottom:7px;">
+ <strong class="font-size-9" >{% trans 'pdfTemplates.bol.terms' %}</strong>
+</div>
+ <div class="font-size-9_5 left-6 " style="text-align: justify;">
+   {{ terms|linebreaks }} 
+</div>
+
+<div class="font-size-9" style="padding-right:30px; padding-top:8px; float: right;"> 
+  {% trans 'pdfTemplates.bol.driverMustVerifyPieceCounts' %}
+</div>
+
+
+</body>
+</html>

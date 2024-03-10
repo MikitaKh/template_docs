@@ -1,5 +1,7 @@
 from django import template
 from num2words import num2words
+from datetime import datetime
+
 
 register = template.Library()
 
@@ -66,7 +68,9 @@ def number_to_words(value, args):
 
     return result
 
-
+@register.filter
+def string_to_date(date_str, format_str):
+    return datetime.strptime(date_str, format_str)
 
 
     
