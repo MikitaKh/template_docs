@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-10 14:24+0100\n"
+"POT-Creation-Date: 2024-03-12 22:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -667,10 +667,201 @@ msgstr ""
 msgid "In words:"
 msgstr ""
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:80
-msgid "Osoba kontaktowa:"
-msgstr ""
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:25
+msgid "pdfTemplate.shippingInstr.orderIssuedBy"
+msgstr "Order issued by"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:124
-msgid "Godziny otwarcia:"
-msgstr ""
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:26
+msgid "pdfTemplate.shippingInstr.email"
+msgstr "email"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:27
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:312
+msgid "pdfTemplate.shippingInstr.branch"
+msgstr "Branch"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:28
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:67
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:307
+msgid "pdfTemplate.shippingInstr.taxId"
+msgstr "TAX ID"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:48
+msgid "pdfTemplate.shippingInstr.transportOrder"
+msgstr "Transport Order"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:48
+msgid "pdfTemplate.shippingInstr.Nr"
+msgstr "Nr"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:53
+msgid "pdfTemplate.shippingInstr.pleaseEnterTheOrderNumberOnTheInvoice"
+msgstr "Please enter the order number on the invoice"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:62
+msgid "pdfTemplate.shippingInstr.carrier"
+msgstr "Carrier"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:72
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:167
+msgid "pdfTemplate.shippingInstr.contactPerson"
+msgstr "Contact Person"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:82
+msgid "pdfTemplate.shippingInstr.conveyance"
+msgstr "Conveyance"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:82
+msgid "pdfTemplate.shippingInstr.licenceplates"
+msgstr "Licence plates"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:101
+msgid "pdfTemplate.shippingInstr.address"
+msgstr "ADDRESS"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:101
+msgid "pdfTemplate.shippingInstr.pointsOfInterests"
+msgstr "POINTS OF INTEREST"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:102
+msgid "pdfTemplate.shippingInstr.date"
+msgstr "DATE"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:103
+msgid "pdfTemplate.shippingInstr.details"
+msgstr "DETAILS"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:117
+msgid "pdfTemplate.shippingInstr.openningHours"
+msgstr "Openning Hours"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:142
+msgid "pdfTemplate.shippingInstr.commodity"
+msgstr "Commodity"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:143
+msgid "pdfTemplate.shippingInstr.packaging"
+msgstr "Packaging"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:144
+msgid "pdfTemplate.shippingInstr.pieces"
+msgstr "Pieces"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:145
+msgid "pdfTemplate.shippingInstr.grossWeightKg"
+msgstr "Gross weight [kg]"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:146
+msgid "pdfTemplate.shippingInstr.CBM"
+msgstr "CBM"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:147
+msgid "pdfTemplate.shippingInstr.dimenssions"
+msgstr "Dimensions"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:148
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:172
+msgid "pdfTemplate.shippingInstr.comments"
+msgstr "Comments"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:161
+msgid "pdfTemplate.shippingInstr.totalCargo"
+msgstr "Total Gross Weight"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:166
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:260
+msgid "pdfTemplate.shippingInstr.referenceNumber"
+msgstr "Reference number"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:168
+msgid "pdfTemplate.shippingInstr.phone"
+msgstr "Tel"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:202
+msgid "pdfTemplate.shippingInstr.freight"
+msgstr "Freight"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:202
+msgid "pdfTemplate.shippingInstr.net"
+msgstr "net"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:202
+msgid "pdfTemplate.shippingInstr.VAT"
+msgstr "VAT"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:204
+msgid "pdfTemplate.shippingInstr.paymentTerm"
+msgstr "Payment Term"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:213
+msgid "pdfTemplate.shippingInstr.valueOfCommodity"
+msgstr "Value of commodity"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:218
+msgid "pdfTemplate.shippingInstr.additionalCost"
+msgstr "Additional cost"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:234
+msgid "pdfTemplate.shippingInstr.additionalRemarks"
+msgstr "Additional remarks"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:250
+msgid "pdfTemplate.shippingInstr.PIN"
+msgstr "PIN"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:270
+msgid "pdfTemplate.shippingInstr.customsClearance"
+msgstr "Customs clearance"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:295
+msgid "pdfTemplate.shippingInstr.carrierSignature"
+msgstr "Carrier"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:297
+msgid "pdfTemplate.shippingInstr.acceptance"
+msgstr "I hereby certify that I accept the general terms of the transportation contract."
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:307
+msgid "pdfTemplate.shippingInstr.tel"
+msgstr "tel"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:307
+msgid "pdfTemplate.shippingInstr.fax"
+msgstr "fax"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:307
+msgid "pdfTemplate.shippingInstr.regon"
+msgstr "regon"
+
+msgid "poi_load"
+msgstr "LOAD"
+
+msgid "poi_custom"
+msgstr "CUSTOMS"
+
+msgid "poi_unload"
+msgstr "UNLOAD"
+
+msgid "poi_open_t1"
+msgstr "OPEN T1"
+
+msgid "poi_port_out"
+msgstr "PORT OUT"
+
+msgid "poi_document_reciept"
+msgstr "RECEIPT OF DOCUMENTS"
+
+msgid "poi_empty_road"
+msgstr "EMPTY ROAD"
+
+msgid "poi_unload_empty"
+msgstr "UNLOAD EMPTY"
+
+msgid "poi_load_full"
+msgstr "LOAD FULL"
+
+msgid "poi_unload_full"
+msgstr "UNLOAD FULL"
+
+msgid "poi_port_in"
+msgstr "PORT IN"

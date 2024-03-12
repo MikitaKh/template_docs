@@ -146,18 +146,16 @@ conditions =  """<p style="text-align: justify;"><strong>Og&oacute;lne warunki i
 context_data ={
         #Podstawowe informacje
          'template_language':'pl',
-         'logo': '',
+         'logo_url': 'documents/static/images/nova_logo.png',
          'issuer': ' Mikita Kharko',
          'phone_issuer' : '+48546654543',
          'email_issuer': ' m.kharko@nova-tracking.com',
          'branch_issuer' : 'NOVA TRACKING SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ /o. Warszawa',
-         'nip':'PL9532641810',
+         'nip_issuer':'PL9532641810',
          'city' : 'Warsaw',
          'date' : '04.01.2024',
-         #tytuł dokumentu
-         'document_type' : 'Zlecenie transportowe',
+         #numer dokumentu
          'shipment_number' : 'NOV/009938/23/4',
-         'info_about_invoice': 'Proszę podać na fakturze nr zlecenia',
          #dane przewoźnika
          'carrier':'Nova Tracking Sp. z o.o.',
          'carrier_address' :'ul. Zagrodnicza 20, 61-654 Poznań',
