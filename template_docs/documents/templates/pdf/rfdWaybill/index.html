@@ -1,3 +1,6 @@
+{% load i18n %}
+{% language template_language %}
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -5,70 +8,62 @@
   </head>
 {% load static %}
 {% load custom_filters %}
-   <body>
-      <!--Nagłowek, Logo i nzawa firmy -->
-      <table class="table2 no-border" style="height: 50px; margin-top: -10px !important">
-    <tr>
-        <td rowspan="2" class="width50 center middle" >
-            {% comment %} <img src="<?= Settings::getOption('logo'); ?>" width="40%" /> {% endcomment %}
-        </td>
-        <td class="width50 center middle">
-            <div style="margin-bottom: 5px;">
-                <!--nazwa firmy zlecającej-->
-                {{company_user.full_name}}<br/>
-                NIP:{{ company_user.nip }}<br/>
-                {{ company_user.street}} ,  {{ company_user.postal_code }} {{ company_user.city }} 
-            </div>
-            {% comment %} <div style="margin-bottom: 5px;">
-                <!--numer zlecenia w kodzie kreskowym-->
-                 <barcode code="{{ shipment_number }}" type="C128A" class="barcode" size="0.4" height="2" />
-                
-            </div> {% endcomment %}
-            <div id="barcode"  >
-               {{ shipment_number }}
-            </div>
-            <div style="margin-bottom: 5px; font-size: 0.65em !important;">
-                <!--numer zlecenia textowo-->
-                  {{ shipment_number }}
-            </div>
-        </td>
-    </tr>
-</table>
+<body>
+ {% comment %} LOGO AND ISSUER  {% endcomment %}
+    <div class="logo" >
+        <img class="img" src={{logo_url}}/>
+    </div>
+
+    <div class="issued_by" >
+                <div class="issuer-info">
+                    {{company_user.full_name}}<br/>
+                    {% trans 'pdfTemplate.rfdWaybill.taxId' %}:{{ company_user.nip }}<br/>
+                    {{ company_user.street}} ,  {{ company_user.postal_code }} {{ company_user.city }} 
+                </div>    
+        
+                <div class="barcode" >
+                    {{shipment_number}}
+                </div>
+
+                <div class="barcode-number">
+                    {{ shipment_number }}
+                </div>
+    </div>
+<br/>
+ {% comment %} WAYBILL NUMBER {% endcomment %}
 <table>
     <tbody>
         <tr>
-            <td style="width: 100%;  height: 50px !important;  vertical-align:top">
-                <p class="tytulPola"><b>Nr listu przewozowego:</b></p>
+            <td class="waybill-title">
+                <p class="field-title"><b> {% trans 'pdfTemplate.rfdWaybill.waybillNumber' %}:</b></p>
                  {{shipment_number}}
             </td>
         </tr> 
     </tbody>
 </table>
-<!--DanePrzewożnika -->
+{% comment %} CARRIER  {% endcomment %}
 <table>
     <tbody>
         <tr>
-            <!--dane przewoźnika-->
-            <td style="width: 75%; vertical-align:top;">
-                <p class="tytulPola"><b>Dane przewoźnika:</b></p>
+            {% comment %} carriers info {% endcomment %}
+            <td class="carrier-details">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.carrierDetails' %}:</b></p>
                 <br/>
                 {{ carrier }}<br/>
                 {{ carrier_street }}<br/>
                 {{ carrier_postal_code }}{{ carrier_city }}<br/>
-                <b>NIP: </b> {{ carrier_nip}}
+                <b>{% trans 'pdfTemplate.rfdWaybill.taxId' %}: </b> {{ carrier_nip}}
                 <br/>
-                {% comment %} <b> Numer licencji przewoźnika: </b> {{ carrier_licension_nr }} {% endcomment %}
             </td>
-
-            <!--numer rejestracyjny pojazdu , naczepy nazwisko kierowcy-->
-            <td style="width: 25%; vertical-align:top">
-                <p class="tytulPola"><b>Numer pojazdu:</b></p>
+            {% comment %} vehicle trailer driver {% endcomment %}
+            <td class="driver-info">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.vehicleNumber' %}:</b></p>
                 {{ truck }} <br/>
 
-                <p class="tytulPola"><b> Numer naczepy:</b></p>
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.trailerNumber' %}:</b></p>
                 {{ trailer }}<br/>
 
-                <p class="tytulPola"><b> Dane kierowcy:</b></p>
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.driverData' %}:</b></p>
                 {{ driver }} <br/>
                 {{ driver_phone }}   
                 <br/>
@@ -78,82 +73,83 @@
     </tbody>
 </table>
 
-<!--Lista ladunkow -->
+{% comment %} CARGO LIST {% endcomment %}
 <table>
   <tbody>
       {% for cargo in cargos %}
            <tr>
             
-            <!--nazwa towaru-->
-            <td style="width: 20%;   vertical-align:top">
-                <p class="tytulPola"><b>Towar:</b></p>
+             {% comment %} commodity {% endcomment %}
+            <td class="cargo-1">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.commodity' %}:</b></p>
                 <br/>
                {{ cargo.name }}
             </td>
             
-            <!--Liczba opakowan-->
-            <td style="width: 20%; vertical-align:top">
-                <p class="tytulPola"><b>Liczba i typ opakowań:</b></p>
+            {% comment %} packages {% endcomment %}
+            <td class="cargo-1">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.packageType' %}:</b></p>
                 <br/>
                   {{ cargo.quantity }} [ {{ cargo.type }} ]
             </td>
 
-
-            <!--Waga-->
-            <td style="width: 15%; vertical-align:top">
-                <p class="tytulPola"><b> Waga brutto:</b></p>
+            {% comment %} weight {% endcomment %}
+            <td class="cargo-2">
+                <p class="field-title"><b> {% trans 'pdfTemplate.rfdWaybill.grossWeight' %}:</b></p>
                 <br/>
                 {{ cargo.weight_brutto }} kg
             </td>
             
-            <!--CBM-->
-            <td style="width: 15%; vertical-align:top">
-                <p class="tytulPola"><b>CBM:</b></p>
+           {% comment %} cbm {% endcomment %}
+            <td class="cargo-2">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.CBM' %}:</b></p>
                 <br/>
                 {{ cargo.CBM }} m3
             </td>
    
-            <!--Typ towaru-->
-            <td style="width: 15%;  vertical-align:top">
-                <p class="tytulPola"><b>Uwagi:</b></p>
+            {% comment %} notes {% endcomment %}
+            <td class="cargo-2">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.notes' %}:</b></p>
                 <br/>
-                <span style="padding-bottom:5px;"> {{ cargo.info|default:'Brak' }}</span>
+                <span style="padding-bottom:5px;">
+                  {% if cargo.info %} {{ cargo.info}} {% else %} {% trans 'pdfTemplate.rfdWaybill.none' %}  {% endif %}
+                </span>
             </td>
         </tr>
       {% endfor %}
   </tbody>
 </table>
 
-<!--Miejsce i data podjęcia-->
+{% comment %} POI {% endcomment %}
 {% for poi in poi_points %}
 <table>
    <tbody>
      <tr>
-        <td style="width: 60%; vertical-align:top" >
-          <p class="tytulPola"><b>Miejsce/data</b></p>
-          <!-- Czynnosć dla punktu trasy -->
-            {% for field_name , action in  dict_cargo.items  %}
-                  {% if poi|get_dictionary_item:action|length > 0 %}  
-                       <b><i>{{ field_name|upper }}</i></b><br/>
+        <td class="place-and-date" >
+          <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.place' %}/{% trans 'pdfTemplate.rfdWaybill.date' %}</b></p>
+          {% comment %} action for poi points {% endcomment %}
+            {% for action_name , action in poi.actions.items  %}
+                  {% if action %}  
+                       <b><i>{% trans  action_name|upper %}</i></b><br/>
                  {% endif %}
             {% endfor %}  
 
-          <!-- Miejsce ,adres -->    
+          {% comment %} address   {% endcomment %}
           <b>{{ poi.name }}</b>
           <br/>
           {{poi.street}} {{ poi.building_nr }} 
           {{ poi.country_code}} {{ poi.postal_code }} {{ poi.city }}, {{ poi.country}} 
           <br/>
 
-          <!-- Data i godzina -->
-          <b>Data:</b>{{ poi.start_date }}<br/>  
+         {% comment %} date and hour {% endcomment %}
+          <b>{% trans 'pdfTemplate.rfdWaybill.date' %}:</b>{{ poi.start_date }}<br/>  
         </td>
-        <!--tableka na wpis ręczny godziny i pieczatke-->
-        <td class="tytulPola" style="width: 40%; vertical-align:top;">
-            <p>Godzina wyjazdu:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Pieczątka i podpis:</b></p>
+        {% comment %} stamp and signatures {% endcomment %}
+        <td class="field-title stamp" >
+            <p style="margin-top:3px" >{% trans 'pdfTemplate.rfdWaybill.departureTime' %}:   <b style="padding-left:20px;">{% trans 'pdfTemplate.rfdWaybill.stampAndSignature' %}:</b></p>
             
             <p><b>__________________</b></p>
-            <p>Godzina przyjazdu:</p>
+            <p>{% trans 'pdfTemplate.rfdWaybill.arrivalTime' %}:</p>
           
             <p><b>__________________</b></p>
         </td>
@@ -162,12 +158,12 @@
 </table>
 {% endfor %}
 
-<!--Uwagi-->
+ {% comment %} NOTES {% endcomment %}
 <table>
     <tbody>
         <tr>
-            <td style="width: 100%;  vertical-align:top">
-                <p class="tytulPola"><b>Uwagi odbiorcy / załadowcy:</b></p>
+            <td class="notes">
+                <p class="field-title"><b>{% trans 'pdfTemplate.rfdWaybill.recipientShipperNotes' %}:</b></p>
                 <br/>
                 {{ shipment_note }}
             </td>
@@ -175,41 +171,37 @@
     </tbody>
 </table>
 
-<!--Podpisy-->
-<div class="">
-
-    <div style="text-align: center; width: 48%; float: left;">
+{% comment %} SIGNATURES {% endcomment %}
+<div>
+    <div class="driver-signature" >
         <table>
             <tbody>
-                <tr><td class="center"><strong>Podpis kierowcy</strong></td></tr>
+                <tr><td class="center"><strong>{% trans 'pdfTemplate.rfdWaybill.driverSignature' %}</strong></td></tr>
                 <tr><td style="height: 50px;"></td></tr>
             </tbody>
         </table>
     </div>
 
-    <div style="text-align: center; width: 48%; float: right;">
+    <div class="customer-signature" >
         <table>
             <tbody>
-                <tr><td class="center"><strong>Podpis klienta</strong></td></tr>
+                <tr><td class="center"><strong>{% trans 'pdfTemplate.rfdWaybill.customerSignature' %}</strong></td></tr>
                 <tr><td style="height: 50px;"></td></tr>
             </tbody>
         </table>
     </div>
-
 </div>
 
-<
 
 {% autoescape on %}
 <div class="conditions">
-   
       {{ conditions_rfd_waybill|cut:"\\"|safe }}
-
     <br/>
-    Dokument wygenerowany: {% now "D, d M y H:i:s O"  %}
-
+     {% trans 'pdfTemplate.rfdWaybill.documentCreated' %}: {% now "D, d M y H:i:s O"  %}
 </div>
 {% endautoescape %}
 
+
 </body>
 </html>
+{% endlanguage %}

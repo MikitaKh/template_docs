@@ -5,9 +5,7 @@ from datetime import datetime
 
 register = template.Library()
 
-@register.filter
-def get_dictionary_item(dictionary,key):
-    return dictionary.get(key)
+
 
 @register.filter
 def index(arr, idx):

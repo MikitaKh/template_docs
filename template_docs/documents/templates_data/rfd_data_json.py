@@ -1,6 +1,8 @@
-context_data ={
+from documents.templates_data.rfd_conditions import conditions , conditions_rfd_waybill
+
+rfd_data ={
         #Podstawowe informacje
-         'logo': 'template_docs/documents/static/images/nova_logo.png',
+         'logo_url': 'documents/static/images/nova_logo.png',
          'issuer': ' Mikita Kharko',
          'phone_issuer' : '+48546654543',
          'email_issuer': ' m.kharko@nova-tracking.com',
@@ -74,7 +76,7 @@ context_data ={
                             'info': 'Testowe uwagi do ładunku',
                             'dimensions': '23 X 45 X 56',
                             'total_weight': '48000',
-                        },
+                       },
                         ],
                     'poi_custom':[
                         {
@@ -451,7 +453,7 @@ context_data ={
           ],
          #payments
          "prefix_or_txt_arr":
-              ['null',
+              ['',
                "lub"],
          'fracht_txt_arr':
             ["Fracht przewozowy 1200 PLN netto + VAT",
@@ -497,7 +499,9 @@ context_data ={
              'postal_code':'61-654',
              'city':'Poznań'
              
-
          },
+         'conditions': conditions,
+         'conditions_rfd_waybill': conditions_rfd_waybill
+
 
 }
