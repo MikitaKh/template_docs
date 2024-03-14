@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-13 21:27+0100\n"
+"POT-Creation-Date: 2024-03-14 23:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,6 +168,237 @@ msgid "pdfTemplates.bol.driverMustVerifyPieceCounts"
 msgstr ""
 "*** DRIVER MUST VERIFY PIECE COUNTS *** DISCREPANCIES MUST BE REPORTED "
 "WITHIN 48 HOURS OF PICK UP***"
+
+#: .\documents\templates\pdf\cmr\index.html:18
+msgid "pdfTemplate.cmr.copyForSender"
+msgstr "Copy for sender"
+
+#: .\documents\templates\pdf\cmr\index.html:18
+msgid "pdfTemplate.cmr.copyForConsignee"
+msgstr "Copy for consignee"
+
+#: .\documents\templates\pdf\cmr\index.html:18
+msgid "pdfTemplate.cmr.copyForCarrier"
+msgstr "Copy for carrier"
+
+#: .\documents\templates\pdf\cmr\index.html:26
+msgid "pdfTemplate.cmr.completeOnSenderResponsibility"
+msgstr "To be completed on the sender's responsibility"
+
+#: .\documents\templates\pdf\cmr\index.html:34
+msgid "pdfTemplate.cmr.includingAnd"
+msgstr "including and"
+
+#: .\documents\templates\pdf\cmr\index.html:42
+msgid "pdfTemplate.cmr.spacesFramedFilledbyCarrier"
+msgstr "The spaces framed with heavy lines must filled in by the carrier"
+
+#: .\documents\templates\pdf\cmr\index.html:51
+msgid "pdfTemplate.cmr.caseDangerousGoodsMention"
+msgstr ""
+"In case of dangerous goods mention, besides the possible certification,on "
+"the last line of the column the particulars of the class, the number and the "
+"letter"
+
+#: .\documents\templates\pdf\cmr\index.html:62
+#: .\documents\templates\pdf\cmr\index.html:112
+#: .\documents\templates\pdf\cmr\index.html:400
+msgid "pdfTemplate.cmr.sender"
+msgstr "Sender"
+
+#: .\documents\templates\pdf\cmr\index.html:62
+#: .\documents\templates\pdf\cmr\index.html:112
+#: .\documents\templates\pdf\cmr\index.html:123
+#: .\documents\templates\pdf\cmr\index.html:137
+#: .\documents\templates\pdf\cmr\index.html:150
+msgid "pdfTemplate.cmr.nameAddressCountry"
+msgstr "(Name, address, country)"
+
+#: .\documents\templates\pdf\cmr\index.html:69
+msgid "pdfTemplate.cmr.onBehalfOfAndFor"
+msgstr "On behalf of and for"
+
+#: .\documents\templates\pdf\cmr\index.html:74
+msgid "pdfTemplate.cmr.internationalConsigment"
+msgstr "INTERNATIONAL CONSIGNMENT"
+
+#: .\documents\templates\pdf\cmr\index.html:87
+msgid "pdfTemplate.cmr.thisCarriageIsSubjectNotwithstanding"
+msgstr ""
+"This carriage is subject notwithstanding any clause to the contrary, to the "
+"Convention on \n"
+"the Contract for the international Carriage of goods by road (CMR)"
+
+#: .\documents\templates\pdf\cmr\index.html:123
+msgid "pdfTemplate.cmr.carrier"
+msgstr "Carrier"
+
+#: .\documents\templates\pdf\cmr\index.html:137
+msgid "pdfTemplate.cmr.placeOfDelivery"
+msgstr "Place of delivery of the goods"
+
+#: .\documents\templates\pdf\cmr\index.html:150
+msgid "pdfTemplate.cmr.succesiveCarriers"
+msgstr "Successive carriers"
+
+#: .\documents\templates\pdf\cmr\index.html:165
+msgid "pdfTemplate.cmrplaceAndDateTaking"
+msgstr "Place and date taking over the goods (place, country, data)"
+
+#: .\documents\templates\pdf\cmr\index.html:176
+msgid "pdfTemplate.cmr.carrierReservationsAndObservations"
+msgstr "Carrier's reservations and observations"
+
+#: .\documents\templates\pdf\cmr\index.html:188
+msgid "pdfTemplate.cmr.documenntsAttached"
+msgstr "Documents attached"
+
+#: .\documents\templates\pdf\cmr\index.html:205
+msgid "pdfTemplate.cmr.marksAndNos"
+msgstr "Marks and Nos"
+
+#: .\documents\templates\pdf\cmr\index.html:214
+msgid "pdfTemplate.cmr.numberOfPackages"
+msgstr "Number of packages"
+
+#: .\documents\templates\pdf\cmr\index.html:223
+msgid "pdfTemplate.cmr.methodOfPacking"
+msgstr "Method of packing"
+
+#: .\documents\templates\pdf\cmr\index.html:232
+msgid "pdfTemplate.cmr.natureOfGoods"
+msgstr "Nature of the goods"
+
+#: .\documents\templates\pdf\cmr\index.html:241
+msgid "pdfTemplate.cmr.statisticalNumber"
+msgstr "Statistical number"
+
+#: .\documents\templates\pdf\cmr\index.html:250
+msgid "pdfTemplate.cmr.grossWeightInKg"
+msgstr "Gross weight in kg"
+
+#: .\documents\templates\pdf\cmr\index.html:259
+msgid "pdfTemplate.cmr.volumeInM3"
+msgstr "Volume in m3"
+
+#: .\documents\templates\pdf\cmr\index.html:273
+msgid "pdfTemplate.cmr.numberUN"
+msgstr "Number UN"
+
+#: .\documents\templates\pdf\cmr\index.html:283
+msgid "pdfTemplate.cmr.lookPoint9"
+msgstr "Look point 9"
+
+#: .\documents\templates\pdf\cmr\index.html:293
+msgid "pdfTemplate.cmr.class"
+msgstr "Class"
+
+#: .\documents\templates\pdf\cmr\index.html:304
+msgid "pdfTemplate.cmr.packingGroup"
+msgstr "The packing group"
+
+#: .\documents\templates\pdf\cmr\index.html:314
+msgid "pdfTemplate.cmr.ADR"
+msgstr "( ADR* )"
+
+#: .\documents\templates\pdf\cmr\index.html:337
+msgid "pdfTemplate.cmr.senderInstructions"
+msgstr "Sender's instructions"
+
+#: .\documents\templates\pdf\cmr\index.html:348
+msgid "pdfTemplate.cmr.instructionAsToPayementForCarriage"
+msgstr "Instruction as to payement for carriage"
+
+#: .\documents\templates\pdf\cmr\index.html:352
+msgid "pdfTemplate.cmr.carriagePaid"
+msgstr "Carriage paid"
+
+#: .\documents\templates\pdf\cmr\index.html:353
+msgid "pdfTemplate.cmr.carriageForward"
+msgstr "Carriage forward"
+
+#: .\documents\templates\pdf\cmr\index.html:362
+msgid "pdfTemplate.cmr.establishedIn"
+msgstr "Established in"
+
+#: .\documents\templates\pdf\cmr\index.html:367
+#: .\documents\templates\pdf\cmr\index.html:591
+msgid "pdfTemplate.cmr.in"
+msgstr "in"
+
+#: .\documents\templates\pdf\cmr\index.html:381
+msgid "pdfTemplate.cmr.specialAgreements"
+msgstr "Special agreements"
+
+#: .\documents\templates\pdf\cmr\index.html:395
+msgid "pdfTemplate.cmr.toBePaidBy"
+msgstr "To be paid by"
+
+#: .\documents\templates\pdf\cmr\index.html:408
+msgid "pdfTemplate.cmr.currency"
+msgstr "Currency"
+
+#: .\documents\templates\pdf\cmr\index.html:413
+msgid "pdfTemplate.cmr.consignee"
+msgstr "Consignee"
+
+#: .\documents\templates\pdf\cmr\index.html:421
+msgid "pdfTemplate.cmr.carriageCharges"
+msgstr "Carriage charges"
+
+#: .\documents\templates\pdf\cmr\index.html:441
+msgid "pdfTemplate.cmr.deductions"
+msgstr "Deductions"
+
+#: .\documents\templates\pdf\cmr\index.html:459
+msgid "pdfTemplate.cmr.balance"
+msgstr "Balance"
+
+#: .\documents\templates\pdf\cmr\index.html:478
+msgid "pdfTemplate.cmr.supplemCharges"
+msgstr "Supplem. charges"
+
+#: .\documents\templates\pdf\cmr\index.html:496
+msgid "pdfTemplate.cmr.miscellaneous"
+msgstr "Miscellaneous"
+
+#: .\documents\templates\pdf\cmr\index.html:514
+msgid "pdfTemplate.cmr.insurance"
+msgstr "Insurance"
+
+#: .\documents\templates\pdf\cmr\index.html:531
+msgid "pdfTemplate.cmr.totalToBePaid"
+msgstr "Total to be paid"
+
+#: .\documents\templates\pdf\cmr\index.html:552
+msgid "pdfTemplate.cmr.cashOnDeliver"
+msgstr "Cash on deliver"
+
+#: .\documents\templates\pdf\cmr\index.html:577
+msgid "pdfTemplate.cmr.goodsRecieved"
+msgstr "Goods recieved"
+
+#: .\documents\templates\pdf\cmr\index.html:582
+msgid "pdfTemplate.cmr.place"
+msgstr "Place"
+
+#: .\documents\templates\pdf\cmr\index.html:605
+msgid "pdfTemplate.cmr.signatureAndStampofTheSender"
+msgstr "Signature and stamp of the sender"
+
+#: .\documents\templates\pdf\cmr\index.html:612
+msgid "pdfTemplate.cmr.signatureAndStampofTheCarrier"
+msgstr "Signature and stamp of the carrier"
+
+#: .\documents\templates\pdf\cmr\index.html:619
+msgid "pdfTemplate.cmr.signatureAndStampofTheConsignee"
+msgstr "Signature and stamp of the consignee"
+
+#: .\documents\templates\pdf\cmr\index.html:630
+msgid "pdfTemplate.cmr.modelIru"
+msgstr ""
+"The CMR/IRU/Poland 1976 model for international road transport corresponds "
+"to the provisions established by the International Road Transport Union (IRU)"
 
 #: .\documents\templates\pdf\correctiveNote\index.html:17
 msgid "pdfTemplates.correctiveNote.correctiveNoteNumber"
@@ -503,6 +734,165 @@ msgstr "Isue date"
 msgid "pdfTemplates.invoice.serviceDate"
 msgstr "Service date"
 
+#: .\documents\templates\pdf\invoice\index.html:48
+msgid "Seller"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:51
+#: .\documents\templates\pdf\invoice\index.html:68
+#: .\documents\templates\pdf\invoice\index.html:79
+msgid "Address:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:54
+#: .\documents\templates\pdf\invoice\index.html:71
+msgid "VAT ID:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:55
+msgid "EUR:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:56
+#: .\documents\templates\pdf\invoice\index.html:58
+msgid "SWIFT CODE:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:57
+msgid "VAT PL:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:65
+msgid "Customer:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:76
+msgid "Recipient:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:91
+msgid "Forwarding position:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:118
+#: .\documents\templates\pdf\invoice\index.html:129
+msgid "No"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:119
+#: .\documents\templates\pdf\invoice\index.html:130
+msgid "Description"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:120
+#: .\documents\templates\pdf\invoice\index.html:131
+msgid "Quantity"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:121
+#: .\documents\templates\pdf\invoice\index.html:132
+msgid "U/M"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:122
+#: .\documents\templates\pdf\invoice\index.html:133
+msgid "Unit Price"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:123
+#: .\documents\templates\pdf\invoice\index.html:138
+msgid "Tax"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:124
+#: .\documents\templates\pdf\invoice\index.html:135
+msgid "Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:125
+msgid "Tax Amount"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:126
+msgid "Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:127
+#: .\documents\templates\pdf\invoice\index.html:134
+msgid "Currency"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:136
+#: .\documents\templates\pdf\invoice\index.html:265
+#: .\documents\templates\pdf\invoice\index.html:282
+#: .\documents\templates\pdf\invoice\index.html:290
+msgid "Exchange Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:137
+msgid "Amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:139
+msgid "Tax amount in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:140
+msgid "Total in"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:184
+msgid "Way of Payment:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:186
+msgid "Day of Payment"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:203
+#: .\documents\templates\pdf\invoice\index.html:238
+msgid "Tax Rate"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:204
+#: .\documents\templates\pdf\invoice\index.html:239
+msgid "Net Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:205
+#: .\documents\templates\pdf\invoice\index.html:240
+msgid "Tax Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:206
+#: .\documents\templates\pdf\invoice\index.html:241
+msgid "Gross Value"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:220
+#: .\documents\templates\pdf\invoice\index.html:255
+msgid "Grand Total"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:289
+msgid "TAX:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:298
+msgid "Notes:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:307
+msgid "Issued By:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:315
+msgid "Amount payable:"
+msgstr ""
+
+#: .\documents\templates\pdf\invoice\index.html:331
+msgid "In words:"
+msgstr ""
 
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:25
 msgid "pdfTemplate.shippingInstr.orderIssuedBy"
@@ -672,51 +1062,52 @@ msgstr "fax"
 msgid "pdfTemplate.shippingInstr.regon"
 msgstr "regon"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:23
+#: .\documents\templates\pdf\rfdWaybill\index.html:21
+#: .\documents\templates\pdf\rfdWaybill\index.html:59
 msgid "pdfTemplate.rfdWaybill.taxId"
 msgstr "TAX ID"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:46
+#: .\documents\templates\pdf\rfdWaybill\index.html:40
 msgid "pdfTemplate.rfdWaybill.waybillNumber"
 msgstr "Waybill Number"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:58
+#: .\documents\templates\pdf\rfdWaybill\index.html:54
 msgid "pdfTemplate.rfdWaybill.carrierDetails"
 msgstr "Carrier details"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:71
+#: .\documents\templates\pdf\rfdWaybill\index.html:65
 msgid "pdfTemplate.rfdWaybill.vehicleNumber"
 msgstr "Veicle Number"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:74
+#: .\documents\templates\pdf\rfdWaybill\index.html:68
 msgid "pdfTemplate.rfdWaybill.trailerNumber"
 msgstr "Trailer Number"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:77
+#: .\documents\templates\pdf\rfdWaybill\index.html:71
 msgid "pdfTemplate.rfdWaybill.driverData"
 msgstr "Driver Data"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:95
+#: .\documents\templates\pdf\rfdWaybill\index.html:91
 msgid "pdfTemplate.rfdWaybill.commodity"
 msgstr "Commodity"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:102
+#: .\documents\templates\pdf\rfdWaybill\index.html:99
 msgid "pdfTemplate.rfdWaybill.packageType"
 msgstr "Package Type / Qty"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:110
+#: .\documents\templates\pdf\rfdWaybill\index.html:107
 msgid "pdfTemplate.rfdWaybill.grossWeight"
 msgstr "Gross weight"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:117
+#: .\documents\templates\pdf\rfdWaybill\index.html:115
 msgid "pdfTemplate.rfdWaybill.CBM"
 msgstr "CBM"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:124
+#: .\documents\templates\pdf\rfdWaybill\index.html:123
 msgid "pdfTemplate.rfdWaybill.notes"
 msgstr "Notes"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:127
+#: .\documents\templates\pdf\rfdWaybill\index.html:126
 msgid "pdfTemplate.rfdWaybill.none"
 msgstr "None"
 
@@ -725,38 +1116,37 @@ msgid "pdfTemplate.rfdWaybill.place"
 msgstr "Place"
 
 #: .\documents\templates\pdf\rfdWaybill\index.html:141
-#: .\documents\templates\pdf\rfdWaybill\index.html:157
+#: .\documents\templates\pdf\rfdWaybill\index.html:160
 msgid "pdfTemplate.rfdWaybill.date"
 msgstr "Date"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:161
+#: .\documents\templates\pdf\rfdWaybill\index.html:165
 msgid "pdfTemplate.rfdWaybill.departureTime"
 msgstr "Departure Time"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:161
+#: .\documents\templates\pdf\rfdWaybill\index.html:165
 msgid "pdfTemplate.rfdWaybill.stampAndSignature"
 msgstr "Stamp and signature"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:164
+#: .\documents\templates\pdf\rfdWaybill\index.html:168
 msgid "pdfTemplate.rfdWaybill.arrivalTime"
 msgstr "Arrival Time"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:178
+#: .\documents\templates\pdf\rfdWaybill\index.html:183
 msgid "pdfTemplate.rfdWaybill.recipientShipperNotes"
 msgstr "Recipient / Shipper Notes"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:192
+#: .\documents\templates\pdf\rfdWaybill\index.html:197
 msgid "pdfTemplate.rfdWaybill.driverSignature"
 msgstr "Driver Signature"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:201
+#: .\documents\templates\pdf\rfdWaybill\index.html:206
 msgid "pdfTemplate.rfdWaybill.customerSignature"
 msgstr "Customer Signature"
 
-#: .\documents\templates\pdf\rfdWaybill\index.html:217
+#: .\documents\templates\pdf\rfdWaybill\index.html:218
 msgid "pdfTemplate.rfdWaybill.documentCreated"
 msgstr "Document Created"
-
 
 msgid "poi_load"
 msgstr "LOAD"
