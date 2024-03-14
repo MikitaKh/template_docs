@@ -10,22 +10,22 @@
 
 @font-face {
 font-family: DejaVuSansCondensed;
-src: url(DejaVuSansCondensed.ttf);
+src: url(../../fonts/DejaVuSansCondensed.ttf);
 }
 
 @font-face {
     font-family: HelveticaNeue;
-    src: url(HelveticaNeue.ttf);
+    src: url(../../fonts/HelveticaNeue.ttf);
 }
 
 @font-face {
     font-family: HelveticaNeueBold;
-    src: url(HelveticaNeue-Bold.ttf);
+    src: url(../../fonts/HelveticaNeue-Bold.ttf);
 }
 
 @font-face{
    font-family: DejaVuSansCondensedBold;
-   src: url(DejaVuSansCondensed-Bold.ttf);  
+   src: url(../../fonts/DejaVuSansCondensed-Bold.ttf);  
 }
 
 body{
