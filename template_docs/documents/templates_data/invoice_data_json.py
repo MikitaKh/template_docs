@@ -5,6 +5,7 @@ invoice_data={
     'stamp_url':'documents/static/images/nova_logo.png',
     'issue_date':'2024-02-06',
     'service_date':'2024-01-31',
+    'duplicate_from_date':'2024-01-31', # Duplikat
     'sender':{
         'name': 'PEKAO - CARGO Agencja Celna Sp. z o.o.',
         'street':'ul. Wirażowa',

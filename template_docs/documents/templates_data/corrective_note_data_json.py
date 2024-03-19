@@ -6,6 +6,7 @@ corrective_note_data = {
     'from_date':' 2023-12-14',
     'regarding_sales_from_date':'2023-12-14',
     'logo_url':'documents/static/images/nova_logo.png',
+    'duplicate_from_date':'2024-01-31', # Duplikat
     'stamp_url':'documents/static/images/nova_logo.png',
     'document_currency':'EUR',
     'currency':'PLN', #Waluta systemowa

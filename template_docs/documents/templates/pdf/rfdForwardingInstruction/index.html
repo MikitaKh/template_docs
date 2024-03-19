@@ -1,0 +1,300 @@
+{% load i18n %}
+{% language template_language %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RFD_FORWARDING_INSTRUCTION</title>
+    <meta name="description" content="rfdShippingInstruction">
+  </head>
+
+<!--PODSTAWOWE INFORMACJE-->
+{% load static %}
+{% load custom_filters %}
+
+<body>
+
+<div class="issued_by"> 
+    <div style=" padding-left:30px;"> 
+     {% trans 'pdfTemplate.shippingInstr.orderIssuedBy'  %}: {{issuer}}<br/>
+     {% trans 'pdfTemplate.shippingInstr.email'  %}: {{ email_issuer }}<br/>
+     {% trans 'pdfTemplate.shippingInstr.branch'  %}: {{ branch_issuer }}<br/>
+     {% trans 'pdfTemplate.shippingInstr.taxId'  %}: {{ nip_issuer }}
+    </div>
+</div>
+
+<div class="logo">
+    <div style="margin-top: 10px;">
+        <img class="img" src={{logo_url}}/>
+    </div>
+    <div style="font-size: 10px !important; height:10px;">
+          {{ city }} {{ date }}<br/>
+    </div>  
+</div>
+
+<div style="clear: both;"></div>
+
+<br/>
+
+<table class="transport-order">
+    <tr>
+        <td style="font-size: 18px ">
+            <b> {% trans 'pdfTemplate.forwardingInstr.forwardingOrder' %}  {% trans 'pdfTemplate.shippingInstr.Nr' %} {{ shipment_number }}</b> 
+        </td>
+    </tr>
+    <tr>
+        <td style=" font-size: 12px ">
+            {% trans "pdfTemplate.shippingInstr.pleaseEnterTheOrderNumberOnTheInvoice" %}
+        </td>
+    </tr>
+</table>
+
+<!--INFORMACJE O PRZEWOZNIKU--> 
+<table class="carrier-information">
+    <tr>
+        <td  class="carrier-label" >
+            {% trans 'pdfTemplate.shippingInstr.carrier' %}
+        </td>
+        <td class="carrier-info">
+            <b>{{ carrier  }}</b><br/>
+            <i>{{ carrier_address }}</b><br/>
+                 {% trans 'pdfTemplate.shippingInstr.taxId' %}: {{ carrier_nip }}</i>
+        </td>
+    </tr>
+    <tr>
+        <td  class="carrier-label"  >
+          {% trans 'pdfTemplate.shippingInstr.contactPerson' %} 
+        </td>
+        <td class="carrier-info">
+          {% for person in contact_person %}
+           {{ person }} <br/>
+          {% endfor %}
+        </td>
+    </tr>
+    <tr>
+        <td  class="carrier-label" >
+          {% trans 'pdfTemplate.shippingInstr.conveyance' %} /  {% trans 'pdfTemplate.shippingInstr.licenceplates' %}:
+        </td>
+        <td class="carrier-info">
+            {{ truck }}
+            {{ trailer }}
+            {{ vehicle_type }}
+            {{ driver }}
+            {{ driver_id_card }}
+            {{ driver_passport }}
+            {{ driver_phone }}
+        </td>
+    </tr>
+</table>
+<br>
+
+<!--PUNKTY TRASY ZLECENIA-->
+<table class="poi-points">
+    <thead>
+        <tr >
+            <th class="width20" ><center>{% trans 'pdfTemplate.shippingInstr.address' %} / {% trans 'pdfTemplate.shippingInstr.pointsOfInterests' %}</center></th>
+            <th class="width10"><center>{% trans 'pdfTemplate.shippingInstr.date' %}</center></th>
+            <th class="width10"><center>{% trans 'pdfTemplate.shippingInstr.details' %}</center></th>
+        </tr>
+    </thead>
+   <tbody>
+       <!-- PUNKTY -->
+       {% for poi in poi_points %}
+         <tr >
+            <td class="poi-address" >
+                <b>{{ poi.name }}</b><br/>
+                {{ poi.street }}  {{ poi.building_nr }}<br/>
+                {{ poi.country_code|default:''|striptags }}  {{ poi.postal_code|default:''|striptags }}  {{ poi.city|default:''|striptags }},
+                {{ poi.country|default:''|striptags }}<br/>
+
+                {% if poi.open_hour is not None and poi.close_hour is not None %}
+                  {% trans "pdfTemplate.shippingInstr.openningHours" %}:  {{ poi.open_hour }} - {{ poi.close_hour }}
+
+                {% endif %}
+                <br/>
+                <br/>
+            </td>
+
+            <!--data-->
+            <td class="poi-date">
+                {{ poi.date }}
+            </td>
+
+            <!--szczegoly-->
+            <td class="poi-details">
+             {% with total_weight='' %}
+               {% for action_name,action in poi.actions.items %}
+          
+                  {% if action  %}  
+                       <b>{% trans action_name|upper %}</b><br/>
+
+                            {% for cargo in action %}
+                                &bull;      
+                                {% if cargo.name %} {% trans "pdfTemplate.shippingInstr.commodity" %}: <i>{{ cargo.name }}</i>, {% endif %}
+                                {% if cargo.type %} {% trans "pdfTemplate.shippingInstr.packaging" %}: <i>{{ cargo.type }}</i>, {% endif %}
+                                {% if cargo.quantity %} {% trans "pdfTemplate.shippingInstr.pieces" %}: <i>{{ cargo.quantity }}</i> ,{% endif %}
+                                {% if cargo.weight_brutto %} {% trans "pdfTemplate.shippingInstr.grossWeightKg" %}: <i>{{ cargo.weight_brutto }}</i>, {% endif %}
+                                {% if cargo.CBM %} {% trans "pdfTemplate.shippingInstr.CBM" %}: <i>{{cargo.CBM}}</i>, {% endif %} 
+                                {% if cargo.dimensions %} {% trans "pdfTemplate.shippingInstr.dimenssions" %}: <i>{{cargo.dimensions}}</i>, {% endif %}
+                                {% if cargo.info %} {% trans "pdfTemplate.shippingInstr.comments" %}: <i>{{ cargo.info }}</i>  {% endif %}
+                                <br/>
+
+                            {% endfor %}     
+
+                   {% endif %}
+                
+              {% endfor %}
+             
+              
+               {% comment %} naprawic total cargo value {% endcomment %}
+              {% if total_weight  %}  &bull;{% trans "pdfTemplate.shippingInstr.totalCargo" %}: {{ total_weight }}<br/> {% endif %}
+              {% endwith %}
+
+
+             <br/>
+             {% if poi.ref_number %} <b>{% trans "pdfTemplate.shippingInstr.referenceNumber" %}:</b>{{ poi.ref_number }} <br/> {% endif %}
+             {% if poi.contact_person %} <b>{% trans "pdfTemplate.shippingInstr.contactPerson" %}:</b> {{ poi.contact_person }} {% endif %}
+             {% if poi.contact_person_phone %} <b>{% trans "pdfTemplate.shippingInstr.phone" %}:</b> {{ poi.contact_person_phone }} {% endif %}
+
+             {% if poi.contact_person is not None or poi.contact_person_phone is not None %} <br/> {% endif %}
+
+             {% if poi.info %} <b>{% trans "pdfTemplate.shippingInstr.comments" %}:</b><br/>{{ poi.info|linebreaksbr }} {% endif %}
+
+            </td>
+
+         </tr>
+           
+       {% endfor %}
+
+   </tbody>
+
+</table>
+
+ <!--FINANSE-->
+ <table class="finances">
+     <tr>
+       <td class="width100" style="border:none" >
+         
+        {% if fracht_txt_arr|length > 0 %} 
+           
+              {% for  item in fracht_txt_arr %}
+                  {% if prefix_or_txt_arr %} {{ prefix_or_txt_arr|get_index:forloop.counter0 }} <br/> {% endif %} 
+                  {% if fracht_txt_arr %} <b> {{ fracht_txt_arr|get_index:forloop.counter0 }}</b> <br/> {% endif %}
+                  {% if payment_term_txt_arr %} {{ payment_term_txt_arr|get_index:forloop.counter0 }} <br/> {% endif %} 
+                {% endfor %}  
+        {% else %}
+
+             {% if fracht %} <b>{% trans "pdfTemplate.shippingInstr.freight" %} {{ fracht }} {% trans "pdfTemplate.shippingInstr.net" %} + {% trans "pdfTemplate.shippingInstr.VAT" %}</b>  {% endif %} 
+             <br/>
+             {% if payment_term %} {% trans "pdfTemplate.shippingInstr.paymentTerm" %}: {{payment_term}} <br/>  {% endif %} 
+   
+        {% endif %}
+          
+        <!--WARTOSĆ TOWARU -->
+          
+           {% if goods_value > 0 %} 
+              <b>{% trans "pdfTemplate.shippingInstr.valueOfCommodity" %}: {{ goods_value }} {{ goods_value_currency }} </b>
+              <br/> 
+           {% endif %}
+
+           {% if extra_cost %}
+             <b>{% trans "pdfTemplate.shippingInstr.additionalCost" %}: {{ extra_cost }} {{ extra_cost_currency }} </b>
+             <br/>
+           {% endif %}
+
+       </td>
+     </tr>
+   
+ </table>
+
+ <br/>
+ <br/>
+  
+  <!--NOTATKA WEWNETRZNA-->
+  <table class="remarks" >
+      <tr>
+         <td>
+          <b>{% trans "pdfTemplate.shippingInstr.additionalRemarks" %}:</b>
+         </td>
+      </tr>
+      <tr>
+        <td> 
+           {% if shipment_internal_note %} 
+                {{ shipment_internal_note|linebreaksbr }}<br/>
+           {% else %}
+                 {{ shipment_note|linebreaksbr }} <br/>   
+           {% endif %}
+        </td>
+      </tr>
+<!-- PIN  -->
+     {% if pin  %}
+       <tr>
+          <td>
+            <b>{% trans "pdfTemplate.shippingInstr.PIN" %}:</b> {{ pin }} <br/>
+          </td>
+       </tr>
+
+     {% endif %}
+
+<!-- PIN REF -->
+     {% if ref_number  %}
+       <tr>
+          <td>
+            <b>{% trans 'pdfTemplate.shippingInstr.referenceNumber' %}:</b> {{ ref_number }} <br/>
+          </td>
+       </tr>
+
+     {% endif %}
+
+<!--ODPRAWA PRZEJSCIE ITD-->
+  <tr>
+    <td>
+     
+     {% if custom_type %} <b>{% trans 'pdfTemplate.shippingInstr.customsClearance' %}:</b> {{custom_type}} <br/>{% endif %}
+
+     {% if custom_point %} {{ custom_point|linebreaksbr }} {% endif %}
+
+ <!--ZWROTY-->
+       {% if pallets_return %} {{ pallets_return|linebreaksbr }}<br/> {% endif %}
+       {% if documents_return %} {{ documents_return|linebreaksbr }} {% endif %}
+    
+    </td>
+  </tr>
+  </table>
+
+  <br/>
+
+  <div>{{ conditions|safe }}</div>
+   
+  <br>
+  <br/>
+<div style="margin: 0 auto; width:100%;">
+    <div style="width: 37%; height: 10%;">
+
+        <a style="font-size: 12px;">....................................................................................</a>
+
+        <div style="text-align:center; font-size: 13px ">
+                <span class="signature"> {% trans 'pdfTemplate.shippingInstr.carrierSignature' %}</span>
+                <br/>
+                <span class="signature"  style="font-size: 10px;">{% trans 'pdfTemplate.shippingInstr.acceptance' %}</span> 
+        </div>  
+        
+    </div>
+</div>
+<!--  FOOTER -->
+<div class="footer" >
+<br/><div class="footer-border">
+            <div style='display:inline; float: left; width:49%'> 
+                 {{ company_user.full_name }} <br/> {% trans 'pdfTemplate.shippingInstr.tel'  %}:{{company_user.phone}}  {% trans 'pdfTemplate.shippingInstr.fax'  %}:{{company_user.fax}}  {% trans 'pdfTemplate.shippingInstr.taxId'  %}:{{company_user.nip}}  {% trans 'pdfTemplate.shippingInstr.regon'%}:{{company_user.regon}}<br/>
+            </div>
+            <div class="footer-branch" style="width:5%; text-align:right;">
+            </div>
+            <div class="footer-branch" style='width:45%'> 
+             {% trans 'pdfTemplate.shippingInstr.branch'  %} {{ branch.full_name }} {{branch.street}} {{ branch.postal_code }} {{ branch.city }}<br/>
+         </div>
+    
+      </div>
+   </div>
+</body>
+
+</html>
+{% endlanguage %}

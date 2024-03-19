@@ -21,15 +21,22 @@ def index(request): #HttpRequest
 
 
 def generate_rfdShippingInstruction(request):
-    #logo image
-    current_script_path = os.path.abspath(__file__)
-    current_script_folder = os.path.dirname(current_script_path)
-    image_path = os.path.join(current_script_folder, "nova_logo.png")
 
     pdf_content = PDFGenerator.generate('documents/templates/pdf/rfdShippingInstruction/index.html',rfd_data)
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename=rfdShippingIns.pdf'
+
+    response.write(pdf_content)
+
+    return response
+
+def generate_rfdForwardingInstruction(request):
+
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/rfdForwardingInstruction/index.html',rfd_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename=rfdForwardingIns.pdf'
 
     response.write(pdf_content)
 
@@ -77,7 +84,7 @@ def generate_corrective_note(request):
     pdf_content = PDFGenerator.generate('documents/templates/pdf/correctiveNote/index.html',corrective_note_data)
 
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename=invoice.pdf'
+    response['Content-Disposition'] = 'inline; filename=correctiveNote.pdf'
 
     response.write(pdf_content)
 
@@ -89,7 +96,18 @@ def generate_creditNote(request):
     pdf_content = PDFGenerator.generate('documents/templates/pdf/creditNote/index.html',credit_note_data)
 
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename=invoice.pdf'
+    response['Content-Disposition'] = 'inline; filename=creditNote.pdf'
+
+    response.write(pdf_content)
+
+    return response
+
+def generate_debitNote(request):
+    
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/debitNote/index.html',credit_note_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename=debitNote.pdf'
 
     response.write(pdf_content)
 
@@ -101,7 +119,20 @@ def generate_bill_of_landing(request):
     pdf_content = PDFGenerator.generate('documents/templates/pdf/bol/index.html',bol_data)
 
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename=invoice.pdf'
+    response['Content-Disposition'] = 'inline; filename=bill_of_landing.pdf'
+
+    response.write(pdf_content)
+
+    return response
+
+
+
+def generate_domestic_cmr(request):
+    
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/domesticCmr/index.html',cmr_data)
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition']='inline; filename=cmr.pdf'
 
     response.write(pdf_content)
 

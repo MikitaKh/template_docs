@@ -36,10 +36,8 @@ body{
 }
 
 th, td, tr{
-    /* border-collapse: collapse; */
     padding: 0px;
     vertical-align: top;
-    /* border:1px solid black; */
     border-spacing: 0px !important;
     border-collapse:collapse !important;
 }
@@ -140,22 +138,8 @@ table{
     float:left;
     margin-left: -25px;
     margin-top: -7px;
-    /* margin:10px; */
 }
-/* .tableInside table{
-    width:100%;
-    border-collapse:collapse;
-    border:1px solid black;
 
-} */
-.tableInside tr{
-
-
-}
-.tableInside td{
-
-
-}
 hr{
     border: 0;
     height: 1px;
@@ -179,8 +163,6 @@ p{
     font-family: DejaVuSansCondensedBold !important;
     color:black;
     font-size: 8px;
-    /* padding-top: 2px;
-    padding-left:18px; */
 }
 
 
@@ -203,7 +185,6 @@ p{
 }
 
 .cmrLeftSideBase {
-    /* position: fixed;  */
     position:absolute;
     right: 393px; 
     top: 42%; 
@@ -216,7 +197,6 @@ p{
 
 .cmrRightSideBase{
     margin:0 auto; 
-    /* position:fixed; */
     position:absolute;
     bottom:530px;
     left:395px; 
@@ -249,7 +229,6 @@ p{
 }
 
 .cargo-table td{
-    /* border:1px solid ; */
     border-top:none;
     border-bottom:none;
     width:14%;

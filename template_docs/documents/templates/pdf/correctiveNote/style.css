@@ -45,8 +45,6 @@
     line-height: 25px;
     padding: 0px; 
     margin-top:3px !important;
-    /* background-color: green; */
-    
   }
 
 body {
@@ -155,15 +153,11 @@ i {
 
 .pdf-invoice__recipient-address {
     width: 49%;
-    /* float: left; */
-    
 }
 
 .pdf-invoice__addressee-address {
     width: 49%;
-    /* float: left; */
     margin-left: 1%;
-  
 }
 
 .pdf-invoice__orders-list {
@@ -201,6 +195,14 @@ i {
     font-weight: bold;
 }
 
-.pdf-stamp{
-    /* padding-top: 10px ; */
+.duplicate-stamp{
+    padding:2px;
+    border-radius: 4px;
+    font-size:15px;
+    color: #F00;
+    border: 1px solid #F00;
+    position:absolute;
+    left: 30%;
+    top: 70px;
+    text-align: center;
 }

@@ -18,9 +18,15 @@
        <strong>{% trans "pdfTemplates.correctiveNote.correctingDocument" %}:</strong> {{correcting_document}} <br/>
         <strong>{% trans "pdfTemplates.correctiveNote.from_date" %}:</strong> {{from_date}} <br/>
        <strong>{% trans "pdfTemplates.correctiveNote.regardingSalesFromDate" %}:</strong> {{ regarding_sales_from_date }}<br/>
-
-
   </div>
+
+  {% if duplicate_from_date  %}
+  <div class="duplicate-stamp">
+    {% trans 'pdfTemplates.invoice.duplicateFromDate' %}<br/>
+     {{ duplicate_from_date }}
+  </div>
+  {% endif %}
+
  
   <div style="float: right; width: 50%; text-align: center;">
    {% if logo_url %}
@@ -119,6 +125,7 @@
    
    {% comment %} ITEMS SECTION {% endcomment %}
    <div style="clear: both;"></div>
+   
     {% comment %} REFACTOR THIS {% endcomment %}
     <table id="invoiceDetails">
       <thead>
@@ -157,7 +164,7 @@
       <tr>
         {% if type_currency_document == 1  %}
          <td class="center-item"> {{ forloop.counter }}</td>
-         <td class="center-item">It was</td>
+         <td class="center-item">{% trans "pdfTemplates.correctiveNote.itWas" %}</td>
          <td>{{item.orig.title}} </td>
          <td class="center-item">{{ item.orig.quantity }} </td>
          <td class="center-item">{{ item.orig.measure_unit }} </td>
@@ -169,7 +176,7 @@
          <td class="center-item">{{ item.orig.currency }} </td>
          {% else %}
            <td class="center-item"> {{ forloop.counter }}</td> 
-           <td class="center-item">It was</td>
+           <td class="center-item">{% trans "pdfTemplates.correctiveNote.itWas" %}</td>
            <td>{{item.orig.title}} </td>
            <td class="center-item">{{ item.orig.quantity }} </td>
            <td class="center-item">{{ item.orig.measure_unit }} </td>
@@ -186,7 +193,7 @@
        <tr>
         {% if type_currency_document == 1  %}
          <td class="center-item"> {{ forloop.counter }}</td>
-         <td class="center-item">Should be</td>
+         <td class="center-item">{% trans "pdfTemplates.correctiveNote.shouldBe" %}</td>
          <td>{{item.fix.title}} </td>
          <td class="center-item">{{ item.fix.quantity }} </td>
          <td class="center-item">{{ item.fix.measure_unit }} </td>
@@ -198,7 +205,7 @@
          <td class="center-item">{{ item.fix.currency }} </td>
          {% else %}
            <td class="center-item"> {{ forloop.counter }}</td> 
-           <td class="center-item">Should be</td>
+           <td class="center-item">{% trans "pdfTemplates.correctiveNote.shouldBe" %}</td>
            <td>{{item.fix.title}} </td>
            <td class="center-item">{{ item.fix.quantity }} </td>
            <td class="center-item">{{ item.fix.measure_unit }} </td>
@@ -215,7 +222,7 @@
       <tr style="background: #f8f8f8;">
         {% if type_currency_document == 1  %}
          
-         <td colspan="2" style="text-align: right;">total correction<br /> </td>
+         <td colspan="2" style="text-align: right;">{% trans "pdfTemplates.correctiveNote.totalCorrection" %}<br /> </td>
          <td >{{item.diffrence.title}} </td>
          <td class="center-item">{{ item.diffrence.quantity }} </td>
          <td class="center-item">{{ item.diffrence.measure_unit }} </td>
@@ -226,7 +233,7 @@
          <td class="center-item">{{ item.diffrence.total }} </td>
          <td class="center-item">{{ item.diffrence.currency }} </td>
          {% else %}
-            <td colspan="2" style="text-align: right;">total correction<br /> </td>
+            <td colspan="2" style="text-align: right;">{% trans "pdfTemplates.correctiveNote.totalCorrection" %}<br /> </td>
            <td>{{item.diffrence.title}} </td>
            <td class="center-item">{{ item.diffrence.quantity }} </td>
            <td class="center-item">{{ item.diffrence.measure_unit }} </td>
@@ -334,7 +341,7 @@
   <div>
       <strong> {% trans "pdfTemplates.correctiveNote.vat" %}: </strong> {{ amount_of_tax_increase.amount_in_document_currency }} {{ document_currency }} = {{ amount_of_tax_increase.amount_in_currency }} {{ currency }}<br/>
       {% trans "pdfTemplates.correctiveNote.rate" %} 1 {{ exchange_rate_document.currency }} = {{ exchange_rate_document.rate }} {{ exchange_rate_document.quote_currency }}<br/>
-      <i>{% trans "Table" %} {{ exchange_rate_table_name }} {% trans "number" %} {{exchange_rate_table_name}} {% trans "dated" %} {{exchange_rate_date}}  </i>
+      <i>{% trans "pdfTemplates.correctiveNote.table" %} {{ exchange_rate_table_name }} {% trans "pdfTemplates.correctiveNote.number" %} {{exchange_rate_table_name}} {% trans "pdfTemplates.correctiveNote.dated" %} {{exchange_rate_date}}  </i>
   </div>
 {% endif %}
 

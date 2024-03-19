@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-14 23:06+0100\n"
+"POT-Creation-Date: 2024-03-19 22:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,6 +203,9 @@ msgstr ""
 #: .\documents\templates\pdf\cmr\index.html:62
 #: .\documents\templates\pdf\cmr\index.html:112
 #: .\documents\templates\pdf\cmr\index.html:400
+#: .\documents\templates\pdf\domesticCmr\index.html:17
+#: .\documents\templates\pdf\domesticCmr\index.html:39
+#: .\documents\templates\pdf\domesticCmr\index.html:331
 msgid "pdfTemplate.cmr.sender"
 msgstr "Sender"
 
@@ -211,10 +214,16 @@ msgstr "Sender"
 #: .\documents\templates\pdf\cmr\index.html:123
 #: .\documents\templates\pdf\cmr\index.html:137
 #: .\documents\templates\pdf\cmr\index.html:150
+#: .\documents\templates\pdf\domesticCmr\index.html:17
+#: .\documents\templates\pdf\domesticCmr\index.html:39
+#: .\documents\templates\pdf\domesticCmr\index.html:50
+#: .\documents\templates\pdf\domesticCmr\index.html:64
+#: .\documents\templates\pdf\domesticCmr\index.html:77
 msgid "pdfTemplate.cmr.nameAddressCountry"
 msgstr "(Name, address, country)"
 
 #: .\documents\templates\pdf\cmr\index.html:69
+#: .\documents\templates\pdf\domesticCmr\index.html:24
 msgid "pdfTemplate.cmr.onBehalfOfAndFor"
 msgstr "On behalf of and for"
 
@@ -230,167 +239,209 @@ msgstr ""
 "the Contract for the international Carriage of goods by road (CMR)"
 
 #: .\documents\templates\pdf\cmr\index.html:123
+#: .\documents\templates\pdf\domesticCmr\index.html:50
 msgid "pdfTemplate.cmr.carrier"
 msgstr "Carrier"
 
 #: .\documents\templates\pdf\cmr\index.html:137
+#: .\documents\templates\pdf\domesticCmr\index.html:64
 msgid "pdfTemplate.cmr.placeOfDelivery"
 msgstr "Place of delivery of the goods"
 
 #: .\documents\templates\pdf\cmr\index.html:150
+#: .\documents\templates\pdf\domesticCmr\index.html:77
 msgid "pdfTemplate.cmr.succesiveCarriers"
 msgstr "Successive carriers"
 
 #: .\documents\templates\pdf\cmr\index.html:165
+#: .\documents\templates\pdf\domesticCmr\index.html:92
 msgid "pdfTemplate.cmrplaceAndDateTaking"
 msgstr "Place and date taking over the goods (place, country, data)"
 
 #: .\documents\templates\pdf\cmr\index.html:176
+#: .\documents\templates\pdf\domesticCmr\index.html:103
 msgid "pdfTemplate.cmr.carrierReservationsAndObservations"
 msgstr "Carrier's reservations and observations"
 
 #: .\documents\templates\pdf\cmr\index.html:188
+#: .\documents\templates\pdf\domesticCmr\index.html:115
 msgid "pdfTemplate.cmr.documenntsAttached"
 msgstr "Documents attached"
 
 #: .\documents\templates\pdf\cmr\index.html:205
+#: .\documents\templates\pdf\domesticCmr\index.html:132
 msgid "pdfTemplate.cmr.marksAndNos"
 msgstr "Marks and Nos"
 
 #: .\documents\templates\pdf\cmr\index.html:214
+#: .\documents\templates\pdf\domesticCmr\index.html:141
 msgid "pdfTemplate.cmr.numberOfPackages"
 msgstr "Number of packages"
 
 #: .\documents\templates\pdf\cmr\index.html:223
+#: .\documents\templates\pdf\domesticCmr\index.html:150
 msgid "pdfTemplate.cmr.methodOfPacking"
 msgstr "Method of packing"
 
 #: .\documents\templates\pdf\cmr\index.html:232
+#: .\documents\templates\pdf\domesticCmr\index.html:159
 msgid "pdfTemplate.cmr.natureOfGoods"
 msgstr "Nature of the goods"
 
 #: .\documents\templates\pdf\cmr\index.html:241
+#: .\documents\templates\pdf\domesticCmr\index.html:171
 msgid "pdfTemplate.cmr.statisticalNumber"
 msgstr "Statistical number"
 
 #: .\documents\templates\pdf\cmr\index.html:250
+#: .\documents\templates\pdf\domesticCmr\index.html:181
 msgid "pdfTemplate.cmr.grossWeightInKg"
 msgstr "Gross weight in kg"
 
 #: .\documents\templates\pdf\cmr\index.html:259
+#: .\documents\templates\pdf\domesticCmr\index.html:190
 msgid "pdfTemplate.cmr.volumeInM3"
 msgstr "Volume in m3"
 
 #: .\documents\templates\pdf\cmr\index.html:273
+#: .\documents\templates\pdf\domesticCmr\index.html:204
 msgid "pdfTemplate.cmr.numberUN"
 msgstr "Number UN"
 
 #: .\documents\templates\pdf\cmr\index.html:283
+#: .\documents\templates\pdf\domesticCmr\index.html:214
 msgid "pdfTemplate.cmr.lookPoint9"
 msgstr "Look point 9"
 
 #: .\documents\templates\pdf\cmr\index.html:293
+#: .\documents\templates\pdf\domesticCmr\index.html:224
 msgid "pdfTemplate.cmr.class"
 msgstr "Class"
 
 #: .\documents\templates\pdf\cmr\index.html:304
+#: .\documents\templates\pdf\domesticCmr\index.html:235
 msgid "pdfTemplate.cmr.packingGroup"
 msgstr "The packing group"
 
 #: .\documents\templates\pdf\cmr\index.html:314
+#: .\documents\templates\pdf\domesticCmr\index.html:245
 msgid "pdfTemplate.cmr.ADR"
 msgstr "( ADR* )"
 
 #: .\documents\templates\pdf\cmr\index.html:337
+#: .\documents\templates\pdf\domesticCmr\index.html:268
 msgid "pdfTemplate.cmr.senderInstructions"
 msgstr "Sender's instructions"
 
 #: .\documents\templates\pdf\cmr\index.html:348
+#: .\documents\templates\pdf\domesticCmr\index.html:279
 msgid "pdfTemplate.cmr.instructionAsToPayementForCarriage"
 msgstr "Instruction as to payement for carriage"
 
 #: .\documents\templates\pdf\cmr\index.html:352
+#: .\documents\templates\pdf\domesticCmr\index.html:283
 msgid "pdfTemplate.cmr.carriagePaid"
 msgstr "Carriage paid"
 
 #: .\documents\templates\pdf\cmr\index.html:353
+#: .\documents\templates\pdf\domesticCmr\index.html:284
 msgid "pdfTemplate.cmr.carriageForward"
 msgstr "Carriage forward"
 
 #: .\documents\templates\pdf\cmr\index.html:362
+#: .\documents\templates\pdf\domesticCmr\index.html:293
 msgid "pdfTemplate.cmr.establishedIn"
 msgstr "Established in"
 
 #: .\documents\templates\pdf\cmr\index.html:367
 #: .\documents\templates\pdf\cmr\index.html:591
+#: .\documents\templates\pdf\domesticCmr\index.html:298
+#: .\documents\templates\pdf\domesticCmr\index.html:522
 msgid "pdfTemplate.cmr.in"
 msgstr "in"
 
 #: .\documents\templates\pdf\cmr\index.html:381
+#: .\documents\templates\pdf\domesticCmr\index.html:312
 msgid "pdfTemplate.cmr.specialAgreements"
 msgstr "Special agreements"
 
 #: .\documents\templates\pdf\cmr\index.html:395
+#: .\documents\templates\pdf\domesticCmr\index.html:326
 msgid "pdfTemplate.cmr.toBePaidBy"
 msgstr "To be paid by"
 
 #: .\documents\templates\pdf\cmr\index.html:408
+#: .\documents\templates\pdf\domesticCmr\index.html:339
 msgid "pdfTemplate.cmr.currency"
 msgstr "Currency"
 
 #: .\documents\templates\pdf\cmr\index.html:413
+#: .\documents\templates\pdf\domesticCmr\index.html:344
 msgid "pdfTemplate.cmr.consignee"
 msgstr "Consignee"
 
 #: .\documents\templates\pdf\cmr\index.html:421
+#: .\documents\templates\pdf\domesticCmr\index.html:352
 msgid "pdfTemplate.cmr.carriageCharges"
 msgstr "Carriage charges"
 
 #: .\documents\templates\pdf\cmr\index.html:441
+#: .\documents\templates\pdf\domesticCmr\index.html:372
 msgid "pdfTemplate.cmr.deductions"
 msgstr "Deductions"
 
 #: .\documents\templates\pdf\cmr\index.html:459
+#: .\documents\templates\pdf\domesticCmr\index.html:390
 msgid "pdfTemplate.cmr.balance"
 msgstr "Balance"
 
 #: .\documents\templates\pdf\cmr\index.html:478
+#: .\documents\templates\pdf\domesticCmr\index.html:409
 msgid "pdfTemplate.cmr.supplemCharges"
 msgstr "Supplem. charges"
 
 #: .\documents\templates\pdf\cmr\index.html:496
+#: .\documents\templates\pdf\domesticCmr\index.html:427
 msgid "pdfTemplate.cmr.miscellaneous"
 msgstr "Miscellaneous"
 
 #: .\documents\templates\pdf\cmr\index.html:514
+#: .\documents\templates\pdf\domesticCmr\index.html:445
 msgid "pdfTemplate.cmr.insurance"
 msgstr "Insurance"
 
 #: .\documents\templates\pdf\cmr\index.html:531
+#: .\documents\templates\pdf\domesticCmr\index.html:462
 msgid "pdfTemplate.cmr.totalToBePaid"
 msgstr "Total to be paid"
 
 #: .\documents\templates\pdf\cmr\index.html:552
+#: .\documents\templates\pdf\domesticCmr\index.html:483
 msgid "pdfTemplate.cmr.cashOnDeliver"
 msgstr "Cash on deliver"
 
 #: .\documents\templates\pdf\cmr\index.html:577
+#: .\documents\templates\pdf\domesticCmr\index.html:508
 msgid "pdfTemplate.cmr.goodsRecieved"
 msgstr "Goods recieved"
 
 #: .\documents\templates\pdf\cmr\index.html:582
+#: .\documents\templates\pdf\domesticCmr\index.html:513
 msgid "pdfTemplate.cmr.place"
 msgstr "Place"
 
 #: .\documents\templates\pdf\cmr\index.html:605
+#: .\documents\templates\pdf\domesticCmr\index.html:536
 msgid "pdfTemplate.cmr.signatureAndStampofTheSender"
 msgstr "Signature and stamp of the sender"
 
 #: .\documents\templates\pdf\cmr\index.html:612
+#: .\documents\templates\pdf\domesticCmr\index.html:543
 msgid "pdfTemplate.cmr.signatureAndStampofTheCarrier"
 msgstr "Signature and stamp of the carrier"
 
 #: .\documents\templates\pdf\cmr\index.html:619
+#: .\documents\templates\pdf\domesticCmr\index.html:550
 msgid "pdfTemplate.cmr.signatureAndStampofTheConsignee"
 msgstr "Signature and stamp of the consignee"
 
@@ -420,229 +471,233 @@ msgstr "From Date"
 msgid "pdfTemplates.correctiveNote.regardingSalesFromDate"
 msgstr "Regarding Sales from Date"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:48
+#: .\documents\templates\pdf\correctiveNote\index.html:27
+#: .\documents\templates\pdf\creditNote\index.html:30
+#: .\documents\templates\pdf\debitNote\index.html:30
+#: .\documents\templates\pdf\invoice\index.html:27
+msgid "pdfTemplates.invoice.duplicateFromDate"
+msgstr "Duplicate from date"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:54
 msgid "pdfTemplates.correctiveNote.seller"
 msgstr "Seller"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:51
-#: .\documents\templates\pdf\correctiveNote\index.html:68
-#: .\documents\templates\pdf\correctiveNote\index.html:79
+#: .\documents\templates\pdf\correctiveNote\index.html:57
+#: .\documents\templates\pdf\correctiveNote\index.html:74
+#: .\documents\templates\pdf\correctiveNote\index.html:85
 msgid "pdfTemplates.correctiveNote.address"
 msgstr "Address"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:54
-#: .\documents\templates\pdf\correctiveNote\index.html:71
+#: .\documents\templates\pdf\correctiveNote\index.html:60
+#: .\documents\templates\pdf\correctiveNote\index.html:77
 msgid "pdfTemplates.correctiveNote.vatId"
 msgstr "TAX ID"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:55
+#: .\documents\templates\pdf\correctiveNote\index.html:61
 msgid "pdfTemplates.correctiveNote.eur"
 msgstr "EUR"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:56
-#: .\documents\templates\pdf\correctiveNote\index.html:58
+#: .\documents\templates\pdf\correctiveNote\index.html:62
+#: .\documents\templates\pdf\correctiveNote\index.html:64
 msgid "pdfTemplates.correctiveNote.swiftCode"
 msgstr "SWIFT CODE"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:57
+#: .\documents\templates\pdf\correctiveNote\index.html:63
 msgid "pdfTemplates.correctiveNote.vatPl"
 msgstr "TAX ID PL"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:65
+#: .\documents\templates\pdf\correctiveNote\index.html:71
 msgid "pdfTemplates.correctiveNote.customer"
 msgstr "Customer"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:76
+#: .\documents\templates\pdf\correctiveNote\index.html:82
 msgid "pdfTemplates.correctiveNote.recipient"
 msgstr "Recepient"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:91
+#: .\documents\templates\pdf\correctiveNote\index.html:97
 msgid "pdfTemplates.correctiveNote.forwardingPosition:"
 msgstr "Forwarding position"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:111
+#: .\documents\templates\pdf\correctiveNote\index.html:117
 msgid "pdfTemplates.correctiveNote.notes"
 msgstr "Notes"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:119
+#: .\documents\templates\pdf\correctiveNote\index.html:125
 msgid "pdfTemplates.correctiveNote.correctionReasons"
 msgstr "Reason of Correction"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:134
-#: .\documents\templates\pdf\correctiveNote\index.html:146
+#: .\documents\templates\pdf\correctiveNote\index.html:141
+#: .\documents\templates\pdf\correctiveNote\index.html:153
 msgid "pdfTemplates.correctiveNote.No"
 msgstr "No"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:136
-#: .\documents\templates\pdf\correctiveNote\index.html:148
+#: .\documents\templates\pdf\correctiveNote\index.html:143
+#: .\documents\templates\pdf\correctiveNote\index.html:155
 msgid "pdfTemplates.correctiveNote.nameOfProductService"
 msgstr "Name of product / service"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:137
-#: .\documents\templates\pdf\correctiveNote\index.html:149
+#: .\documents\templates\pdf\correctiveNote\index.html:144
+#: .\documents\templates\pdf\correctiveNote\index.html:156
 msgid "pdfTemplates.correctiveNote.quantity"
 msgstr "Quantity"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:138
-#: .\documents\templates\pdf\correctiveNote\index.html:150
+#: .\documents\templates\pdf\correctiveNote\index.html:145
+#: .\documents\templates\pdf\correctiveNote\index.html:157
 msgid "pdfTemplates.correctiveNote.UM"
 msgstr "U/M"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:139
+#: .\documents\templates\pdf\correctiveNote\index.html:146
 msgid "pdfTemplates.correctiveNote.priceWithoutTax"
 msgstr "Price without Tax"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:140
-#: .\documents\templates\pdf\correctiveNote\index.html:156
+#: .\documents\templates\pdf\correctiveNote\index.html:147
+#: .\documents\templates\pdf\correctiveNote\index.html:163
 msgid "pdfTemplates.correctiveNote.vatTax"
 msgstr "VAT Rate"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:141
-#: .\documents\templates\pdf\correctiveNote\index.html:279
+#: .\documents\templates\pdf\correctiveNote\index.html:148
+#: .\documents\templates\pdf\correctiveNote\index.html:286
 msgid "pdfTemplates.correctiveNote.totalNet"
 msgstr "Total NET"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:142
-#: .\documents\templates\pdf\correctiveNote\index.html:280
+#: .\documents\templates\pdf\correctiveNote\index.html:149
+#: .\documents\templates\pdf\correctiveNote\index.html:287
 msgid "pdfTemplates.correctiveNote.taxValue"
 msgstr "Tax Value"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:143
-#: .\documents\templates\pdf\correctiveNote\index.html:281
+#: .\documents\templates\pdf\correctiveNote\index.html:150
+#: .\documents\templates\pdf\correctiveNote\index.html:288
 msgid "pdfTemplates.correctiveNote.totalGross"
 msgstr "Total Gross"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:144
-#: .\documents\templates\pdf\correctiveNote\index.html:152
+#: .\documents\templates\pdf\correctiveNote\index.html:151
+#: .\documents\templates\pdf\correctiveNote\index.html:159
 msgid "pdfTemplates.correctiveNote.currency"
 msgstr "Currency"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:151
+#: .\documents\templates\pdf\correctiveNote\index.html:158
 msgid "pdfTemplates.correctiveNote.priceWithoutTaxInDefinedCurrency"
 msgstr "Price without Tax in defined Currency"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:153
+#: .\documents\templates\pdf\correctiveNote\index.html:160
 msgid "pdfTemplates.correctiveNote.valueWithoutTaxInDefinedCurrency"
 msgstr "Value without Tax in defined Currency"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:154
-#: .\documents\templates\pdf\correctiveNote\index.html:315
-#: .\documents\templates\pdf\correctiveNote\index.html:321
-#: .\documents\templates\pdf\correctiveNote\index.html:339
-#: .\documents\templates\pdf\correctiveNote\index.html:347
+#: .\documents\templates\pdf\correctiveNote\index.html:161
+#: .\documents\templates\pdf\correctiveNote\index.html:322
+#: .\documents\templates\pdf\correctiveNote\index.html:328
+#: .\documents\templates\pdf\correctiveNote\index.html:346
+#: .\documents\templates\pdf\correctiveNote\index.html:354
 msgid "pdfTemplates.correctiveNote.rate"
 msgstr "Rate"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:155
+#: .\documents\templates\pdf\correctiveNote\index.html:162
 msgid "pdfTemplates.correctiveNote.amountIn"
 msgstr "Amount In"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:157
+#: .\documents\templates\pdf\correctiveNote\index.html:164
 msgid "pdfTemplates.correctiveNote.taxAmountIn"
 msgstr "Tax amount in"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:158
+#: .\documents\templates\pdf\correctiveNote\index.html:165
 msgid "pdfTemplates.correctiveNote.totalIn"
 msgstr "Total in"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:257
+#: .\documents\templates\pdf\correctiveNote\index.html:174
+#: .\documents\templates\pdf\correctiveNote\index.html:186
+msgid "pdfTemplates.correctiveNote.itWas"
+msgstr "It was"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:203
+#: .\documents\templates\pdf\correctiveNote\index.html:215
+msgid "pdfTemplates.correctiveNote.shouldBe"
+msgstr "Should be"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:232
+#: .\documents\templates\pdf\correctiveNote\index.html:243
+msgid "pdfTemplates.correctiveNote.totalCorrection"
+msgstr "Total correction"
+
+#: .\documents\templates\pdf\correctiveNote\index.html:264
 msgid "pdfTemplates.correctiveNote.wayOfPayment"
 msgstr "Way of Payment"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:259
+#: .\documents\templates\pdf\correctiveNote\index.html:266
 msgid "pdfTemplates.correctiveNote.dayOfPayment"
 msgstr "Day of Payment"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:266
+#: .\documents\templates\pdf\correctiveNote\index.html:273
 msgid "pdfTemplates.correctiveNote.splitPaymentMethod"
 msgstr "Split Payment Method"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:275
+#: .\documents\templates\pdf\correctiveNote\index.html:282
 msgid "pdfTemplates.correctiveNote.summaryOfCorrectionInvoice"
 msgstr "Summary of Correction Invoice"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:278
+#: .\documents\templates\pdf\correctiveNote\index.html:285
 msgid "pdfTemplates.correctiveNote.vatRate"
 msgstr "VAT Rate"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:294
+#: .\documents\templates\pdf\correctiveNote\index.html:301
 msgid "pdfTemplates.correctiveNote.grandTotal"
 msgstr "Grand Total"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:311
+#: .\documents\templates\pdf\correctiveNote\index.html:318
 msgid "pdfTemplates.correctiveNote.beforeCorrection"
 msgstr "Before correction"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:314
-#: .\documents\templates\pdf\correctiveNote\index.html:320
-#: .\documents\templates\pdf\correctiveNote\index.html:346
+#: .\documents\templates\pdf\correctiveNote\index.html:321
+#: .\documents\templates\pdf\correctiveNote\index.html:327
+#: .\documents\templates\pdf\correctiveNote\index.html:353
 msgid "pdfTemplates.correctiveNote.vat"
 msgstr "VAT"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:316
-#: .\documents\templates\pdf\correctiveNote\index.html:322
-#: .\documents\templates\pdf\correctiveNote\index.html:341
+#: .\documents\templates\pdf\correctiveNote\index.html:323
+#: .\documents\templates\pdf\correctiveNote\index.html:329
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\correctiveNote\index.html:355
 msgid "pdfTemplates.correctiveNote.table"
 msgstr "Table"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:316
-#: .\documents\templates\pdf\correctiveNote\index.html:322
-#: .\documents\templates\pdf\correctiveNote\index.html:341
+#: .\documents\templates\pdf\correctiveNote\index.html:323
+#: .\documents\templates\pdf\correctiveNote\index.html:329
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\correctiveNote\index.html:355
 msgid "pdfTemplates.correctiveNote.number"
 msgstr "number"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:316
-#: .\documents\templates\pdf\correctiveNote\index.html:322
-#: .\documents\templates\pdf\correctiveNote\index.html:341
+#: .\documents\templates\pdf\correctiveNote\index.html:323
+#: .\documents\templates\pdf\correctiveNote\index.html:329
+#: .\documents\templates\pdf\correctiveNote\index.html:348
+#: .\documents\templates\pdf\correctiveNote\index.html:355
 msgid "pdfTemplates.correctiveNote.dated"
 msgstr "dated"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:319
+#: .\documents\templates\pdf\correctiveNote\index.html:326
 msgid "pdfTemplates.correctiveNote.afterCorrection"
 msgstr "After correction"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:326
+#: .\documents\templates\pdf\correctiveNote\index.html:333
 msgid "pdfTemplates.correctiveNote.amountOfTaxIncrease"
 msgstr "The amount of tax increase"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:348
-#: .\documents\templates\pdf\invoice\index.html:266
-#: .\documents\templates\pdf\invoice\index.html:284
-#: .\documents\templates\pdf\invoice\index.html:291
-msgid "Table"
-msgstr ""
-
-#: .\documents\templates\pdf\correctiveNote\index.html:348
-#: .\documents\templates\pdf\invoice\index.html:266
-#: .\documents\templates\pdf\invoice\index.html:284
-#: .\documents\templates\pdf\invoice\index.html:291
-msgid "number"
-msgstr ""
-
-#: .\documents\templates\pdf\correctiveNote\index.html:348
-#: .\documents\templates\pdf\invoice\index.html:266
-#: .\documents\templates\pdf\invoice\index.html:284
-#: .\documents\templates\pdf\invoice\index.html:291
-msgid "dated"
-msgstr ""
-
-#: .\documents\templates\pdf\correctiveNote\index.html:357
+#: .\documents\templates\pdf\correctiveNote\index.html:364
 msgid "pdfTemplates.correctiveNote.issuedBy"
 msgstr "Issuer"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:365
+#: .\documents\templates\pdf\correctiveNote\index.html:372
 msgid "pdfTemplates.correctiveNote.totalToPay"
 msgstr "Total to pay (Amount)"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:376
+#: .\documents\templates\pdf\correctiveNote\index.html:383
 msgid "pdfTemplates.correctiveNote.byWords"
 msgstr "By Words"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:402
+#: .\documents\templates\pdf\correctiveNote\index.html:409
 msgid "pdfTemplates.correctiveNote.receptionDate"
 msgstr "Reception Date"
 
-#: .\documents\templates\pdf\correctiveNote\index.html:408
+#: .\documents\templates\pdf\correctiveNote\index.html:415
 msgid "pdfTemplates.correctiveNote.recieverOfCorrectionInvoice"
 msgstr "Receiver of Correction Invoice"
 
@@ -651,76 +706,105 @@ msgid "pdfTemplates.creditNote.creditNote"
 msgstr "CREDIT NOTE"
 
 #: .\documents\templates\pdf\creditNote\index.html:23
+#: .\documents\templates\pdf\debitNote\index.html:23
 msgid "pdfTemplates.creditNote.orginal"
 msgstr "Original"
 
 #: .\documents\templates\pdf\creditNote\index.html:23
+#: .\documents\templates\pdf\debitNote\index.html:23
 msgid "pdfTemplates.creditNote.copy"
 msgstr "Copy"
 
-#: .\documents\templates\pdf\creditNote\index.html:48
+#: .\documents\templates\pdf\creditNote\index.html:55
+#: .\documents\templates\pdf\debitNote\index.html:55
 msgid "pdfTemplates.creditNote.seller"
 msgstr "Seller"
 
-#: .\documents\templates\pdf\creditNote\index.html:51
-#: .\documents\templates\pdf\creditNote\index.html:64
-#: .\documents\templates\pdf\creditNote\index.html:75
+#: .\documents\templates\pdf\creditNote\index.html:58
+#: .\documents\templates\pdf\creditNote\index.html:71
+#: .\documents\templates\pdf\creditNote\index.html:82
+#: .\documents\templates\pdf\debitNote\index.html:58
+#: .\documents\templates\pdf\debitNote\index.html:71
+#: .\documents\templates\pdf\debitNote\index.html:82
 msgid "pdfTemplates.creditNote.address"
 msgstr "Address"
 
-#: .\documents\templates\pdf\creditNote\index.html:54
-#: .\documents\templates\pdf\creditNote\index.html:67
+#: .\documents\templates\pdf\creditNote\index.html:61
+#: .\documents\templates\pdf\creditNote\index.html:74
+#: .\documents\templates\pdf\debitNote\index.html:61
+#: .\documents\templates\pdf\debitNote\index.html:74
 msgid "pdfTemplates.creditNote.vatId"
 msgstr "VAT ID"
 
-#: .\documents\templates\pdf\creditNote\index.html:61
+#: .\documents\templates\pdf\creditNote\index.html:68
+#: .\documents\templates\pdf\debitNote\index.html:68
 msgid "pdfTemplates.creditNote.customer"
 msgstr "Customer"
 
-#: .\documents\templates\pdf\creditNote\index.html:72
+#: .\documents\templates\pdf\creditNote\index.html:79
+#: .\documents\templates\pdf\debitNote\index.html:79
 msgid "pdfTemplates.creditNote.recipient"
 msgstr "Recepient"
 
-#: .\documents\templates\pdf\creditNote\index.html:95
+#: .\documents\templates\pdf\creditNote\index.html:102
+#: .\documents\templates\pdf\debitNote\index.html:102
 msgid "pdfTemplates.creditNote.title"
 msgstr "Title"
 
-#: .\documents\templates\pdf\creditNote\index.html:101
+#: .\documents\templates\pdf\creditNote\index.html:108
+#: .\documents\templates\pdf\debitNote\index.html:108
 msgid "pdfTemplates.creditNote.forwardingPosition"
 msgstr "Forwarding position"
 
-#: .\documents\templates\pdf\creditNote\index.html:116
+#: .\documents\templates\pdf\creditNote\index.html:123
+#: .\documents\templates\pdf\debitNote\index.html:123
 msgid "pdfTemplates.creditNote.contents"
 msgstr "Contents"
 
-#: .\documents\templates\pdf\creditNote\index.html:117
+#: .\documents\templates\pdf\creditNote\index.html:124
+#: .\documents\templates\pdf\debitNote\index.html:124
 msgid "pdfTemplates.creditNote.amount"
 msgstr "Amount"
 
-#: .\documents\templates\pdf\creditNote\index.html:141
+#: .\documents\templates\pdf\creditNote\index.html:148
+#: .\documents\templates\pdf\debitNote\index.html:148
 msgid "pdfTemplates.creditNote.toPay"
 msgstr "To Pay"
 
-#: .\documents\templates\pdf\creditNote\index.html:147
+#: .\documents\templates\pdf\creditNote\index.html:154
+#: .\documents\templates\pdf\debitNote\index.html:154
 msgid "pdfTemplates.creditNote.paymentTerm"
 msgstr "Payment Term"
 
-#: .\documents\templates\pdf\creditNote\index.html:154
+#: .\documents\templates\pdf\creditNote\index.html:161
+#: .\documents\templates\pdf\debitNote\index.html:161
 msgid "pdfTemplates.creditNote.transferDetails"
 msgstr "Transfer Details"
 
-#: .\documents\templates\pdf\creditNote\index.html:159
+#: .\documents\templates\pdf\creditNote\index.html:166
+#: .\documents\templates\pdf\debitNote\index.html:166
 msgid "pdfTemplates.creditNote.swiftCode"
 msgstr "SWIFT CODE"
 
-#: .\documents\templates\pdf\creditNote\index.html:168
+#: .\documents\templates\pdf\creditNote\index.html:175
+#: .\documents\templates\pdf\debitNote\index.html:175
 msgid "pdfTemplates.creditNote.notes"
 msgstr "Notes"
 
-#: .\documents\templates\pdf\creditNote\index.html:177
 #: .\documents\templates\pdf\creditNote\index.html:184
+#: .\documents\templates\pdf\creditNote\index.html:191
+#: .\documents\templates\pdf\debitNote\index.html:184
+#: .\documents\templates\pdf\debitNote\index.html:191
 msgid "pdfTemplates.creditNote.issuer"
 msgstr "Issuer"
+
+#: .\documents\templates\pdf\debitNote\index.html:17
+msgid "pdfTemplates.debitNote.debitNote"
+msgstr "DEBIT NOTE"
+
+#: .\documents\templates\pdf\domesticCmr\index.html:29
+msgid "pdfTemplate.domesticCmr.waybill"
+msgstr "WAYBILL"
 
 #: .\documents\templates\pdf\invoice\index.html:18
 msgid "pdfTemplates.invoice.invoiceNumber"
@@ -734,333 +818,406 @@ msgstr "Isue date"
 msgid "pdfTemplates.invoice.serviceDate"
 msgstr "Service date"
 
-#: .\documents\templates\pdf\invoice\index.html:48
-msgid "Seller"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:51
-#: .\documents\templates\pdf\invoice\index.html:68
-#: .\documents\templates\pdf\invoice\index.html:79
-msgid "Address:"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:54
-#: .\documents\templates\pdf\invoice\index.html:71
-msgid "VAT ID:"
-msgstr ""
-
 #: .\documents\templates\pdf\invoice\index.html:55
-msgid "EUR:"
-msgstr ""
+msgid "pdfTemplates.invoice.seller"
+msgstr "Seller"
 
-#: .\documents\templates\pdf\invoice\index.html:56
 #: .\documents\templates\pdf\invoice\index.html:58
+msgid "pdfTemplates.invoice.address:"
+msgstr "Address"
+
+#: .\documents\templates\pdf\invoice\index.html:61
+#: .\documents\templates\pdf\invoice\index.html:78
+msgid "pdfTemplates.invoice.vatId"
+msgstr "VAT ID"
+
+#: .\documents\templates\pdf\invoice\index.html:62
+msgid "pdfTemplates.invoice.eur"
+msgstr "EUR"
+
+#: .\documents\templates\pdf\invoice\index.html:63
+msgid "pdfTemplates.invoice.swiftCode"
+msgstr "SWIFT CODE"
+
+#: .\documents\templates\pdf\invoice\index.html:64
+msgid "pdfTemplates.invoice.vatPl"
+msgstr "VAT PL"
+
+#: .\documents\templates\pdf\invoice\index.html:65
 msgid "SWIFT CODE:"
 msgstr ""
 
-#: .\documents\templates\pdf\invoice\index.html:57
-msgid "VAT PL:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:72
+msgid "pdfTemplates.invoice.customer"
+msgstr "Customer"
 
-#: .\documents\templates\pdf\invoice\index.html:65
-msgid "Customer:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:75
+#: .\documents\templates\pdf\invoice\index.html:86
+msgid "pdfTemplates.invoice.address"
+msgstr "Address"
 
-#: .\documents\templates\pdf\invoice\index.html:76
-msgid "Recipient:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:83
+msgid "pdfTemplates.invoice.recipient"
+msgstr "Recipient"
 
-#: .\documents\templates\pdf\invoice\index.html:91
-msgid "Forwarding position:"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:118
-#: .\documents\templates\pdf\invoice\index.html:129
-msgid "No"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:119
-#: .\documents\templates\pdf\invoice\index.html:130
-msgid "Description"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:120
-#: .\documents\templates\pdf\invoice\index.html:131
-msgid "Quantity"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:121
-#: .\documents\templates\pdf\invoice\index.html:132
-msgid "U/M"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:122
-#: .\documents\templates\pdf\invoice\index.html:133
-msgid "Unit Price"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:123
-#: .\documents\templates\pdf\invoice\index.html:138
-msgid "Tax"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:124
-#: .\documents\templates\pdf\invoice\index.html:135
-msgid "Amount"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:98
+msgid "pdfTemplates.invoice.forwardingPosition"
+msgstr "Forwarding position"
 
 #: .\documents\templates\pdf\invoice\index.html:125
-msgid "Tax Amount"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:136
+msgid "pdfTemplates.invoice.No"
+msgstr "No"
 
 #: .\documents\templates\pdf\invoice\index.html:126
-msgid "Total"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:137
+msgid "pdfTemplates.invoice.description"
+msgstr "Description"
 
 #: .\documents\templates\pdf\invoice\index.html:127
-#: .\documents\templates\pdf\invoice\index.html:134
-msgid "Currency"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:138
+msgid "pdfTemplates.invoice.quantity"
+msgstr "Quantity"
 
-#: .\documents\templates\pdf\invoice\index.html:136
-#: .\documents\templates\pdf\invoice\index.html:265
-#: .\documents\templates\pdf\invoice\index.html:282
-#: .\documents\templates\pdf\invoice\index.html:290
-msgid "Exchange Rate"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:137
-msgid "Amount in"
-msgstr ""
-
+#: .\documents\templates\pdf\invoice\index.html:128
 #: .\documents\templates\pdf\invoice\index.html:139
-msgid "Tax amount in"
-msgstr ""
+msgid "pdfTemplates.invoice.U/M"
+msgstr "U/M"
 
+#: .\documents\templates\pdf\invoice\index.html:129
 #: .\documents\templates\pdf\invoice\index.html:140
-msgid "Total in"
-msgstr ""
+msgid "pdfTemplates.invoice.unitPrice"
+msgstr "Unit Price"
 
-#: .\documents\templates\pdf\invoice\index.html:184
-msgid "Way of Payment:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:130
+#: .\documents\templates\pdf\invoice\index.html:145
+msgid "pdfTemplates.invoice.tax"
+msgstr "Tax"
 
-#: .\documents\templates\pdf\invoice\index.html:186
-msgid "Day of Payment"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:131
+#: .\documents\templates\pdf\invoice\index.html:142
+msgid "pdfTemplates.invoice.amount"
+msgstr "Amount"
 
-#: .\documents\templates\pdf\invoice\index.html:203
-#: .\documents\templates\pdf\invoice\index.html:238
-msgid "Tax Rate"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:132
+msgid "pdfTemplates.invoice.taxAmount"
+msgstr "Tax amount"
 
-#: .\documents\templates\pdf\invoice\index.html:204
-#: .\documents\templates\pdf\invoice\index.html:239
-msgid "Net Value"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:133
+msgid "pdfTemplates.invoice.total"
+msgstr "Total"
 
-#: .\documents\templates\pdf\invoice\index.html:205
-#: .\documents\templates\pdf\invoice\index.html:240
-msgid "Tax Value"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:134
+#: .\documents\templates\pdf\invoice\index.html:141
+msgid "pdfTemplates.invoice.currency"
+msgstr "Currency"
 
-#: .\documents\templates\pdf\invoice\index.html:206
-#: .\documents\templates\pdf\invoice\index.html:241
-msgid "Gross Value"
-msgstr ""
-
-#: .\documents\templates\pdf\invoice\index.html:220
-#: .\documents\templates\pdf\invoice\index.html:255
-msgid "Grand Total"
-msgstr ""
-
+#: .\documents\templates\pdf\invoice\index.html:143
+#: .\documents\templates\pdf\invoice\index.html:272
 #: .\documents\templates\pdf\invoice\index.html:289
-msgid "TAX:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:297
+msgid "pdfTemplates.invoice.exchangeRate"
+msgstr "Exchange Rate"
 
+#: .\documents\templates\pdf\invoice\index.html:144
+msgid "pdfTemplates.invoice.amountIn"
+msgstr "Amount In"
+
+#: .\documents\templates\pdf\invoice\index.html:146
+msgid "pdfTemplates.invoice.taxAmountIn"
+msgstr "Tax amount in"
+
+#: .\documents\templates\pdf\invoice\index.html:147
+msgid "pdfTemplates.invoice.totalIn"
+msgstr "Total in"
+
+#: .\documents\templates\pdf\invoice\index.html:191
+msgid "pdfTemplates.invoice.wayOfPayment"
+msgstr "Way of Payment"
+
+#: .\documents\templates\pdf\invoice\index.html:193
+msgid "pdfTemplates.invoice.dayOfPayment"
+msgstr "Day of Payment"
+
+#: .\documents\templates\pdf\invoice\index.html:210
+#: .\documents\templates\pdf\invoice\index.html:245
+msgid "pdfTemplates.invoice.taxRate"
+msgstr "Tax Rate"
+
+#: .\documents\templates\pdf\invoice\index.html:211
+#: .\documents\templates\pdf\invoice\index.html:246
+msgid "pdfTemplates.invoice.netValue"
+msgstr "Net Value"
+
+#: .\documents\templates\pdf\invoice\index.html:212
+#: .\documents\templates\pdf\invoice\index.html:247
+msgid "pdfTemplates.invoice.taxValue"
+msgstr "Tax Value"
+
+#: .\documents\templates\pdf\invoice\index.html:213
+#: .\documents\templates\pdf\invoice\index.html:248
+msgid "pdfTemplates.invoice.grossValue"
+msgstr "Gross Value"
+
+#: .\documents\templates\pdf\invoice\index.html:227
+#: .\documents\templates\pdf\invoice\index.html:262
+msgid "pdfTemplates.invoice.grandTotal"
+msgstr "Grand Total"
+
+#: .\documents\templates\pdf\invoice\index.html:273
+#: .\documents\templates\pdf\invoice\index.html:291
 #: .\documents\templates\pdf\invoice\index.html:298
-msgid "Notes:"
-msgstr ""
+msgid "pdfTemplates.invoice.table"
+msgstr "Table"
 
-#: .\documents\templates\pdf\invoice\index.html:307
-msgid "Issued By:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:273
+#: .\documents\templates\pdf\invoice\index.html:291
+#: .\documents\templates\pdf\invoice\index.html:298
+msgid "pdfTemplates.invoice.number"
+msgstr "number"
 
-#: .\documents\templates\pdf\invoice\index.html:315
-msgid "Amount payable:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:273
+#: .\documents\templates\pdf\invoice\index.html:291
+#: .\documents\templates\pdf\invoice\index.html:298
+msgid "pdfTemplates.invoice.dated"
+msgstr "dated"
 
-#: .\documents\templates\pdf\invoice\index.html:331
-msgid "In words:"
-msgstr ""
+#: .\documents\templates\pdf\invoice\index.html:296
+msgid "pdfTemplates.invoice.TAX"
+msgstr "TAX"
 
+#: .\documents\templates\pdf\invoice\index.html:305
+msgid "pdfTemplates.invoice.notes:"
+msgstr "Notes"
+
+#: .\documents\templates\pdf\invoice\index.html:314
+msgid "pdfTemplates.invoice.issuedBy:"
+msgstr "Isue date"
+
+#: .\documents\templates\pdf\invoice\index.html:322
+msgid "pdfTemplates.invoice.amountPayable:"
+msgstr "Amount Payble"
+
+#: .\documents\templates\pdf\invoice\index.html:338
+msgid "pdfTemplates.invoice.inWords:"
+msgstr "In Words"
+
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:18
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:25
 msgid "pdfTemplate.shippingInstr.orderIssuedBy"
 msgstr "Order issued by"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:19
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:26
 msgid "pdfTemplate.shippingInstr.email"
 msgstr "email"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:20
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:293
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:27
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:300
 msgid "pdfTemplate.shippingInstr.branch"
 msgstr "Branch"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:21
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:60
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:288
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:28
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:67
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:295
 msgid "pdfTemplate.shippingInstr.taxId"
 msgstr "TAX ID"
 
-#: .\documents\templates\pdf\rfdShippingInstruction\index.html:48
-msgid "pdfTemplate.shippingInstr.transportOrder"
-msgstr "Transport Order"
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:41
+msgid "pdfTemplate.forwardingInstr.forwardingOrder"
+msgstr "Forwarding Order"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:41
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:48
 msgid "pdfTemplate.shippingInstr.Nr"
 msgstr "Nr"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:46
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:53
 msgid "pdfTemplate.shippingInstr.pleaseEnterTheOrderNumberOnTheInvoice"
 msgstr "Please enter the order number on the invoice"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:55
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:62
 msgid "pdfTemplate.shippingInstr.carrier"
 msgstr "Carrier"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:65
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:156
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:72
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:163
 msgid "pdfTemplate.shippingInstr.contactPerson"
 msgstr "Contact Person"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:75
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:82
 msgid "pdfTemplate.shippingInstr.conveyance"
 msgstr "Conveyance"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:75
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:82
 msgid "pdfTemplate.shippingInstr.licenceplates"
 msgstr "Licence plates"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:94
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:101
 msgid "pdfTemplate.shippingInstr.address"
 msgstr "ADDRESS"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:94
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:101
 msgid "pdfTemplate.shippingInstr.pointsOfInterests"
 msgstr "POINTS OF INTEREST"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:95
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:102
 msgid "pdfTemplate.shippingInstr.date"
 msgstr "DATE"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:96
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:103
 msgid "pdfTemplate.shippingInstr.details"
 msgstr "DETAILS"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:110
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:117
 msgid "pdfTemplate.shippingInstr.openningHours"
 msgstr "Openning Hours"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:132
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:139
 msgid "pdfTemplate.shippingInstr.commodity"
 msgstr "Commodity"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:133
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:140
 msgid "pdfTemplate.shippingInstr.packaging"
 msgstr "Packaging"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:134
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:141
 msgid "pdfTemplate.shippingInstr.pieces"
 msgstr "Pieces"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:135
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:142
 msgid "pdfTemplate.shippingInstr.grossWeightKg"
 msgstr "Gross weight [kg]"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:136
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:143
 msgid "pdfTemplate.shippingInstr.CBM"
 msgstr "CBM"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:137
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:144
 msgid "pdfTemplate.shippingInstr.dimenssions"
 msgstr "Dimensions"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:138
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:161
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:145
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:168
 msgid "pdfTemplate.shippingInstr.comments"
 msgstr "Comments"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:150
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:157
 msgid "pdfTemplate.shippingInstr.totalCargo"
 msgstr "Total Gross Weight"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:155
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:243
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:162
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:250
 msgid "pdfTemplate.shippingInstr.referenceNumber"
 msgstr "Reference number"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:157
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:164
 msgid "pdfTemplate.shippingInstr.phone"
 msgstr "Tel"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:187
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:194
 msgid "pdfTemplate.shippingInstr.freight"
 msgstr "Freight"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:187
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:194
 msgid "pdfTemplate.shippingInstr.net"
 msgstr "net"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:187
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:194
 msgid "pdfTemplate.shippingInstr.VAT"
 msgstr "VAT"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:189
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:196
 msgid "pdfTemplate.shippingInstr.paymentTerm"
 msgstr "Payment Term"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:196
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:203
 msgid "pdfTemplate.shippingInstr.valueOfCommodity"
 msgstr "Value of commodity"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:201
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:208
 msgid "pdfTemplate.shippingInstr.additionalCost"
 msgstr "Additional cost"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:217
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:224
 msgid "pdfTemplate.shippingInstr.additionalRemarks"
 msgstr "Additional remarks"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:233
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:240
 msgid "pdfTemplate.shippingInstr.PIN"
 msgstr "PIN"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:253
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:260
 msgid "pdfTemplate.shippingInstr.customsClearance"
 msgstr "Customs clearance"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:277
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:284
 msgid "pdfTemplate.shippingInstr.carrierSignature"
 msgstr "Carrier"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:279
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:286
 msgid "pdfTemplate.shippingInstr.acceptance"
 msgstr ""
 "I hereby certify that I accept the general terms of the transportation "
 "contract."
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:288
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:295
 msgid "pdfTemplate.shippingInstr.tel"
 msgstr "tel"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:288
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:295
 msgid "pdfTemplate.shippingInstr.fax"
 msgstr "fax"
 
+#: .\documents\templates\pdf\rfdForwardingInstruction\index.html:288
 #: .\documents\templates\pdf\rfdShippingInstruction\index.html:295
 msgid "pdfTemplate.shippingInstr.regon"
 msgstr "regon"
+
+#: .\documents\templates\pdf\rfdShippingInstruction\index.html:48
+msgid "pdfTemplate.shippingInstr.transportOrder"
+msgstr "Transport Order"
 
 #: .\documents\templates\pdf\rfdWaybill\index.html:21
 #: .\documents\templates\pdf\rfdWaybill\index.html:59

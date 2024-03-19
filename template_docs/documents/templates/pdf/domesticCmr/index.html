@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% language template_language %}
+
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Domestic CMR</title>
+    </head>
+    {% load custom_filters %}
+     
+    <body>
+        <table>
+            <tr style="height: 90px; ">
+                <td colspan="2"  class="border">
+                    <span class="num-right">1</span>
+                        {% trans 'pdfTemplate.cmr.sender' %} {% trans 'pdfTemplate.cmr.nameAddressCountry' %}<br/>
+                        Absender (Name,Anschrift,Land)<br/>
+                        Sender (name, address, country)
+                        <div class="insert-data">
+                            {{sender.name}}<br/>
+                            {{sender.address}}<br/>
+                            {{sender.postal_code}} {{sender.city}}, {{sender.country}}<br/>
+                            {% trans 'pdfTemplate.cmr.onBehalfOfAndFor' %} {{client}}
+                        </div>
+                </td>
+                <td colspan="2" class="border" style="width:330px;" >
+                    <div style="padding-left:8px;">
+                        {% trans 'pdfTemplate.domesticCmr.waybill' %} &#x2116;<br>
+                    </div>
+                    <div style="float: right; padding-right:60px; padding-top:20px" >
+                        <span class="cmr-number">{{number}}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="border" colspan="2"  style="height:75px; ">
+                    <span class="num-right">2</span>
+                    {% trans 'pdfTemplate.cmr.sender' %} {% trans 'pdfTemplate.cmr.nameAddressCountry' %}<br>
+                    Absender (Name, Anschrift, Land)<br>
+                    Sender (name, address, country)
+                    <div class="insert-data">
+                            {{consignee.name}}<br/>
+                            {{consignee.address}} , {{consignee.postal_code}} {{ consignee.city }} {{ consignee.country }}
+                    </div>
+
+                </td>
+                <td colspan="2" style="border:3px solid ;border-bottom:none;">
+                    <span class="num-left">16</span>
+                    {% trans 'pdfTemplate.cmr.carrier' %} {% trans 'pdfTemplate.cmr.nameAddressCountry' %}<br>
+                    Frachtführer (Name, Anschrift, Land)<br>
+                    Carrier (Name, address, country)
+                        <div class="insert-data">
+                            {{carrier.name}}<br/>
+                            {{carrier.street}}<br/>
+                            {{carrier.postal_code}} {{carrier.city}}, {{ carrier.country }}<br/>
+                            {{driver.name}} {{driver.surname}} {{driver.identification_document}}, {{driver.truck}}/{{driver.trailer}}
+
+                    </div>
+                </td>
+            <tr>
+                <td colspan="2" style="height:50px; border:1px solid ;">
+                    <span class="num-right">3</span>
+                    {% trans 'pdfTemplate.cmr.placeOfDelivery' %} {% trans 'pdfTemplate.cmr.nameAddressCountry' %}<br>
+                    Auslieferungsort des Gutes (Ort, Land)<br>
+                    Place of delivery of the goods (place, country)<br>
+                    <div class="insert-data">
+                            {{delivery_place.name}}<br/>
+                            {{delivery_place.street}}, {{delivery_place.postal_code}} {{ delivery_place.city }}, {{delivery_place.country}}<br/>
+                            {{delivery_date}}
+                    </div>
+                    
+                </td>
+                <td colspan="2" style="border:3px solid ; border-bottom:none;border-top:none;">
+                <div style="margin-top:-8px;">
+                        <span  class="num-left">17</span>
+                    {% trans 'pdfTemplate.cmr.succesiveCarriers' %} {% trans 'pdfTemplate.cmr.nameAddressCountry' %}<br>
+                        Nachfolgende Frachtführer (Name, Anschrift, Land)<br>
+                        Successive carriers (name, address, country) <br>
+                        <div class="insert-data">
+                            {{successive_carriers.name}}<br/>
+                            {{successive_carriers.street}}<br/>
+                            {{successive_carriers.postal_code}} {{successive_carriers.city}} ,{{successive_carriers.country}}<br/>
+                            {{successive_driver.name}} {{successive_driver.surname}} {{successive_driver.identification_document}}, {{successive_driver.truck}}/{{successive_driver.trailer}}
+                    </div>
+                </div>     
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height:35px;border:1px solid ;height:50px;">
+                    <span class="num-right">4</span> 
+                    {% trans 'pdfTemplate.cmrplaceAndDateTaking' %}<br>
+                    Ort und Tag der Übernahme das Gutes (Ort, Land, Datum)<br>
+                    Place and date taking over the goods (place, country, data)<br>
+                    <div class="insert-data">
+                        {{loading_place.name}}<br/>
+                        {{loading_place.street}}, {{loading_place.postal_code}} {{loading_place.city}}, {{loading_place.country}}<br/>
+                        {{ loading_date }}      
+                    </div>
+                </td>
+                <td colspan="2" style="border: 3px solid; border-bottom:none!important; border-top:1px solid; ">
+                    <span class="num-left">18</span> 
+                    {% trans 'pdfTemplate.cmr.carrierReservationsAndObservations' %}<br>
+                    Vorbehalte und Bemerkungen der Frachtführer<br>
+                    Carrier’s reservations and observations<br>
+                    <div class="insert-data">
+                        {{instructions_for_carrier}}
+                    </div>
+                
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border:1px solid ;height:50px;">
+                    <span class="num-right">5</span> 
+                    {% trans 'pdfTemplate.cmr.documenntsAttached' %}<br>
+                    Beigefügte Dokumente<br>
+                    Documents attached<br>
+                    <div class="insert-data">
+                        {{documents_attached}}
+                    </div>
+                </td>
+                    <td colspan="2" style="border:3px solid ;border-top:none">
+
+                </td> 
+            </tr>
+            <tr>
+                <td colspan="4" style="height:280px;border:1px solid ;">
+                    <table class="cargo-table" style="width:100%;">
+                        <tr style="height: 240px;">
+                            <td style="width:16%">
+                                <span class="num-right">6</span>
+                                {% trans 'pdfTemplate.cmr.marksAndNos' %}<br>
+                                Kennzeichen und Nammern<br>
+                                Marks and Nos<br>
+                                <div class="insert-data">
+                                    {{ marks_and_numbers|linebreaksbr }}
+                                </div>
+                            </td>
+                            <td>
+                                <span class="num-right">7</span>
+                                {% trans 'pdfTemplate.cmr.numberOfPackages' %}<br>
+                                Anzahl der Packstücke<br>
+                                Number of packages<br>
+                                <div class="insert-data">
+                                    {{ number_of_packages|linebreaksbr }}
+                                </div>
+                            </td>
+                            <td>
+                                <span class="num-right">8</span>
+                                {% trans 'pdfTemplate.cmr.methodOfPacking' %}<br>
+                                Art der Verpackung<br>
+                                Method of packing <br>
+                                <div class="insert-data">
+                                    {{ packing_method|linebreaksbr }}
+                                </div>
+                            </td>
+                            <td>
+                                <span class="num-right">9</span>
+                                {% trans 'pdfTemplate.cmr.natureOfGoods' %}<br>
+                                Bezeichnung des Gutes<br>
+                                Nature of the goods<br>
+                                <div class="insert-data">
+                                    {{ nature_of_goods|linebreaksbr }}
+                                </div>
+                            </td>
+                            <td class="cargo-points10-12">
+                                <div class="num-left10">
+                                    10
+                                </div>
+                                <div class="statistic-number"> 
+                                    {% trans 'pdfTemplate.cmr.statisticalNumber' %}<br/>
+                                Statistiknummer<br/>
+                                Statistical number<br/>
+                                </div>
+                                <div class="insert-data">
+                                    {{ statistical_number|linebreaksbr }}
+                                </div>  
+                            </td>
+                            <td class="cargo-points10-12">
+                                <span class="num-left">11</span>
+                                {% trans 'pdfTemplate.cmr.grossWeightInKg' %}<br>
+                                Bruttogewicht in kg<br>
+                                Gross weight in kg<br>
+                                <div class="insert-data">
+                                    {{ gross_weight|linebreaksbr  }} kg
+                                </div>
+                            </td>
+                            <td class="cargo-points10-12" style="border-right:none;">
+                                <span class="num-right">12</span>
+                                {% trans 'pdfTemplate.cmr.volumeInM3' %}<br>
+                                Umfang m3<br>
+                                Volume in m3<br>
+                                <div class="insert-data">
+                                    {{ volume|linebreaksbr}} cm3
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <table class="adr-table" style="width:100%;">
+                                    <tr>
+                                        <td style="border-left:none; ">
+                                            <div class="adr-title">
+                                                {% trans 'pdfTemplate.cmr.numberUN' %}<br>
+                                                Nummer UN<br>
+                                                Number UN<br>
+                                            </div>
+                                            <div class="adr-insert-data">
+                                                {{un_number}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="adr-title">
+                                                {% trans 'pdfTemplate.cmr.lookPoint9' %}<br>
+                                                Bez.s.Nr.9<br>
+                                                Look point 9<br>
+                                            </div>
+                                            <div class="adr-insert-data">
+                                                {{official_designation}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="adr-title">
+                                                {% trans 'pdfTemplate.cmr.class' %}<br>
+                                                Klasse<br>
+                                                Class<br>
+                                            </div>
+                                            <div class="adr-insert-data">
+                                                {{class}}
+                                            </div>
+                
+                                        </td>
+                                        <td>
+                                            <div class="adr-title">
+                                                {% trans 'pdfTemplate.cmr.packingGroup' %}<br>
+                                                Verpackung gruppe<br>
+                                                The packing group<br>
+                                            </div>
+                                            <div class="adr-insert-data">
+                                                {{packing_group}}
+                                            </div>
+                                        </td>
+                                        <td style="border-right:none;">
+                                            <div>
+                                            {% trans 'pdfTemplate.cmr.ADR' %} 
+                                            </div>
+                                            <div class="adr-insert-data">
+                                                {{adr}}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="cargo-points10-12"></td>
+                            <td class="cargo-points10-12"></td>
+                            <td class="cargo-points10-12" style="border-right:none;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+                
+            <tr>
+                <td colspan="2" style="width:340px; border-left:1px solid; border-right:1px solid ;">
+                    <table style="width:100%;border:none;">
+                        <tr>
+                            <td style="height:140px;border:1px solid ;border-top:none;border-left:none;border-right:none;">
+                                <span class="num-right">13</span> 
+                                {% trans 'pdfTemplate.cmr.senderInstructions' %}<br>
+                                Anweisungen des Absenders<br>
+                                Sender’s instructions<br>
+                                <div class="insert-data">
+                                    {{sender_instructions|linebreaksbr}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid;border-top:none;border-left:none;border-right:none;height:53px;">
+                                <span class="num-right">14</span>
+                                {% trans 'pdfTemplate.cmr.instructionAsToPayementForCarriage' %} <span class="insert-data" style="padding-left:23px !important" > {{ instruction_for_carriage }} </span> <br/>
+                                Frechtzahlungsanweisungen<br/>
+                                <span style="padding-left:25px;">Instruction as to payement for carriage</span><br/>
+                                <div style="padding-left: 25px; padding-top:5px; padding-bottom:0px;">
+                                {% trans 'pdfTemplate.cmr.carriagePaid' %} / frei / Carriage paid  <span class="insert-data" style="padding-left:35px !important" > {{ carriage_charges_payment_date }} </span><br>
+                                {% trans 'pdfTemplate.cmr.carriageForward' %} / Unfrei / Carriage forward
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid;border-left:none;border-right:none;border-bottom:none;height:50px;">
+                                <span class="num-right">21</span>
+                                <div style="display: flex; justify-content: start; padding-left:25px;">
+                                        <div>
+                                            <span>{% trans 'pdfTemplate.cmr.establishedIn' %}</span>  <span class="insert-data" style="padding-left:5px !important"> {{ established_city }} </span>  <br/>
+                                            <span>Ausgefertigt</span><br/>
+                                            <span style="white-space: nowrap;">Established in</span><br/>
+                                        </div>
+                                        <div style="padding-left:70px;">
+                                            <span>{% trans 'pdfTemplate.cmr.in' %}</span> <span class="insert-data" style="padding-left:5px !important"> {{ established_date }} </span> <br/>
+                                            <span>am</span><br/>
+                                            <span>in</span><br/>
+                                        </div>
+                                    </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="2" style="border-right:1px solid;">
+                    <table class="table20">
+                        <tr>
+                            <td style="height:55px; max-height:55px;" colspan="8">
+                                <span class="num-left">19</span> 
+                                {% trans 'pdfTemplate.cmr.specialAgreements' %}<br/>
+                                    Besondere Vereinbarungen<br/>
+                                    Special agreements<br/>
+                                    <div class="insert-data">
+                                    {{ special_agreements|linebreaksbr}}
+                                    </div>
+                                
+                            </td>
+                        </tr>
+                        <tr style="border-collapse:collapse; !important border: 2px solid;">
+                                
+                                    <tr style="border-left:2px solid ;">
+                                        <td class="border-bottom1 border-top3 border-right1 border-left3 height20"  style="width:30%;">
+                                            <span class="num-right-2">20</span>
+                                            {% trans 'pdfTemplate.cmr.toBePaidBy' %}<br>
+                                            Zu zahlen vom:<br>
+                                            To be paid by<br>
+                                        </td>
+                                        <td class="border-bottom1 border-top3 border-right1 height20" style="width:16.66%;">
+                                            {% trans 'pdfTemplate.cmr.sender' %}<br>
+                                            Absender<br>
+                                            Sender<br>
+                                        </td>
+                                        <td class="border-bottom1 border-right1 border-top3 height20" style="width:10%;"></td>
+
+                                        <td colspan="2" class="border-bottom1 border-right3 border-left3 border-top3  height20" style="width:25%;">
+                                            <center>  
+                                                {% trans 'pdfTemplate.cmr.currency' %} / Währung<br/>
+                                                / Currency 
+                                            </center>
+                                        </td>
+                                        <td class="border-bottom1 border-top3 border-right3 height20" style="width:15%;">
+                                            {% trans 'pdfTemplate.cmr.consignee' %} <br>
+                                            Empfänger<br>
+                                            Consignee<br>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none border-left3">
+                                        <td class="border-left3  border-botttom-none height15">
+                                            <span style="padding-bottom:0px;">
+                                            {% trans 'pdfTemplate.cmr.carriageCharges' %} / Fracht<br/>
+                                            / Carriage charges
+                                            </span>
+                                        </td>
+                                        <td class="data20-alignment">
+                                            <div>{{sender_carriage_charges_amount}}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                            <div> {{sender_carriage_charges_currency}}</div>
+                                        </td>
+                                        <td class="data20-alignment width12">
+                                            <div> {{consignee_carriage_charges_currency}}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment ">
+                                            <div> {{consignee_carriage_charges_amount}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class="border-top-none border-left3 height15">
+                                            {% trans 'pdfTemplate.cmr.deductions' %} / Ermässigungen<br/>
+                                            Deductions</td>
+                                        <td class="data20-alignment">
+                                            <div>{{sender_discounts_amount}}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                            <div>{{sender_discounts_currency}}</div>
+                                        </td>
+                                        <td class="data20-alignment width12">
+                                            <div>{{consignee_discounts_currency}}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment">
+                                            <div>{{consignee_discounts_amount}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class="border-botttom-none border-left3 height15">
+                                            {% trans 'pdfTemplate.cmr.balance' %} / Zuschläge /<br/>
+                                            Balance
+                                        </td>
+                                        <td class="data20-alignment">
+                                            <div>{{sender_balance_amount}}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                            <div>{{sender_balance_currency}}</div>
+                                        </td>
+                                        <td class="data20-alignment width12">
+                                            <div>{{consignee_balance_currency}}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment">
+                                            <div>{{consignee_balance_amount}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class="border-top-bottom-none border-left3 height15">
+                                            {% trans 'pdfTemplate.cmr.supplemCharges' %} / Nebengebühren<br/>
+                                            / Supplem. charges</td>
+                                        <td class="data20-alignment">
+                                            <div>{{sender_supplem_charges_amount}}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                            <div>{{sender_supplem_charges_currency}}</div>
+                                        </td>
+                                        <td class="data20-alignment width12">
+                                            <div>{{consignee_supplem_charges_currency}}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment">
+                                            <div>{{consignee_supplem_charges_amount}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class="border-left3 border-top-none height15">
+                                        {% trans 'pdfTemplate.cmr.miscellaneous' %}<br/>
+                                        / Sonstiges / Miscellaneous</td>
+                                        <td class="data20-alignment">
+                                            <div>{{ sender_miscellaneous_amount}}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                            <div>{{ sender_miscellaneous_currency}}</div>
+                                        </td>
+                                        <td class="data20-alignment width12">
+                                            <div>{{ consignee_miscellaneous_currency}}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment" >
+                                            <div>{{ consignee_miscellaneous_amount}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class=" border-left3 height15">
+                                        {% trans 'pdfTemplate.cmr.insurance' %} / Versicherung / Insurance</td>
+                                        <td class="data20-alignment">
+                                            <div>{{ sender_insurance_amount }}</div>
+                                        </td>
+                                        <td></td>
+                                        <td class="border-leftright-3 data20-alignment width12">
+                                                <div>{{ sender_insurance_currency }}</div>
+                                        </td>
+                                        <td class="data20-alignment width12" >
+                                            <div>{{ consignee_insurance_currency }}</div>
+                                        </td>
+                                        <td class="border-leftright-3 data20-alignment">
+                                            <div>{{ consignee_insurance_amount }}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top-bottom-none">
+                                        <td class="border-left3 border-bottom3 height15">
+                                            {% trans 'pdfTemplate.cmr.totalToBePaid' %} / Gesamtsumme<br/>
+                                            / Total to be paid
+                                        </td>
+                                        <td class="border-bottom3 data20-alignment">
+                                            <div>{{ sender_total_amount }}</div>
+                                        </td>
+                                        <td class="border-bottom3"></td>
+                                        <td class="border-leftright-3 border-bottom3 data20-alignment width12 ">
+                                            <div>{{ sender_total_currency }}</div>
+                                        </td>
+                                        <td class="border-bottom3 data20-alignment width12">
+                                            <div>{{ consignee_total_currency }}</div>
+                                        </td>
+                                        <td class="border-bottom3 border-leftright-3 data20-alignment">
+                                            <div>{{ consignee_total_amount }}</div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                            <td  style="height:45px;border:none;">
+                                <div style="display: flex; align-items: center; text-align: center;">
+                                <span class="num-left" >15</span> 
+                                <span style="padding-left:3px; white-space:nowrap;">{% trans 'pdfTemplate.cmr.cashOnDeliver' %} / Rückerstattuung / Cash on deliver</span>
+                                </div>
+                                <div class="insert-data">
+                                    {{cash_on_delivery}}
+                                </div>
+                            </td>
+                        </tr>
+                            
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="border-left: 1px solid; border-right: 1px solid">
+                    <table style="width:100%;  ">
+                        <tr>
+                            <td style="border:1px solid;border-top:3px solid;border-bottom:none;border-left:none;height:115px;">
+                                <span class="num-right">22</span>
+                            </td>
+                            <td style="border-top: 3px solid; border-right:3px solid; border-left:3px solid; ">
+                                <span class="num-right">23</span>
+                            </td>
+                            <td style="border:1px solid;border-top:1px solid;border-bottom:none; border-right:none;">
+                                <span class="num-right">24</span>
+                                <span>{% trans 'pdfTemplate.cmr.goodsRecieved' %} / Gut empfangen<br/>
+                                / Goods recieved </span>
+                                <div style="display: flex;  padding-left:5px; padding-top:10px;">
+                                    
+                                        <div>
+                                            <span>{% trans 'pdfTemplate.cmr.place' %}</span><br/>
+                                            <span>Ort</span><br/>
+                                            <span>Place</span><br/>
+                                        </div>
+                                        <div class="insert-data" style="padding-top: 0px;padding-left:5px !important; padding-right:7px !important; width:45px;" >
+                                                {{ goods_recieved_place }}
+                                        </div>
+                                    
+                                        <div>
+                                            <span>{% trans 'pdfTemplate.cmr.in' %}</span><br/>
+                                            <span>am</span><br/>
+                                            <span>in</span><br/>
+                                        </div>
+                                        <div class="insert-data" style="padding-left:3px !important; padding-right:0px !important;" >
+                                                {{ goods_recieved_date }}
+                                        </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid;border-top:none;border-bottom:1px solid;height:15px;">
+                                <div style="padding-left:4px;">
+                                {% trans 'pdfTemplate.cmr.signatureAndStampofTheSender' %}<br>
+                                Unterschrift und Stempel des Absenders<br>
+                                Signature and stamp of the sender<br>
+                                </div>
+                            </td>
+                            <td style="border-left:3px solid; border-right:3px solid; border-bottom:3px solid;">
+                                <div style="padding-left:4px">
+                                {% trans 'pdfTemplate.cmr.signatureAndStampofTheCarrier' %}<br>
+                                Unterschrift und Stempel des Frachtführers<br>
+                                Signature and stamp of the carrier<br>
+                                </div>
+                            </td>
+                            <td style="border:1px solid;border-top:none;border-bottom:1px solid;border-right:none;">
+                                <div style="padding-left:4px">
+                                {% trans 'pdfTemplate.cmr.signatureAndStampofTheConsignee' %}<br>
+                                Unterschrift und Stempel des Empfängers<br>
+                                Signature and stamp of the consignee<br>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>   
+</body>
+    
+</html>
+{% endlanguage %}
