@@ -1,6 +1,7 @@
 
 credit_note_data={
     'credit_note_number':'NU/000001/01/24',
+    'template_language':'pl',#testowo
     'logo_url':'documents/static/images/nova_logo.png',
     'duplicate_from_date':'2024-01-31', # Duplikat
     'place_of_issue':'Piotrków Trybunalski',

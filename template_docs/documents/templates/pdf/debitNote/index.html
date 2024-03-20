@@ -1,4 +1,5 @@
 {% load i18n %}
+{% language template_language %} 
 {% load static %}
 {% load custom_filters %}
 {% load humanize %}
@@ -116,7 +117,7 @@
   <thead>
       <tr>
          <td style="width: 65%">{% trans 'pdfTemplates.creditNote.contents'  %}</td>
-         <td style="width: 35%">{% trans  'pdfTemplates.creditNote.amount' %}</td>
+         <td style="width: 35%">{% trans  'pdfTemplates.debitNote.amount' %}</td>
       </tr>
   </thead>
   <tbody>
@@ -193,3 +194,4 @@
 
 <body>
 </html>
+{% endlanguage %}

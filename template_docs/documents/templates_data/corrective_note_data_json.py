@@ -1,5 +1,5 @@
 corrective_note_data = {
-    'document_language': 'en',
+    'document_language': 'pl',
     'corrective_note_number':'FVK/000354/11/23',
     'corrective_note_issue_date':'2024-02-17',
     'correcting_document':'FVK/000354/11/23',

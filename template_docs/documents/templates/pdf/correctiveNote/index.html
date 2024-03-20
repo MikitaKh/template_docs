@@ -1,7 +1,9 @@
 {% load i18n %}
+{% language document_language %}
 {% load static %}
 {% load custom_filters %}
 {% load humanize %}
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -254,9 +256,9 @@
   <br />
 
   <div style="width: 25%; float: left;">
-     <strong>{% trans 'pdfTemplates.correctiveNote.wayOfPayment' %}</strong>{{ way_of_payment }}<br/>
+     <strong>{% trans 'pdfTemplates.correctiveNote.wayOfPayment' %}:</strong> {{ way_of_payment }}<br/>
      <br/>
-     <strong>{% trans 'pdfTemplates.correctiveNote.dayOfPayment' %}</strong>{{ day_of_payment  }}
+     <strong>{% trans 'pdfTemplates.correctiveNote.dayOfPayment' %}:</strong> {{ day_of_payment  }}
   </div>
 
    {% if split_payment == 1  %}
@@ -408,3 +410,4 @@
 
 </body>
 </html>
+{% endlanguage %}

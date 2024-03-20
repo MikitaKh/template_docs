@@ -1,6 +1,7 @@
 cmr_data={
     
     'number':'NOV/009820/24/2',
+    'template_language':'pl', #ustawienie języku(testowo)
     'sender':{
         'name':'Nova Tracking Sp. z o.o',
         'address':'ul. Zagrodnicza 20',
