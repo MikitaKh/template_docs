@@ -3,6 +3,7 @@ from documents.templates_data.rfd_conditions import conditions , conditions_rfd_
 rfd_data ={
         #Podstawowe informacje
          'logo_url': 'documents/static/images/nova_logo.png',
+         'template_language': 'en',
          'issuer': ' Mikita Kharko',
          'phone_issuer' : '+48546654543',
          'email_issuer': ' m.kharko@nova-tracking.com',

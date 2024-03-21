@@ -1,5 +1,5 @@
 {% load i18n %}
-
+{% language document_language %} 
 {% load static %}
 {% load custom_filters %}
 {% load humanize %}
@@ -53,14 +53,14 @@
           <strong>{% trans "pdfTemplates.invoice.seller" %} :</strong><br/>
           <br/>
           {{ sender.name }}<br/>
-          {% trans "pdfTemplates.invoice.address:" %} {{ sender.street }} {{sender.building_nr}}<br/>
+          {% trans "pdfTemplates.invoice.address" %}: {{ sender.street }} {{sender.building_nr}}<br/>
           {{sender.postal_code}} {{sender.city}}<br/>
           {{sender.country}}<br/>
           {% trans "pdfTemplates.invoice.vatId" %}: {{sender.vat_id}}<br/>
           {% trans "pdfTemplates.invoice.eur" %}: {{ sender.transfer_details.eur }}<br/>
           {% trans "pdfTemplates.invoice.swiftCode"%}: {{ sender.transfer_details.swift_code|linebreaksbr}}<br/>
           {% trans "pdfTemplates.invoice.vatPl" %}: {{ sender.transfer_details.vat_pl}}<br/>
-          {% trans "SWIFT CODE:" %}{{ sender.transfer_details.swift_code_pl|linebreaksbr}}
+          {% trans "pdfTemplates.invoice.swiftCode" %}: {{ sender.transfer_details.swift_code_pl|linebreaksbr}}
        </div>
 
        <div class="{% if addresse|length > 0 %} pdf-invoice__recipient-addresses-section {% else %} pdf-invoice__recipient-addresses-section-1 {% endif %}">
@@ -191,7 +191,7 @@
    
    {% if split_payment %}
     <div style="width: 20%; float: left; font-size: 1.3em; margin-left: 2%; margin-right: 2%;" class="center bold">
-        {{ split_payment }}
+        {% trans "pdfTemplates.invoice.splitPaymentMethod" %}
     </div>
   {% endif %}
 
@@ -295,7 +295,7 @@
 <div style="clear: both;"></div>
 
  <hr style="clear: both;"/>
-<strong>{% trans "pdfTemplates.invoice.notes:" %}</strong><br/>
+<strong>{% trans "pdfTemplates.invoice.notes" %}: </strong><br/>
 {{ notes|safe }}
 
 <div style="clear: both;"></div>
@@ -303,7 +303,7 @@
 {% comment %} TOTAL SECTION {% endcomment %}
 <hr style="clear: both;"/>
 <div style="width: 30%; float:left;">
-  <strong>{% trans "pdfTemplates.invoice.issuedBy:" %}</strong><br/>
+  <strong>{% trans "pdfTemplates.invoice.issuedBy" %}: </strong><br/>
   {{ issuer_name }}
 </div>
 
@@ -311,7 +311,7 @@
    <div style="background: #efefef; padding: 5px; font-size: 1.2em;" >
 
        <div style="float: left; width: 68%;" >
-          <strong>{% trans "pdfTemplates.invoice.amountPayable:" %}</strong>
+          <strong>{% trans "pdfTemplates.invoice.amountPayable" %}: </strong>
        </div>
 
        <div style="float: right; width: 30%; text-align: right;" >
@@ -327,7 +327,7 @@
 
        <div style="text-align:right;">
 
-          {% trans "pdfTemplates.invoice.inWords:" %} 
+          {% trans "pdfTemplates.invoice.inWords" %}: 
           {% with currency_lang_string=document_currency|add:","|add:document_language %}
              {{ summary_grand_total_in_converted_currency.gross_value|number_to_words:currency_lang_string}}
           {% endwith %}
@@ -349,3 +349,4 @@
 
 </body>
 </html>
+{% endlanguage %}

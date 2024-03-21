@@ -7,7 +7,6 @@
     <meta name="description" content="rfdShippingInstruction">
   </head>
 
-{% comment %} Pytania trudne momenty {% endcomment %}
 {% comment %} Czcionka DejaVuSansCondensed {% endcomment %}
 {% comment %} Waga łączna jak policzyć z with nie działa {% endcomment %}
 
@@ -56,7 +55,7 @@
 <table class="carrier-information">
     <tr>
         <td  class="carrier-label" >
-            {% trans 'pdfTemplate.shippingInstr.carrier' %}
+            {% trans 'pdfTemplate.shippingInstr.carrier' %}:
         </td>
         <td class="carrier-info">
             <b>{{ carrier  }}</b><br/>
@@ -95,7 +94,7 @@
 <table class="poi-points">
     <thead>
         <tr >
-            <th class="width20" ><center>{% trans 'pdfTemplate.shippingInstr.address' %} / {% trans 'pdfTemplate.shippingInstr.pointsOfInterests' %}</center></th>
+            <th class="width20" ><center>{% trans 'pdfTemplate.shippingInstr.pointsOfInterests' %}</center></th>
             <th class="width10"><center>{% trans 'pdfTemplate.shippingInstr.date' %}</center></th>
             <th class="width10"><center>{% trans 'pdfTemplate.shippingInstr.details' %}</center></th>
         </tr>
@@ -277,7 +276,7 @@
         <a style="font-size: 12px;">....................................................................................</a>
 
         <div style="text-align:center; font-size: 13px ">
-                <span class="signature"> {% trans 'pdfTemplate.shippingInstr.carrierSignature' %}</span>
+                <span class="signature"> {% trans 'pdfTemplate.shippingInstr.contractorsSignature' %}</span>
                 <br/>
                 <span class="signature"  style="font-size: 10px;">{% trans 'pdfTemplate.shippingInstr.acceptance' %}</span> 
         </div>  

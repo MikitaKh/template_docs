@@ -43,7 +43,7 @@ invoice_data={
       'document_currency': 'EUR',
       'currency':'PLN', #Waluta systemowa
       'document_exchange_rate':'4,3309',
-      'document_language':'en',
+      'document_language':'pl',
       'items':[
           {
             'title':'Fracht morski',
