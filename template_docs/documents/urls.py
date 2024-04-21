@@ -13,5 +13,6 @@ urlpatterns = [
     path('generate_debitNote',generate_debitNote),
     path('generate_creditNote',generate_creditNote),
     path('generate_bol',generate_bill_of_landing),
-    path('generate_domestic_cmr',generate_domestic_cmr)
+    path('generate_domestic_cmr',generate_domestic_cmr),
+    path('generate_sea_bill_of_lading',generate_sea_bill_of_lading)
 ]

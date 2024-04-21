@@ -7,6 +7,7 @@ from documents.templates_data.invoice_data_json import invoice_data
 from documents.templates_data.corrective_note_data_json import corrective_note_data
 from documents.templates_data.credit_note_json import credit_note_data
 from documents.templates_data.bol_data_json import bol_data
+from documents.templates_data.sea_bill_of_lading_data_json import sea_bol_data
 
 import os
 from django.utils.translation import gettext as _
@@ -137,3 +138,15 @@ def generate_domestic_cmr(request):
     response.write(pdf_content)
 
     return response
+
+
+def generate_sea_bill_of_lading(request):
+                                
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/sea_bill_of_lading/index.html',sea_bol_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition']='inline; filename=sea_bill_of_lading.pdf'
+
+    response.write(pdf_content)
+
+    return response                 

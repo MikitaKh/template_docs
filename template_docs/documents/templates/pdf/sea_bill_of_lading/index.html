@@ -1,0 +1,301 @@
+{% load i18n %}
+{% language template_language %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEA BILL OF LADING</title>
+    <meta name="description" content="rfdShippingInstruction">
+  </head>
+
+
+{% load static %}
+{% load custom_filters %}
+
+<body>
+<div class="d-table">
+  <div class="d-tr" >
+ {% comment %} SHIPPER CONSIGNEE {% endcomment %}
+
+    <div class="d-td" style="vertical-align:top; margin:0; padding:0px; width:40%;">   
+          
+    
+             <div class="d-table shippers">
+                 {% comment %} SHIPPER {% endcomment %}
+                <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="padding:4px;">
+                         <b style="padding:6px">SHIPPER</b>
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="height:80px;">
+                         SHIPPER DATA
+                      </div>
+                </div>
+                {% comment %} CONSIGNEE {% endcomment %}
+                  <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="padding:4px;">
+                         <b style="padding:6px;" >CONSIGNEE</b> 
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="height:80px;">
+                         CONSIGNEE DATA
+                      </div>
+                </div>
+                {% comment %} NOTIFY-PARTY {% endcomment %}
+                <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="padding:4px;">
+                         <b style="padding:6px;">NOTIFY-PARTY</b>
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td shippers" colspan="2" style="height:80px;">
+                         NOTIFY PARTY DATA
+                      </div>
+                </div>
+                {% comment %} PRE CARRIAGE {% endcomment %}
+                <div class="d-tr">
+                    <div class="d-td"  style="border-right: 1px solid blue; width:100px;">
+                       <b style="padding:6px;" >Pre-Carriage</b>
+                    </div>
+                    <div class="d-td"  style="border-right: 1px solid blue; padding:6px;">
+                        PRE CARRIAGE
+                    </div>
+                </div>
+            </div>
+
+    </div> 
+          
+      {% comment %} LOGO {% endcomment %}
+            <div class="d-td" style="margin:0; padding:0px;">
+
+                <div style="float:left;padding: 10px;width:50%;">
+                    <img src="{{ logo_url }}" style=" max-height:90px; margin:0;  " />
+                </div>
+
+                <div style="float:right; top:0; right:0; margin:0;width:45%;">
+                  <div class="d-table">
+                    <div class="d-tr" style="width:100%">
+                            <div class="d-td" style="width:40%">
+                                <b>B/L NUMBER</b>
+                            </div>
+                            <div class="d-td">
+                               6754236788 
+                            </div>
+                    </div>
+                    <div class="d-tr" style="width:100%">
+                        <div class="d-td" colspan="2">
+                            <b style="font-size:15px;">ORIGINAL</b>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                  <div style="clear: both;"></div>
+                  <br/>
+                <div style="padding-left:15px;">
+                    <b style="font-size:12px; color:#1287c8;" >NEGOTIABLE</b><br/>
+                   <b style="font-size:20px;color:#1287c8; padding-bottom:10px;">BILL OF LADING</b>
+                   <br/>
+                   <br/>
+                   <div style="font-size:8px; line-height: 11px; text-align: justify; padding-right:10px; ">
+                   Received by the Carrier- as far as ascertained by reasonable means of checking, in apparent good order and
+                   condition unless otherwise herein stated, the total number or quantity of Containers or other packages or 
+                   units indicated in the box entitled "Number of Packages" for carriage front the port of loading (or the place of receipt, 
+                   if mentioned above) to the port of discharge (or the place of delivery if mentioned above), such carriage being always 
+                   subject to the terms, rights, defenses, provisions, conditions. exceptions, limitations, and liberties hereof (INCLUDING THOSE TERMS AND 
+                   CONDITIONS ON THE REVERSE HEREOF AND THOSE TERMS AND CONDITIONS CONTAINED IN THE CARRIER'S APPLICABLE TARIFF) .
+                   The Merchant is obliged to surrender one original bill of lading. duly endorsed in exchange for the Goods The Carrier accepts a duty of
+                    reasonable care to check that any such document which the Merchant surrenders as a bill of lading is genuine and original.
+                   If the Carrier complies with this duty it will be entitled to deliver the Goode against what it reasonably believes to be genuine and 
+                   original bill of lading such delivery discharging the Carrier's delivery obligations. In accepting this bill of lading, any local customs or 
+                   privileges to the contrary. Notwithstanding, the Merchant agrees to be bound by all Terms and Conditions stated herein whether written, printed, 
+                   stamped or incorporated on the face, or reverse side hereof as if they were all signed by the Merchant. 
+                   </div>
+                </div>
+                
+            </div> 
+  </div>
+</div>
+ {% comment %} PLACES OF RECIEPT {% endcomment %}
+<div class="d-table" >
+  <div class="d-tr" style="text-align:center" >
+     <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:12.4% ">
+        <b>Place of Reciept</b>
+     </div>
+      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:15%">
+        <b>Vessel /Voy No</b>
+     </div>
+      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:15%">
+        <b>Port of Loading</b>
+     </div>
+      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:15%">
+        <b>Port of Discharge</b>
+     </div>
+      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:13%">
+        <b>Place of Delivery</b>
+     </div>
+      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:15%;">
+        <b>Final Destination for Merchants Reference</b>
+     </div>
+  </div>
+  <div class="d-tr" style="height:70px;">
+         <div class="d-td">
+         Place of Reciept data
+     </div>
+      <div class="d-td">
+         Vessel /Voy No data
+     </div>
+      <div class="d-td">
+         Port of Loading data
+     </div>
+      <div class="d-td">
+         Port of Discharge data
+     </div>
+      <div class="d-td">
+         Place of Delivery data
+     </div>
+      <div class="d-td">
+         Final Destination for Merchants Reference data
+     </div>
+  </div>
+</div>
+{% comment %} CONTAINERS  {% endcomment %}
+<div class="d-table" style="font-size:9px;">
+    <div class="d-tr" style="text-align:center">
+       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;width:27%"  >
+         <b>Marks & Numbers</b>
+       </div>
+       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;">
+          <b>No & Kind of packages</b>
+       </div>
+       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;width:32.8%">
+         <b>Description of Packages & Goods Gross Weight</b>
+       </div>
+       <div class="d-td" style="background-color:#1287c8; color:white; width:17.55% ">
+         <b>Measurement</b>
+       </div>
+    </div>
+    <div class="d-tr" style="height:380px;">
+        <div class="d-td" style="border-right: 1px solid white;">
+            CBHU7899
+        </div>
+        <div class="d-td" style="border-right: 1px solid white;">
+            Packages
+        </div>
+        <div class="d-td" style="border-right: 1px solid white;">
+           Description
+        </div>
+        <div class="d-td" >
+           Measurement
+        </div>
+    </div>
+</div>
+{% comment %} SUMMARY {% endcomment %}
+<div class="d-table">
+    <div class="d-tr">
+       <div class="d-td" style="width:50%; margin:0; padding:0px;">
+           {% comment %} OCEAN RATES {% endcomment %}
+          <div class="d-table">
+             <div class="d-tr ">
+                <div class="d-td pale-blue" colspan="4" >
+                  <b style="font-size:9px;">Ocean Rates, Weights, Measurement & Charges ( Subject to Correction )</b>
+                </div>
+             </div>
+               {% comment %} Weight/Measurement {% endcomment %}
+                <div class="d-tr" >
+                    <div class="d-td blue" style="width:35%;">
+                        Weight/Measurement
+                    </div>
+                    <div class="d-td blue" style="text-align:center; width:19%" >
+                        Rate
+                    </div>
+                    <div class="d-td blue" style="text-align:center; width:19%">
+                        Per
+                    </div>
+                    <div class="d-td blue" style="text-align:center; width:27%">
+                       Amount
+                    </div>
+                </div>
+               {% comment %} DATA  Weight/Measurement {% endcomment %}
+               <div class="d-tr" >
+                    <div class="d-td" style="height:50px;">
+                        Weight/Measurement data
+                    </div>
+                    <div class="d-td" >
+                        Rate data
+                    </div>
+                    <div class="d-td" >
+                        Per data
+                    </div>
+                    <div class="d-td">
+                       Amount data
+                    </div>
+                </div>
+                {% comment %} FREIGHT PAYBLE at {% endcomment %}
+                <div class="d-tr" >
+                   <div class="d-td pale-blue" colspan="2" style="width:30%">
+                       <b>Freight Paybale at</b>
+                   </div>
+                   <div class="d-td" colspan="2" style="width:70%">   
+                   </div>
+                </div>
+                {% comment %} FOR DELLIVERY OF GOODS {% endcomment %}
+                <div class="d-tr">
+                    <div class="d-td pale-blue" colspan="4">
+                        <b>For delivery of goods, please apply to</b>
+                    </div>
+                </div>
+                <div class="d-tr">
+                    <div class="d-td" colspan="4" style="height:60px; border-bottom: 1px solid white;" >
+                        For delivery of goods, please apply to data
+                    </div>
+                </div>
+          </div>
+       </div>
+       {% comment %} SHIPPED ON BOARD {% endcomment %}
+       <div class="d-td" style="width:50%; margin:0; padding:0px;">
+          <div class="d-table">
+            <div class="d-tr" style="height:30px; ">
+                <div class="d-td dark-blue " style="width:40%; " >
+                   <b>SHIPPED ON BOARD ON</b>
+                </div>
+                <div class="d-td " style="width:60%; " >
+                   DATA
+                </div>
+            </div>
+            <div class="d-tr">
+                <div class="d-td" colspan="2" style="border-bottom:1px solid white;">
+                    <div style="color:#1287c8; text-align:justify; padding:5px; "> 
+                        <b>IN ACCEPTING THIS BILL OF LADING</b> the Merchants agree to be bound by all of
+                        its stipulations, exceptions and conditions whether written, printed or stamped
+                        on the front or back hereof any local customs or privileges to the contrary 
+                        notwithstanding.
+                    </div>
+                    <br/>
+                   
+                    <div style="color:#1287c8; text-align:justify;  padding:5px; "> 
+                        <b>IN WITNESS WHEREOF</b> the Carrier itself or by its agents has signed three
+                        (3) original Bills of Lading all of this tenor and date and as soon as at least
+                        one original is surrendered the others shall be void.
+                    </div>
+                  
+                      {% comment %} DATES {% endcomment %}
+                       <div style="padding:5px;">
+                            DATED ON <span class="blue">______________________</span> AT <span class="blue">______________________</span>
+                       </div>
+                       <br/>
+                       {% comment %} NUMBER OF ORIGINALS {% endcomment %}
+                       <div>
+                            <b>Numbers of original</b> <br/>
+                            <b>B / L (s)</b>  <span id="number_blank">___________</span> As carrier  <span id="blank2">________________</span>
+                       </div>
+                </div>
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endlanguage %}
