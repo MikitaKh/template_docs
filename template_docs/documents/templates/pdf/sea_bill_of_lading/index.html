@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>SEA BILL OF LADING</title>
-    <meta name="description" content="rfdShippingInstruction">
+    <meta name="description" content="seaBillOfLading">
   </head>
 
 
@@ -19,68 +19,73 @@
     <div class="d-td" style="vertical-align:top; margin:0; padding:0px; width:40%;">   
           
     
-             <div class="d-table shippers">
+             <div class="d-table ">
                  {% comment %} SHIPPER {% endcomment %}
                 <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="padding:4px;">
-                         <b style="padding:6px">SHIPPER</b>
+                      <div class="d-td  partiesHeader" colspan="2" >
+                         <b class="p6"> SHIPPER</b>
                       </div>
                 </div>
                 <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="height:80px;">
-                         SHIPPER DATA
+                      <div class="d-td partiesData" colspan="2" >
+                           {{ shipper.name }} <br/>
+                           {{ shipper.street }} <br/>
+                           {{ shipper.postal_code}} {{ shipper.city }} , {{ shipper.country }} ({{ shipper.country_prefix }}) <br/>
+                           {{ shipper.additional_info }}
                       </div>
                 </div>
                 {% comment %} CONSIGNEE {% endcomment %}
                   <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="padding:4px;">
-                         <b style="padding:6px;" >CONSIGNEE</b> 
+                      <div class="d-td partiesHeader" colspan="2" >
+                         <b class="p6" >CONSIGNEE</b> 
                       </div>
                 </div>
                 <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="height:80px;">
-                         CONSIGNEE DATA
+                      <div class="d-td partiesData" colspan="2" > 
+                           {{ consignee.name }} <br/>
+                           {{ consignee.street }} <br/>
+                           {{ consignee.postal_code}} {{ consignee.city }} , {{ consignee.country }} ({{ consignee.country_prefix }}) <br/>
+                           {{ consignee.additional_info }} 
                       </div>
                 </div>
                 {% comment %} NOTIFY-PARTY {% endcomment %}
                 <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="padding:4px;">
-                         <b style="padding:6px;">NOTIFY-PARTY</b>
+                      <div class="d-td partiesHeader" colspan="2" >
+                         <b class="p6" >NOTIFY-PARTY</b>
                       </div>
                 </div>
                 <div class="d-tr "  >
-                      <div class="d-td shippers" colspan="2" style="height:80px;">
-                         NOTIFY PARTY DATA
+                      <div class="d-td partiesData" colspan="2" style="vertical-align:middle" >
+                          {{ notify_party }}
                       </div>
                 </div>
                 {% comment %} PRE CARRIAGE {% endcomment %}
                 <div class="d-tr">
-                    <div class="d-td"  style="border-right: 1px solid blue; width:100px;">
-                       <b style="padding:6px;" >Pre-Carriage</b>
+                    <div class="d-td"  style="width:100px;">
+                       <b class="p6" >Pre-Carriage</b>
                     </div>
-                    <div class="d-td"  style="border-right: 1px solid blue; padding:6px;">
-                        PRE CARRIAGE
+                    <div class="d-td"  style="padding:6px;">
+                        PRE CARRIAGE 
                     </div>
                 </div>
             </div>
-
     </div> 
           
       {% comment %} LOGO {% endcomment %}
             <div class="d-td" style="margin:0; padding:0px;">
 
-                <div style="float:left;padding: 10px;width:50%;">
-                    <img src="{{ logo_url }}" style=" max-height:90px; margin:0;  " />
+                <div class="logo">
+                    <img class="logo-img"  src="{{ logo_url }}"/>
                 </div>
 
-                <div style="float:right; top:0; right:0; margin:0;width:45%;">
+                <div class="bl-number">
                   <div class="d-table">
-                    <div class="d-tr" style="width:100%">
-                            <div class="d-td" style="width:40%">
+                    <div class="d-tr" style="width:100%; font-size:11px;">
+                            <div class="d-td" style="width:45%">
                                 <b>B/L NUMBER</b>
                             </div>
                             <div class="d-td">
-                               6754236788 
+                              {{ bl_number }}
                             </div>
                     </div>
                     <div class="d-tr" style="width:100%">
@@ -93,11 +98,11 @@
                   <div style="clear: both;"></div>
                   <br/>
                 <div style="padding-left:15px;">
-                    <b style="font-size:12px; color:#1287c8;" >NEGOTIABLE</b><br/>
-                   <b style="font-size:20px;color:#1287c8; padding-bottom:10px;">BILL OF LADING</b>
+                    <b class="blue" style="font-size:12px;" >NEGOTIABLE</b><br/>
+                    <b class="blue document-title" >{{ document_title }}</b>
                    <br/>
                    <br/>
-                   <div style="font-size:8px; line-height: 11px; text-align: justify; padding-right:10px; ">
+                   <div class="document-info">
                    Received by the Carrier- as far as ascertained by reasonable means of checking, in apparent good order and
                    condition unless otherwise herein stated, the total number or quantity of Containers or other packages or 
                    units indicated in the box entitled "Number of Packages" for carriage front the port of loading (or the place of receipt, 
@@ -116,77 +121,103 @@
             </div> 
   </div>
 </div>
- {% comment %} PLACES OF RECIEPT {% endcomment %}
+ {% comment %} PLACES {% endcomment %}
 <div class="d-table" >
   <div class="d-tr" style="text-align:center" >
-     <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:12.4% ">
+     <div class="d-td no-p placesHeader" style=" width:12.4% ">
         <b>Place of Reciept</b>
      </div>
-      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:15%">
+      <div class="d-td no-p placesHeader" style="width:15%">
         <b>Vessel /Voy No</b>
      </div>
-      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:15%">
+      <div class="d-td no-p placesHeader" style="width:15%">
         <b>Port of Loading</b>
      </div>
-      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:15%">
+      <div class="d-td no-p placesHeader" style="width:15%">
         <b>Port of Discharge</b>
      </div>
-      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px;width:13%">
+      <div class="d-td no-p placesHeader" style="width:13%">
         <b>Place of Delivery</b>
      </div>
-      <div class="d-td no-p" style="vertical-align:bottom; padding-bottom:3px; width:15%;">
+      <div class="d-td no-p placesHeader" style="width:15%;">
         <b>Final Destination for Merchants Reference</b>
      </div>
   </div>
   <div class="d-tr" style="height:70px;">
          <div class="d-td">
-         Place of Reciept data
+           {{ place_of_reciept }}
      </div>
       <div class="d-td">
-         Vessel /Voy No data
+          {{ vessel }} {{ voy_no }}
      </div>
       <div class="d-td">
-         Port of Loading data
+          {{ port_of_loading }}
      </div>
       <div class="d-td">
-         Port of Discharge data
+        {{ port_of_discharge }}
      </div>
       <div class="d-td">
-         Place of Delivery data
+         {{ place_of_delivery }}
      </div>
       <div class="d-td">
-         Final Destination for Merchants Reference data
+        {{ final_destination_for_merchants_reference }}
      </div>
   </div>
 </div>
 {% comment %} CONTAINERS  {% endcomment %}
 <div class="d-table" style="font-size:9px;">
     <div class="d-tr" style="text-align:center">
-       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;width:27%"  >
+       <div class="d-td  containeCargorHeader border-r-white" style="width:27%"  >
          <b>Marks & Numbers</b>
        </div>
-       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;">
+       <div class="d-td containeCargorHeader border-r-white">
           <b>No & Kind of packages</b>
        </div>
-       <div class="d-td" style="background-color:#1287c8; color:white; border-right: 1px solid white;width:32.8%">
+       <div class="d-td containeCargorHeader border-r-white" style="width:32.8%">
          <b>Description of Packages & Goods Gross Weight</b>
        </div>
-       <div class="d-td" style="background-color:#1287c8; color:white; width:17.55% ">
+       <div class="d-td containeCargorHeader" style="width:17.55% ">
          <b>Measurement</b>
        </div>
     </div>
-    <div class="d-tr" style="height:380px;">
-        <div class="d-td" style="border-right: 1px solid white;">
-            CBHU7899
+      {% if containers %}
+      <div class="d-tr">
+        <div class="d-td border-b-white cargo-description" colspan="4">
+           SHIPPER'S LOAD, COUNT & SEAL, CONTAINER S.T.C.
         </div>
-        <div class="d-td" style="border-right: 1px solid white;">
-            Packages
-        </div>
-        <div class="d-td" style="border-right: 1px solid white;">
-           Description
-        </div>
-        <div class="d-td" >
-           Measurement
+      </div>
+      {% endif %}
+    <div class="d-tr"  style="height:360px;">
+        <div class="d-td" colspan="4">
+            <div class="d-table">
+                {% for container in containers %}
+                    <div class="d-tr " style="width:99.5%;"  >
+                        <div class="d-td borders-white " style="width:27%">
+                            {{container.number}} - {{container.type}} <br/>
+                                        
+                            {% for seal in container.seals %}
+                                Seal {{ forloop.counter}}: {{ seal }}<br/> 
+                            {% endfor %}
+                        </div>
+                        <div class="d-td borders-white" colspan="3" style="width:73%; padding:0 !important;">
+                            {% for cargo in container.cargo %}
+                                <div class="d-tr "  >
+                                    <div class="d-td borders-white" style=" width:35%;">
+                                         {{ cargo.quantity }} {{ cargo.package_type }}  {{ cargo.name }}
+                                    </div>
+                                    <div class="d-td borders-white cargo-weight-data" style=" width:50.8%; ">
+                                         {{ cargo.weight }}
+                                    </div>
+                                    <div class="d-td borders-white cargo-dimensions-data" style="width:120px;" >
+                                        {{ cargo.dimensions }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+           
+           </div>
         </div>
     </div>
 </div>
@@ -203,32 +234,32 @@
              </div>
                {% comment %} Weight/Measurement {% endcomment %}
                 <div class="d-tr" >
-                    <div class="d-td blue" style="width:35%;">
+                    <div class="d-td summaryHeader" style="width:35%;">
                         Weight/Measurement
                     </div>
-                    <div class="d-td blue" style="text-align:center; width:19%" >
+                    <div class="d-td summaryHeader" style=" width:19%" >
                         Rate
                     </div>
-                    <div class="d-td blue" style="text-align:center; width:19%">
+                    <div class="d-td summaryHeader" style="width:19%">
                         Per
                     </div>
-                    <div class="d-td blue" style="text-align:center; width:27%">
+                    <div class="d-td summaryHeader" style="width:27%">
                        Amount
                     </div>
                 </div>
                {% comment %} DATA  Weight/Measurement {% endcomment %}
-               <div class="d-tr" >
-                    <div class="d-td" style="height:50px;">
-                        Weight/Measurement data
+               <div class="d-tr" style="height:50px;" >
+                    <div class="d-td" >
+                       {{ weight }} / {{ measurement }}
                     </div>
                     <div class="d-td" >
-                        Rate data
+                        {{ rate }} {{ currency }}
                     </div>
                     <div class="d-td" >
-                        Per data
+                        {{ per }}
                     </div>
                     <div class="d-td">
-                       Amount data
+                        {{ amount }} {{ currency }}
                     </div>
                 </div>
                 {% comment %} FREIGHT PAYBLE at {% endcomment %}
@@ -236,7 +267,8 @@
                    <div class="d-td pale-blue" colspan="2" style="width:30%">
                        <b>Freight Paybale at</b>
                    </div>
-                   <div class="d-td" colspan="2" style="width:70%">   
+                   <div class="d-td" colspan="2" style="width:70%">  
+                       {{ freight_payable_at  }} 
                    </div>
                 </div>
                 {% comment %} FOR DELLIVERY OF GOODS {% endcomment %}
@@ -246,8 +278,11 @@
                     </div>
                 </div>
                 <div class="d-tr">
-                    <div class="d-td" colspan="4" style="height:60px; border-bottom: 1px solid white;" >
-                        For delivery of goods, please apply to data
+                    <div class="d-td partiesData border-b-white" colspan="4" style="height:60px;" >
+                        {{ agent.name }} <br/>
+                        {{ agent.street }} <br/>
+                        {{ agent.postal_code}} {{ agent.city }} , {{ agent.country }} ({{ agent.country_prefix }}) <br/>
+                        {{ agent.additional_info }} 
                     </div>
                 </div>
           </div>
@@ -259,13 +294,13 @@
                 <div class="d-td dark-blue " style="width:40%; " >
                    <b>SHIPPED ON BOARD ON</b>
                 </div>
-                <div class="d-td " style="width:60%; " >
-                   DATA
+                <div class="d-td " style="width:60%;" >
+                   {{ shipped_on_board_date }}
                 </div>
             </div>
             <div class="d-tr">
-                <div class="d-td" colspan="2" style="border-bottom:1px solid white;">
-                    <div style="color:#1287c8; text-align:justify; padding:5px; "> 
+                <div class="d-td border-b-white" colspan="2">
+                    <div class="conditions"> 
                         <b>IN ACCEPTING THIS BILL OF LADING</b> the Merchants agree to be bound by all of
                         its stipulations, exceptions and conditions whether written, printed or stamped
                         on the front or back hereof any local customs or privileges to the contrary 
@@ -273,7 +308,7 @@
                     </div>
                     <br/>
                    
-                    <div style="color:#1287c8; text-align:justify;  padding:5px; "> 
+                    <div class="conditions"> 
                         <b>IN WITNESS WHEREOF</b> the Carrier itself or by its agents has signed three
                         (3) original Bills of Lading all of this tenor and date and as soon as at least
                         one original is surrendered the others shall be void.
@@ -281,7 +316,8 @@
                   
                       {% comment %} DATES {% endcomment %}
                        <div style="padding:5px;">
-                            DATED ON <span class="blue">______________________</span> AT <span class="blue">______________________</span>
+                            DATED ON {{ dated_on }} AT  {{ dated_place }} <br/>
+                               <span class="blue">______________________</span>   <span class="blue">______________________</span>
                        </div>
                        <br/>
                        {% comment %} NUMBER OF ORIGINALS {% endcomment %}
