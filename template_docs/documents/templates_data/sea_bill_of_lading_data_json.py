@@ -129,6 +129,8 @@ sea_bol_data = {
     'per' : 'KG',
     'amount': '23000 ',
     'currency' : 'USD',
+    'total_cargo_weight':'2100 KGS',
+    'freight_payment_type': 'Freight prepaid', #Freight collect 
     'freight_payable_at' : 'Destination',
     'shipped_on_board_date': '17.04.2024',
     'dated_on':'28.04.2024',

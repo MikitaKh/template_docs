@@ -140,13 +140,37 @@ def generate_domestic_cmr(request):
     return response
 
 
-def generate_sea_bill_of_lading(request):
+def generate_sea_bill_of_lading_draft(request):
                                 
-    pdf_content = PDFGenerator.generate('documents/templates/pdf/sea_bill_of_lading/index.html',sea_bol_data)
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/sea_bill_of_lading_draft/index.html',sea_bol_data)
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition']='inline; filename=sea_bill_of_lading.pdf'
 
     response.write(pdf_content)
 
-    return response                 
+    return response  
+
+
+def generate_sea_bill_of_lading_original(request):
+                                
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/sea_bill_of_lading_original/index.html',sea_bol_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition']='inline; filename=sea_bill_of_lading.pdf'
+
+    response.write(pdf_content)
+
+    return response
+
+
+def generate_sea_bill_of_lading_rider(request):
+                                
+    pdf_content = PDFGenerator.generate('documents/templates/pdf/sea_bill_of_lading_rider/index.html',sea_bol_data)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition']='inline; filename=sea_bill_of_lading.pdf'
+
+    response.write(pdf_content)
+
+    return response

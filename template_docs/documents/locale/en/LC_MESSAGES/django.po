@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-21 23:11+0100\n"
+"POT-Creation-Date: 2024-05-05 19:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1346,3 +1346,200 @@ msgstr "Customer Signature"
 #: .\documents\templates\pdf\rfdWaybill\index.html:218
 msgid "pdfTemplate.rfdWaybill.documentCreated"
 msgstr "Document Created"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:28
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:28
+msgid "pdfTemplates.seaBl.shipper"
+msgstr "SHIPPER"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:43
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:43
+msgid "pdfTemplates.seaBl.consignee"
+msgstr "CONSIGNEE"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:58
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:58
+msgid "pdfTemplates.seaBl.notify_party"
+msgstr "NOTIFY-PARTY"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:70
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:70
+msgid "pdfTemplates.seaBl.pre_carriage"
+msgstr "PRE CARRIAGE"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:91
+msgid "pdfTemplates.seaBl.bl_number"
+msgstr "B/L NUMBER"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:99
+msgid "pdfTemplates.seaBl.original"
+msgstr "ORIGINAL"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:107
+msgid "pdfTemplates.seaBl.negotiable"
+msgstr "NEGOTIABLE"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:135
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:90
+msgid "pdfTemplates.seaBl.place_of_reciept"
+msgstr "Place of Reciept"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:138
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:93
+msgid "pdfTemplates.seaBl.vessel"
+msgstr "Vessel"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:138
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:93
+msgid "pdfTemplates.seaBl.vou_no"
+msgstr "Voy No"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:141
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:96
+msgid "pdfTemplates.seaBl.port_of_loading"
+msgstr "Port of Loading"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:144
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:99
+msgid "pdfTemplates.seaBl.port_of_disccharge"
+msgstr "Port of Discharge"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:147
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:102
+msgid "pdfTemplates.seaBl.place_of_delivery"
+msgstr "Place of Delivery"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:150
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:105
+msgid "pdfTemplates.seaBl.final_destination_for_merchants_reference"
+msgstr "Final Destination for Merchants Reference"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:179
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:134
+msgid "pdfTemplates.seaBl.marks_and_numbers"
+msgstr "Marks & Numbers"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:182
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:137
+msgid "pdfTemplates.seaBl.no_and_kind_of_packages"
+msgstr "No & Kind of packages"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:185
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:140
+msgid "pdfTemplates.seaBl.description_of_packages"
+msgstr "Description of Packages"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:185
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:140
+msgid "pdfTemplates.seaBl.goods_gross_weight"
+msgstr "Goods Gross Weight"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:188
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:143
+msgid "pdfTemplates.seaBl.measurement"
+msgstr "Measurement"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:194
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:149
+msgid "pdfTemplates.seaBl.shippers_load_count_seals_containers"
+msgstr "SHIPPER'S LOAD, COUNT & SEAL, CONTAINER S.T.C."
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:242
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:201
+msgid "pdfTemplates.seaBl.ocean_rates_weights_measurement_charges"
+msgstr "Ocean Rates, Weights, Measurement & Charges ( Subject to Correction )"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:249
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:208
+msgid "pdfTemplates.seaBl.weight_measurement"
+msgstr "Weight/Measurement"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:252
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:211
+msgid "pdfTemplates.seaBl.rate"
+msgstr "Rate"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:255
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:214
+msgid "pdfTemplates.seaBl.per"
+msgstr "Per"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:258
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:217
+msgid "pdfTemplates.seaBl.amount"
+msgstr "Amount"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:281
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:240
+msgid "pdfTemplates.seaBl.freight_payable_at"
+msgstr "Freight Paybale at"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:291
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:250
+msgid "pdfTemplates.seaBl.for_delivery_goods_please_apply_to"
+msgstr "For delivery of goods, please apply to"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:310
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:269
+msgid "pdfTemplates.seaBl.shipped_on_board_on"
+msgstr "SHIPPED ON BOARD ON"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:335
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:282
+msgid "pdfTemplates.seaBl.dated_on"
+msgstr "DATED ON"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:335
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:282
+msgid "pdfTemplates.seaBl.at"
+msgstr "AT"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:342
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:289
+msgid "pdfTemplates.seaBl.numbers_of_original"
+msgstr "Numbers of original"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_draft\index.html:343
+#: .\documents\templates\pdf\sea_bill_of_lading_original\index.html:290
+msgid "pdfTemplates.seaBl.as_carrier"
+msgstr "As carrier"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:29
+msgid "pdfTemplate.seablRider.bl_number"
+msgstr "B/L No."
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:38
+msgid "pdfTemplate.seablRider.cont_seals_marks"
+msgstr "Cont/Seals/Marks"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:41
+msgid "pdfTemplate.seablRider.packages"
+msgstr "Packages"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:44
+msgid "pdfTemplate.seablRider.description_of_goods"
+msgstr "Description of Goods"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:47
+msgid "pdfTemplate.seablRider.weight"
+msgstr "Weight"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:50
+msgid "pdfTemplate.seablRider.measure"
+msgstr "Measure"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:90
+msgid "pdfTemplate.seablRider.total_weight"
+msgstr "Total Weight"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:97
+msgid "pdfTemplate.seablRider.shipped_on_board"
+msgstr "SHIPPED ON BOARD"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:98
+msgid "pdfTemplate.seablRider.port_of_loading"
+msgstr "PORT OF LOADING"
+
+#: .\documents\templates\pdf\sea_bill_of_lading_rider\index.html:99
+msgid "pdfTemplate.seablRider.vessel_name"
+msgstr "VESSEL NAME"

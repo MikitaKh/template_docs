@@ -1,0 +1,71 @@
+@page {
+    margin-top: 0.3in;
+    margin-bottom: 0.3in;
+    margin-left: 0.3in;
+    margin-right: 0.3in; 
+    size: A4;
+
+}
+
+
+@font-face {
+    font-family: DejaVuSansMono;
+    src: url(../../fonts/DejaVuSansMono.ttf);
+}
+
+
+@font-face {
+    font-family: DejaVuSansMono-Oblique;
+    src: url(../../fonts/DejaVuSansMono-Oblique.ttf);
+}
+
+
+@font-face {
+  font-family: DejaVuSansMono-Bold;
+  src: url(../../fonts/DejaVuSansMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: DejaVuSansMono-BoldOblique;
+  src: url(../../fonts/DejaVuSansMono-BoldOblique.ttf);
+}
+
+body{
+    font-family: DejaVuSansMono;
+    font-size: 12px;
+}
+
+  
+.logo-img{
+    max-height:40px; 
+    margin:0;
+  }
+
+
+.div-element, table {
+    display: inline-block; 
+    vertical-align: top; 
+    margin: 0 !important;
+}
+
+.d-table{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: DejaVuSansMono ;
+    font-size:11px;
+   
+  }
+  .d-tr{
+    display: table-row;
+    border-collapse: collapse;
+  }
+  .d-td{
+    display: table-cell;
+    border-collapse: collapse;
+    border: none;
+    
+  }
+  .d-td:not(.no-p){
+    padding: 4px;
+  }

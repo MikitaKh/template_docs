@@ -1,0 +1,337 @@
+{% load i18n %}
+{% language template_language %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEA BILL OF LADING DRAFT</title>
+    <meta name="description" content="seaBillOfLading">
+  </head>
+
+
+{% load static %}
+{% load custom_filters %}
+
+<body>
+<div class="d-table">
+  <div class="d-tr" >
+ {% comment %} SHIPPER CONSIGNEE {% endcomment %}
+
+    <div class="d-td" style="vertical-align:top; margin:0; padding:0px; width:40%;">   
+          
+    
+             <div class="d-table ">
+                 {% comment %} SHIPPER {% endcomment %}
+                <div class="d-tr "  >
+                      <div class="d-td  partiesHeader border-l-white border-t-white" colspan="2" >
+                         <b class="p6">{% trans "pdfTemplates.seaBl.shipper" %}</b>
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td partiesData border-l-white" colspan="2" >
+                           {{ shipper.name }} <br/>
+                           {{ shipper.street }} <br/>
+                           {{ shipper.postal_code}} {{ shipper.city }} , {{ shipper.country }} ({{ shipper.country_prefix }}) <br/>
+                           {{ shipper.additional_info }}
+                      </div>
+                </div>
+                {% comment %} CONSIGNEE {% endcomment %}
+                  <div class="d-tr "  >
+                      <div class="d-td partiesHeader border-l-white" colspan="2" >
+                         <b class="p6" >{% trans "pdfTemplates.seaBl.consignee" %}</b> 
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td partiesData border-l-white" colspan="2" > 
+                           {{ consignee.name }} <br/>
+                           {{ consignee.street }} <br/>
+                           {{ consignee.postal_code}} {{ consignee.city }} , {{ consignee.country }} ({{ consignee.country_prefix }}) <br/>
+                           {{ consignee.additional_info }} 
+                      </div>
+                </div>
+                {% comment %} NOTIFY-PARTY {% endcomment %}
+                <div class="d-tr "  >
+                      <div class="d-td partiesHeader border-l-white" colspan="2" >
+                         <b class="p6" >{% trans "pdfTemplates.seaBl.notify_party" %}NOTIFY-PARTY</b>
+                      </div>
+                </div>
+                <div class="d-tr "  >
+                      <div class="d-td partiesData border-l-white" colspan="2" style="vertical-align:middle" >
+                          {{ notify_party }}
+                      </div>
+                </div>
+                {% comment %} PRE CARRIAGE {% endcomment %}
+                <div class="d-tr">
+                    <div class="d-td border-l-white border-b-white"  style="width:100px;">
+                       <b class="p6" > {% trans "pdfTemplates.seaBl.pre_carriage" %} </b>
+                    </div>
+                    <div class="d-td border-b-white"  style="padding:6px;">
+                       
+                    </div>
+                </div>
+            </div>
+    </div> 
+          
+      {% comment %} LOGO {% endcomment %}
+            <div class="d-td" style="margin:0; padding:0px;">
+
+                <div class="logo">
+                    <img class="logo-img"  src="{{ logo_url }}"/>
+                </div>
+
+                <div class="bl-number">
+                  <div class="d-table">
+                    <div class="d-tr" style="width:100%; font-size:11px;">
+                            <div class="d-td border-t-white" style="width:45%">
+                                <b>{% trans "pdfTemplates.seaBl.bl_number" %}</b>
+                            </div>
+                            <div class="d-td border-t-white">
+                              {{ bl_number }}
+                            </div>
+                    </div>
+                    <div class="d-tr" style="width:100%">
+                        <div class="d-td" colspan="2">
+                            <b style="font-size:15px;">{% trans "pdfTemplates.seaBl.original" %}</b>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                  <div style="clear: both;"></div>
+                  <br/>
+                <div style="padding-left:15px;">
+                    <b class="blue" style="font-size:12px;" >{% trans "pdfTemplates.seaBl.negotiable" %}</b><br/>
+                    <b class="blue document-title" >{{ document_title }}</b>
+                   <br/>
+                   <br/>
+                   <div class="document-info">
+                   Received by the Carrier- as far as ascertained by reasonable means of checking, in apparent good order and
+                   condition unless otherwise herein stated, the total number or quantity of Containers or other packages or 
+                   units indicated in the box entitled "Number of Packages" for carriage front the port of loading (or the place of receipt, 
+                   if mentioned above) to the port of discharge (or the place of delivery if mentioned above), such carriage being always 
+                   subject to the terms, rights, defenses, provisions, conditions. exceptions, limitations, and liberties hereof (INCLUDING THOSE TERMS AND 
+                   CONDITIONS ON THE REVERSE HEREOF AND THOSE TERMS AND CONDITIONS CONTAINED IN THE CARRIER'S APPLICABLE TARIFF) .
+                   The Merchant is obliged to surrender one original bill of lading. duly endorsed in exchange for the Goods The Carrier accepts a duty of
+                    reasonable care to check that any such document which the Merchant surrenders as a bill of lading is genuine and original.
+                   If the Carrier complies with this duty it will be entitled to deliver the Goode against what it reasonably believes to be genuine and 
+                   original bill of lading such delivery discharging the Carrier's delivery obligations. In accepting this bill of lading, any local customs or 
+                   privileges to the contrary. Notwithstanding, the Merchant agrees to be bound by all Terms and Conditions stated herein whether written, printed, 
+                   stamped or incorporated on the face, or reverse side hereof as if they were all signed by the Merchant. 
+                   </div>
+                </div>
+                
+            </div> 
+  </div>
+</div>
+ {% comment %} PLACES {% endcomment %}
+<div class="d-table" >
+  <div class="d-tr" style="text-align:center" >
+     <div class="d-td no-p placesHeader" style=" width:12.4% ">
+        <b>{% trans "pdfTemplates.seaBl.place_of_reciept" %}</b>
+     </div>
+      <div class="d-td no-p placesHeader" style="width:15%">
+        <b>{% trans "pdfTemplates.seaBl.vessel" %} /{% trans "pdfTemplates.seaBl.vou_no" %} </b>
+     </div>
+      <div class="d-td no-p placesHeader" style="width:15%">
+        <b>{% trans "pdfTemplates.seaBl.port_of_loading" %}</b>
+     </div>
+      <div class="d-td no-p placesHeader" style="width:15%">
+        <b>{% trans "pdfTemplates.seaBl.port_of_disccharge" %}</b>
+     </div>
+      <div class="d-td no-p placesHeader" style="width:13%">
+        <b>{% trans "pdfTemplates.seaBl.place_of_delivery" %}</b>
+     </div>
+      <div class="d-td no-p placesHeader" style="width:15%;">
+        <b>{% trans "pdfTemplates.seaBl.final_destination_for_merchants_reference" %}</b>
+     </div>
+  </div>
+  <div class="d-tr" style="height:70px;">
+         <div class="d-td">
+           {{ place_of_reciept }}
+     </div>
+      <div class="d-td">
+          {{ vessel }} {{ voy_no }}
+     </div>
+      <div class="d-td">
+          {{ port_of_loading }}
+     </div>
+      <div class="d-td">
+        {{ port_of_discharge }}
+     </div>
+      <div class="d-td">
+         {{ place_of_delivery }}
+     </div>
+      <div class="d-td">
+        {{ final_destination_for_merchants_reference }}
+     </div>
+  </div>
+</div>
+{% comment %} CONTAINERS  {% endcomment %}
+<div class="d-table" style="font-size:9px;">
+    <div class="d-tr" style="text-align:center">
+       <div class="d-td  containeCargorHeader border-r-white" style="width:27%"  >
+         <b>{% trans "pdfTemplates.seaBl.marks_and_numbers" %}</b>
+       </div>
+       <div class="d-td containeCargorHeader border-r-white">
+          <b>{% trans "pdfTemplates.seaBl.no_and_kind_of_packages" %}</b>
+       </div>
+       <div class="d-td containeCargorHeader border-r-white" style="width:32.8%">
+         <b>{% trans "pdfTemplates.seaBl.description_of_packages" %} & {% trans "pdfTemplates.seaBl.goods_gross_weight" %}</b>
+       </div>
+       <div class="d-td containeCargorHeader" style="width:17.55% ">
+         <b>{% trans "pdfTemplates.seaBl.measurement" %}</b>
+       </div>
+    </div>
+      {% if containers %}
+      <div class="d-tr">
+        <div class="d-td border-b-white cargo-description" colspan="4">
+          {% trans "pdfTemplates.seaBl.shippers_load_count_seals_containers" %} 
+        </div>
+      </div>
+      {% endif %}
+    <div class="d-tr"  style="height:360px;">
+        <div class="d-td border-b-white" colspan="4">
+            <div class="d-table">
+                {% for container in containers %}
+                    <div class="d-tr " style="width:99.5%;"  >
+                        <div class="d-td borders-white " style="width:27%">
+                            {{container.number}} - {{container.type}} <br/>
+                                        
+                            {% for seal in container.seals %}
+                                Seal {{ forloop.counter}}: {{ seal }}<br/> 
+                            {% endfor %}
+                        </div>
+                        <div class="d-td borders-white" colspan="3" style="width:73%; padding:0 !important;">
+                            {% for cargo in container.cargo %}
+                                <div class="d-tr "  >
+                                    <div class="d-td borders-white" style=" width:35%;">
+                                         {{ cargo.quantity }} {{ cargo.package_type }}  {{ cargo.name }}
+                                    </div>
+                                    <div class="d-td borders-white cargo-weight-data" style=" width:50.8%; ">
+                                         {{ cargo.weight }}
+                                    </div>
+                                    <div class="d-td borders-white cargo-dimensions-data" style="width:120px;" >
+                                        {{ cargo.dimensions }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+           
+           </div>
+        </div>
+    </div>
+</div>
+{% comment %} SUMMARY {% endcomment %}
+<div class="d-table">
+    <div class="d-tr">
+       <div class="d-td" style="width:50%; margin:0; padding:0px;">
+           {% comment %} OCEAN RATES {% endcomment %}
+          <div class="d-table">
+             <div class="d-tr ">
+                <div class="d-td pale-blue" colspan="4" >
+                  <b style="font-size:9px;">{% trans "pdfTemplates.seaBl.ocean_rates_weights_measurement_charges" %}</b>
+                </div>
+             </div>
+               {% comment %} Weight/Measurement {% endcomment %}
+                <div class="d-tr" >
+                    <div class="d-td summaryHeader" style="width:35%;">
+                        {% trans "pdfTemplates.seaBl.weight_measurement" %}
+                    </div>
+                    <div class="d-td summaryHeader" style=" width:19%" >
+                        {% trans "pdfTemplates.seaBl.rate" %}
+                    </div>
+                    <div class="d-td summaryHeader" style="width:19%">
+                       {% trans "pdfTemplates.seaBl.per" %} 
+                    </div>
+                    <div class="d-td summaryHeader" style="width:27%">
+                       {% trans "pdfTemplates.seaBl.amount" %}
+                    </div>
+                </div>
+               {% comment %} DATA  Weight/Measurement {% endcomment %}
+               <div class="d-tr" style="height:50px;" >
+                    <div class="d-td" >
+                       {{ weight }} / {{ measurement }}
+                    </div>
+                    <div class="d-td" >
+                        {{ rate }} {{ currency }}
+                    </div>
+                    <div class="d-td" >
+                        {{ per }}
+                    </div>
+                    <div class="d-td">
+                        {{ amount }} {{ currency }}
+                    </div>
+                </div>
+                {% comment %} FREIGHT PAYBLE at {% endcomment %}
+                <div class="d-tr" >
+                   <div class="d-td pale-blue" colspan="2" style="width:30%">
+                       <b>{% trans "pdfTemplates.seaBl.freight_payable_at" %}</b>
+                   </div>
+                   <div class="d-td" colspan="2" style="width:70%">  
+                       {{ freight_payable_at  }} 
+                   </div>
+                </div>
+                {% comment %} FOR DELLIVERY OF GOODS {% endcomment %}
+                <div class="d-tr">
+                    <div class="d-td pale-blue" colspan="4">
+                        <b>{% trans "pdfTemplates.seaBl.for_delivery_goods_please_apply_to" %}</b>
+                    </div>
+                </div>
+                <div class="d-tr">
+                    <div class="d-td partiesData " colspan="4" style="height:90px;" >
+                        {{ agent.name }} <br/>
+                        {{ agent.street }} <br/>
+                        {{ agent.postal_code}} {{ agent.city }} , {{ agent.country }} ({{ agent.country_prefix }}) <br/>
+                        {{ agent.additional_info }} 
+                    </div>
+                </div>
+          </div>
+       </div>
+       {% comment %} SHIPPED ON BOARD {% endcomment %}
+       <div class="d-td" style="width:50%; margin:0; padding:0px;">
+          <div class="d-table">
+            <div class="d-tr" style="height:30px; ">
+                <div class="d-td dark-blue " style="width:40%;" >
+                   <b>{% trans "pdfTemplates.seaBl.shipped_on_board_on" %}</b>
+                </div>
+                <div class="d-td  border-r-blue" style="width:60%;" >
+                   {{ shipped_on_board_date }}
+                </div>
+            </div>
+            <div class="d-tr">
+                <div class="d-td border-r-blue" colspan="2">
+                    <div class="conditions"> 
+                        <b>IN ACCEPTING THIS BILL OF LADING</b> the Merchants agree to be bound by all of
+                        its stipulations, exceptions and conditions whether written, printed or stamped
+                        on the front or back hereof any local customs or privileges to the contrary 
+                        notwithstanding.
+                    </div>
+                    <br/>
+                   
+                    <div class="conditions"> 
+                        <b>IN WITNESS WHEREOF</b> the Carrier itself or by its agents has signed three
+                        (3) original Bills of Lading all of this tenor and date and as soon as at least
+                        one original is surrendered the others shall be void.
+                    </div>
+                  
+                      {% comment %} DATES {% endcomment %}
+                       <div style="padding:5px; padding-bottom:11.5px !important;">
+                           {% trans "pdfTemplates.seaBl.dated_on" %}  {{ dated_on }} {% trans "pdfTemplates.seaBl.at" %}  {{ dated_place }} <br/>
+                               <span class="blue">______________________</span>   <span class="blue">______________________</span>
+                       </div>
+                       <br/>
+                       {% comment %} NUMBER OF ORIGINALS {% endcomment %}
+                       <div>
+                            <b>{% trans "pdfTemplates.seaBl.numbers_of_original" %}</b> <br/>
+                            <b>B / L (s)</b>  <span id="number_blank">___________</span> {% trans "pdfTemplates.seaBl.as_carrier" %}  <span id="blank2">________________</span>
+                       </div>
+                </div>
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endlanguage %}

@@ -1,0 +1,107 @@
+{% load i18n %}
+{% language template_language %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEA BILL OF LADING RIDER</title>
+    <meta name="description" content="seaBillOfLading">
+  </head>
+
+
+{% load static %}
+{% load custom_filters %}
+
+<body>
+    <div style="float:left; display:inline-block; width:49%">
+        {{ shipper.name }} 
+    </div>
+
+    <div class="logo" style="float:right;display:inline-block; width:49%; text-align:center" >
+            <img class="logo-img"  src="{{ logo_url }}"/>
+    </div>
+
+   
+
+   <div style="clear: both;"></div>
+   <br/>
+
+   <div style="float:right;">
+     {% trans "pdfTemplate.seablRider.bl_number" %} {{ bl_number }}
+   </div>
+   
+    <div style="clear: both;"></div>
+
+    <hr/>
+   <div class="d-table">
+    <div class="d-tr" style="text-align:left">
+       <div class="d-td" style="width:27%"  >
+         <b>{% trans "pdfTemplate.seablRider.cont_seals_marks" %}</b>
+       </div>
+       <div class="d-td" style="width:25%">
+          <b>{% trans "pdfTemplate.seablRider.packages" %}</b>
+       </div>
+       <div class="d-td" style="width:25%">
+         <b>{% trans "pdfTemplate.seablRider.description_of_goods" %}</b>
+       </div>
+        <div class="d-td" style="width:12% ">
+         <b>{% trans "pdfTemplate.seablRider.weight" %}</b>
+       </div>
+       <div class="d-td" style="width:12% ">
+         <b>{% trans "pdfTemplate.seablRider.measure" %}</b>
+       </div>
+    </div>
+    <div class="d-tr">
+        <div class="d-td" colspan="5">
+            <div class="d-table" >
+                {% for container in containers %}
+                    <div class="d-tr " style="width:99.5%;"  >
+                        <div class="d-td  " style="width:27%">
+                            {{container.number}} - {{container.type}} <br/>
+                                        
+                            {% for seal in container.seals %}
+                                Seal {{ forloop.counter}}: {{ seal }}<br/> 
+                            {% endfor %}
+                        </div>
+                        <div class="d-td " colspan="4" style="width:73%; padding:0 !important;">
+                           <div class="d-table">
+                            {% for cargo in container.cargo %}
+                                <div class="d-tr" style="width:100%;  "  >
+                                    <div class="d-td " colspan="2" style="width: 69%;">
+                                         {{ cargo.quantity }} {{ cargo.package_type }}  {{ cargo.name }}
+                                    </div>
+                                    <div class="d-td  cargo-weight-data" style="width:16%">
+                                         {{ cargo.weight }}
+                                    </div>
+                                    <div class="d-td  cargo-dimensions-data" style="width:16%" >
+                                        {{ cargo.dimensions }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+           
+           </div>
+        </div>
+    </div>
+    <div class="d-tr" colspan="5" style="text-align:center;">
+       <div style="padding-left:170px !important;">
+         <b>{% trans "pdfTemplate.seablRider.total_weight" %}:</b> {{ total_cargo_weight }}
+       </div> 
+    </div>
+</div>
+<div style="clear: both;"></div>
+<br/>
+<div style="float:left">
+  {% trans "pdfTemplate.seablRider.shipped_on_board" %}: {{ shipped_on_board_date  }}<br/>
+  {% trans "pdfTemplate.seablRider.port_of_loading" %}: {{ port_of_loading }}<br/>
+  {% trans "pdfTemplate.seablRider.vessel_name" %}: {{ vessel }}<br/>
+  {{ freight_payment_type| upper }}
+
+
+</div>
+
+</body>
+</html>
+{% endlanguage %}

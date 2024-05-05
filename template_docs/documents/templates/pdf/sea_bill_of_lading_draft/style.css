@@ -188,6 +188,20 @@
   border-bottom: 1px solid white;
 }
 
+.border-l-white{
+  border-left: 1px solid white;
+}
+
+.border-t-white{
+  border-top: 1px solid white;
+}
+
+.border-r-blue{
+   border-right: 2px solid  #1287c8;
+}
+
+
+
 .cargo-description{
   padding-left: 28% !important; 
   padding-top:10px !important;

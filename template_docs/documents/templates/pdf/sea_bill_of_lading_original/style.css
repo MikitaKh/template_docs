@@ -1,0 +1,166 @@
+@page {
+    margin-top: 0.05in;
+    margin-bottom: 0.05in;
+    margin-left: 0.1in;
+    margin-right: 0.1in; 
+    size: A4;
+
+}
+
+
+@font-face {
+  font-family: MyriadPro-Regular;
+  src: url(../../fonts/MyriadPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: Verdana;
+  src: url(../../fonts/Verdana.ttf);
+}
+
+.body{
+  font-family: Verdana !important;
+}
+
+
+.container {
+    white-space: nowrap; 
+    height:25%;
+    width:100%;
+}
+
+.div-element, table {
+    display: inline-block; 
+    vertical-align: top; 
+    margin: 0 !important;
+}
+
+.logo{
+    border:1px solid #1287c8;
+    height:100%;
+    width:60%;
+}
+
+.shipper{
+    border-collapse:collapse !important;
+    width: 40%;
+
+}
+
+.d-table{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Verdana ;
+    font-size:10px;
+  }
+  .d-tr{
+    display: table-row;
+    border-collapse: collapse;
+  }
+  .d-td{
+    display: table-cell;
+    border-collapse: collapse;
+    border: none; 
+  }
+  .d-td:not(.no-p){
+    padding: 4px;
+  }
+
+/* PARTIES */
+.partiesHeader{
+    padding:4px;
+    color: white;
+}
+
+.partiesData{
+    height:80px;
+    padding-left: 10px !important;
+    font-size:12px;
+    
+    
+}
+
+.p6 {
+  padding: 6px;
+}
+
+.preCarriageHeader{
+   width:100px;
+}
+
+
+.bl-number{
+  float:right; 
+  top:0; 
+  right:0; 
+  margin:0;
+  width:45%;
+}
+
+.document-title{
+  font-size:20px; 
+  padding-bottom:10px;
+}
+
+.document-info{
+  font-size:8px; 
+  line-height: 11px; 
+  text-align: justify; 
+  padding-right:10px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.placesHeader{
+  vertical-align:bottom; 
+  padding-bottom:3px;
+  color: white;
+}
+
+/* CONTAINERS  AND CARGOS*/
+
+.containeCargorHeader{
+  color:white;
+}
+
+.cargo-weight-data{
+  text-align:right; 
+  padding-right:10px !important;
+}
+
+.cargo-dimensions-data{
+  text-align:right; 
+  padding-right:5px!important;
+}
+
+
+/* SUMMARY */
+
+.summaryHeader{
+  text-align:center;
+  color: white;
+}
+
+.conditions{
+  text-align:justify; 
+  padding:5px;
+}
+/* Tables styles */
+
+
+.cargo-description{
+  padding-left: 28% !important; 
+  padding-top:10px !important;
+}
+
+.white{
+    color: white;
+}
+
+.original{
+    text-align:right;
+    font-size: 16px; 
+    padding-top: 20px !important;
+    padding-right:40px !important;
+}
